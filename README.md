@@ -1,2 +1,21 @@
-# E-19_RGB_8x8_Display
-The are the design files for the RGB 8x8 Display (E-19).
+# E-19 RGB 8x8 Display
+
+![RGB 8x8 Display](https://live.staticflickr.com/65535/33867577668_3501be2fde_k.jpg)
+![RGB 8x8 Display](https://live.staticflickr.com/65535/32801182037_fcb34d834e_k.jpg)
+![RGB 8x8 Display](https://www.ez-robot.com/Shop/Images/Products/52.jpg)
+
+This is an RGB Matrix display of 8x8 (64) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more!
+
+## Contents
+
+**Documentation:** Schematic PDF, Datasheet PDF, BOM
+
+**Hardware:** Altium PCB design File, Altium SCH Design File
+
+**Firmware:** Code, Compiled Hex
+
+## License
+
+For profit use of these files requires written consent. Contact partners@synthiam.com. For everyone else party on!
+
+Please see LICENSE.md for license details.
