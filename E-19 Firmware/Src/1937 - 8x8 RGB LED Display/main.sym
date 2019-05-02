@@ -1,0 +1,176 @@
+004-005 @READ_PACKED_MEMORY.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004-005 @READ_PROGRAM_MEMORY8.P3
+004-005 @WRITE_PROGRAM_MEMORY8.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025-064 redA
+065-06F,0A0-0D4 greenA
+070     _address
+071     _mode
+072     _changeAddress
+073     _tmp
+074     _state
+075     @I2C_STATE
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07F     @INTERRUPT_AREA
+0D5-0EF,120-144 blueA
+0FF     @INTERRUPT_AREA
+111.6   C1OUT
+113.6   C2OUT
+145-147 _digits
+148-149 _cnt
+14A     MAIN.digitsSize
+14B     MAIN.t
+14C     loop1.x
+14C     MAIN.@SCRATCH1
+14D     MAIN.@SCRATCH2
+14E     @DIV88.P1
+14E     MAIN.@SCRATCH3
+14F     @delay_ms1.P1
+14F     @DIV88.P2
+14F     loop1.@SCRATCH1
+150     loop1.@SCRATCH2
+150     @DIV88.@SCRATCH1
+151     loop1.@SCRATCH3
+152     @WRITEBITA.P1
+152     @READ_PROGRAM_MEMORY8.P2
+153     @WRITEBITA.P1
+154-155 @WRITEBITA.P1
+159     displayDigit.digit
+159     ssp_interupt.y
+15A     ssp_interupt.x
+15B     clearDisplay.x
+15B     ssp_interupt.@SCRATCH1
+15C     clearDisplay.y
+15C     ssp_interupt.@SCRATCH2
+15D     ssp_interupt.@SCRATCH3
+15E     clearDisplay.@SCRATCH1
+15F     clearDisplayColor.r
+15F     SetLEDPosition.x
+15F     clearDisplay.@SCRATCH2
+160     SetLEDPosition.y
+160     clearDisplayColor.g
+161     clearDisplayColor.b
+161     SetLEDPosition.red
+162     SetLEDPosition.green
+162     clearDisplayColor.x
+163     clearDisplayColor.y
+163     SetLEDPosition.blue
+164     clearDisplayColor.@SCRATCH1
+164     SetLEDPosition.@SCRATCH1
+165     clearDisplayColor.@SCRATCH2
+165     SetLEDPosition.@SCRATCH2
+17F     @INTERRUPT_AREA
+191-192 @WRITE_PROGRAM_MEMORY8.P1
+191-192 @READ_PROGRAM_MEMORY8.P2
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+291     CCP_1_LOW
+291     CCP_1
+292     CCP_1_HIGH
+298     CCP_2
+298     CCP_2_LOW
+299     CCP_2_HIGH
+2FF     @INTERRUPT_AREA
+311     CCP_3
+311     CCP_3_LOW
+312     CCP_3_HIGH
+318     CCP_4
+318     CCP_4_LOW
+319     CCP_4_HIGH
+31C     CCP_5_LOW
+31C     CCP_5
+31D     CCP_5_HIGH
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00002A  SetLEDPosition
+000060  ssp_interupt
+0000A9  clearDisplayColor
+00021F  isr_tmr1
+000321  @DIV88
+000338  @READ_PROGRAM_MEMORY8
+00034B  @WRITEBITA
+00036D  @delay_ms1
+000382  MAIN
+000382  @cinit1
+0003A9  @cinit2
+0003AC  clearDisplay
+000800  displayDigit
+000F41  @goto10780
+001000  loop1
+
+User Memory space: rom
+ 001FF8-001FFF  Trans
+ 001FF0-001FF7  gPin
+ 001FE8-001FEF  bPin
+ 001FE0-001FE7  rPin
+
+Project Directory:
+    C:\My Documents\SVN\Developer - Microcontroller\Microchip\1937 - 8x8 RGB LED Display\
+
+Project Files:
+    main.c                                                  [13-May-16 11:16  CRC=ABD171DA]
+    main.h                                                  [09-May-16 21:26  CRC=53827745]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F1937.h [04-Mar-14 15:13  CRC=37C07C50]
+
+Source signature=6ED4E1BF
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F1937
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

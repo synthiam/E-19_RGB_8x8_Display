@@ -1,0 +1,5746 @@
+CCS PCM C Compiler, Version 5.021, 50860               13-May-16 11:16
+
+               Filename:   C:\My Documents\SVN\Developer - Microcontroller\Microchip\1937 - 8x8 RGB LED Display\main.lst
+
+               ROM used:   5113 words (62%)
+                           Largest free fragment is 2016
+               RAM used:   216 (42%) at main() level
+                           246 (48%) worst case
+               Stack used: 4 locations (1 in main + 3 for interrupts)
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   382
+0002:  NOP
+*
+0004:  CLRF   03
+0005:  MOVLP  00
+0006:  MOVLB  00
+0007:  MOVF   77,W
+0008:  MOVWF  20
+0009:  MOVF   78,W
+000A:  MOVWF  21
+000B:  MOVF   79,W
+000C:  MOVWF  22
+000D:  MOVF   7A,W
+000E:  MOVWF  23
+000F:  CLRF   05
+0010:  MOVLW  91
+0011:  MOVWF  04
+0012:  BTFSS  00.0
+0013:  GOTO   016
+0014:  BTFSC  11.0
+0015:  GOTO   026
+0016:  CLRF   05
+0017:  MOVLW  91
+0018:  MOVWF  04
+0019:  BTFSS  00.3
+001A:  GOTO   01D
+001B:  BTFSC  11.3
+001C:  GOTO   028
+001D:  MOVF   20,W
+001E:  MOVWF  77
+001F:  MOVF   21,W
+0020:  MOVWF  78
+0021:  MOVF   22,W
+0022:  MOVWF  79
+0023:  MOVF   23,W
+0024:  MOVWF  7A
+0025:  RETFIE
+0026:  MOVLP  00
+0027:  GOTO   21F
+0028:  MOVLP  00
+0029:  GOTO   060
+.................... #include "main.h" 
+.................... #include <16F1937.h> 
+.................... //////////// Standard Header file for the PIC16F1937 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F1937 
+*
+0321:  MOVLB  02
+0322:  MOVF   4F,W
+0323:  CLRF   78
+0324:  SUBWF  4E,W
+0325:  BTFSC  03.0
+0326:  GOTO   32A
+0327:  MOVF   4E,W
+0328:  MOVWF  77
+0329:  GOTO   336
+032A:  CLRF   77
+032B:  MOVLW  08
+032C:  MOVWF  50
+032D:  RLF    4E,F
+032E:  RLF    77,F
+032F:  MOVF   4F,W
+0330:  SUBWF  77,W
+0331:  BTFSC  03.0
+0332:  MOVWF  77
+0333:  RLF    78,F
+0334:  DECFSZ 50,F
+0335:  GOTO   32D
+0336:  MOVLB  00
+0337:  RETURN
+0338:  MOVLB  02
+0339:  MOVF   52,W
+033A:  MOVWF  77
+033B:  BCF    03.0
+033C:  MOVLB  03
+033D:  BSF    15.7
+033E:  BSF    15.0
+033F:  NOP
+0340:  NOP
+0341:  MOVF   13,W
+0342:  MOVWF  00
+0343:  INCF   04,F
+0344:  INCF   11,F
+0345:  BTFSC  03.2
+0346:  INCF   12,F
+0347:  DECFSZ 77,F
+0348:  GOTO   33E
+0349:  MOVLB  00
+034A:  RETURN
+034B:  MOVLB  02
+034C:  MOVF   52,W
+034D:  ANDLW  07
+034E:  MOVWF  77
+034F:  RRF    52,W
+0350:  MOVWF  78
+0351:  RRF    78,F
+0352:  RRF    78,F
+0353:  MOVLW  1F
+0354:  ANDWF  78,F
+0355:  MOVF   78,W
+0356:  ADDWF  54,W
+0357:  MOVWF  04
+0358:  MOVLW  00
+0359:  ADDWFC 55,W
+035A:  MOVWF  05
+035B:  CLRF   78
+035C:  INCF   78,F
+035D:  INCF   77,F
+035E:  GOTO   360
+035F:  RLF    78,F
+0360:  DECFSZ 77,F
+0361:  GOTO   35F
+0362:  MOVF   53,F
+0363:  BTFSC  03.2
+0364:  GOTO   368
+0365:  MOVF   78,W
+0366:  IORWF  00,F
+0367:  GOTO   36B
+0368:  COMF   78,F
+0369:  MOVF   78,W
+036A:  ANDWF  00,F
+036B:  MOVLB  00
+036C:  RETURN
+*
+0F41:  BSF    0A.0
+0F42:  BSF    0A.1
+0F43:  BSF    0A.2
+0F44:  ADDWF  02,F
+0F45:  GOTO   043
+0F46:  GOTO   111
+0F47:  GOTO   185
+0F48:  GOTO   26B
+0F49:  GOTO   311
+0F4A:  GOTO   3D0
+0F4B:  GOTO   49A
+0F4C:  GOTO   55A
+0F4D:  GOTO   5D8
+0F4E:  GOTO   698
+....................  
+.................... #list 
+....................  
+....................  
+.................... #device CONST=ROM 
+....................  
+.................... #FUSES MCLR 
+.................... #FUSES NOWDT                   //No Watch Dog Timer 
+.................... #FUSES PROTECT                 //Code protected from reads 
+.................... #FUSES NOBROWNOUT              //No brownout reset 
+.................... #FUSES NOLVP                   //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES PLL 
+.................... #FUSES NODEBUG 
+....................  
+.................... #use delay(internal=32MHz) 
+*
+036D:  MOVLW  20
+036E:  MOVWF  05
+036F:  MOVLW  CF
+0370:  MOVWF  04
+0371:  MOVF   00,W
+0372:  BTFSC  03.2
+0373:  GOTO   381
+0374:  MOVLW  0A
+0375:  MOVWF  78
+0376:  CLRF   77
+0377:  DECFSZ 77,F
+0378:  GOTO   377
+0379:  DECFSZ 78,F
+037A:  GOTO   376
+037B:  MOVLW  5F
+037C:  MOVWF  77
+037D:  DECFSZ 77,F
+037E:  GOTO   37D
+037F:  DECFSZ 00,F
+0380:  GOTO   374
+0381:  RETURN
+....................  
+.................... // I2C Slave (0xa2 is 8 bit address, the 7 bit is 0x51) 
+.................... // The allowable i2c slave base address range is 0x10 through 0xEE. 
+.................... #use i2c(Slave, force_hw, sda = pin_c4, scl = pin_c3, FAST, address = 0xa2) 
+....................  
+.................... #use FAST_IO(ALL) 
+....................  
+.................... typedef int1 bool; 
+....................  
+.................... #DEFINE ON_DELAY_US 2000 
+....................  
+.................... #define CHECK_BIT(var,pos) ((var) & (1<<(pos))) 
+....................  
+.................... const unsigned int8 Trans [] = {pin_d7, pin_d6, pin_d5, pin_d4, pin_d3, pin_d2, pin_d1, pin_d0}; 
+....................  
+.................... const unsigned int8 gPin [] = {pin_a0, pin_a3, pin_b0, pin_b3, pin_b6, pin_c1, pin_c6, pin_e1}; 
+.................... const unsigned int8 bPin [] = {pin_a1, pin_a4, pin_b1, pin_b4, pin_b7, pin_c2, pin_c7, pin_e2}; 
+.................... const unsigned int8 rPin [] = {pin_a2, pin_a5, pin_b2, pin_b5, pin_c0, pin_c5, pin_e0, pin_a6}; 
+....................  
+....................  
+....................  
+....................  
+.................... volatile unsigned bool redA[8][8]; 
+.................... volatile unsigned bool greenA[8][8]; 
+.................... volatile unsigned bool blueA[8][8]; 
+....................  
+.................... unsigned int8 _address; 
+.................... volatile char          _digits[3] = {0, 0, 0}; 
+....................  
+.................... volatile unsigned int16 _cnt = 0; 
+....................  
+.................... #inline 
+.................... void clearDisplay() { 
+....................  
+....................   for (int x = 0; x < 8; x++) 
+*
+0133:  MOVLB  02
+0134:  CLRF   5B
+0135:  MOVF   5B,W
+0136:  SUBLW  07
+0137:  BTFSS  03.0
+0138:  GOTO   16F
+*
+0235:  CLRF   5B
+0236:  MOVF   5B,W
+0237:  SUBLW  07
+0238:  BTFSS  03.0
+0239:  GOTO   270
+*
+0287:  CLRF   5B
+0288:  MOVF   5B,W
+0289:  SUBLW  07
+028A:  BTFSS  03.0
+028B:  GOTO   2C2
+*
+02D7:  CLRF   5B
+02D8:  MOVF   5B,W
+02D9:  SUBLW  07
+02DA:  BTFSS  03.0
+02DB:  GOTO   312
+*
+03AC:  CLRF   5B
+03AD:  MOVF   5B,W
+03AE:  SUBLW  07
+03AF:  BTFSS  03.0
+03B0:  GOTO   3E7
+*
+0800:  MOVLB  02
+0801:  CLRF   5B
+0802:  MOVF   5B,W
+0803:  SUBLW  07
+0804:  BTFSS  03.0
+0805:  GOTO   03C
+....................     for (int y = 0; y < 8; y++) { 
+*
+0139:  CLRF   5C
+013A:  MOVF   5C,W
+013B:  SUBLW  07
+013C:  BTFSS  03.0
+013D:  GOTO   16D
+*
+023A:  CLRF   5C
+023B:  MOVF   5C,W
+023C:  SUBLW  07
+023D:  BTFSS  03.0
+023E:  GOTO   26E
+*
+028C:  CLRF   5C
+028D:  MOVF   5C,W
+028E:  SUBLW  07
+028F:  BTFSS  03.0
+0290:  GOTO   2C0
+*
+02DC:  CLRF   5C
+02DD:  MOVF   5C,W
+02DE:  SUBLW  07
+02DF:  BTFSS  03.0
+02E0:  GOTO   310
+*
+03B1:  CLRF   5C
+03B2:  MOVF   5C,W
+03B3:  SUBLW  07
+03B4:  BTFSS  03.0
+03B5:  GOTO   3E5
+*
+0806:  CLRF   5C
+0807:  MOVF   5C,W
+0808:  SUBLW  07
+0809:  BTFSS  03.0
+080A:  GOTO   03A
+....................      
+....................       redA[x][y] = false; 
+*
+013E:  RLF    5B,W
+013F:  MOVWF  77
+0140:  RLF    77,F
+0141:  RLF    77,F
+0142:  MOVLW  F8
+0143:  ANDWF  77,F
+0144:  MOVF   77,W
+0145:  ADDWF  5C,W
+0146:  ADDLW  05
+0147:  MOVWF  04
+0148:  MOVLW  20
+0149:  MOVWF  05
+014A:  BTFSC  03.0
+014B:  INCF   05,F
+014C:  CLRF   00
+*
+023F:  RLF    5B,W
+0240:  MOVWF  77
+0241:  RLF    77,F
+0242:  RLF    77,F
+0243:  MOVLW  F8
+0244:  ANDWF  77,F
+0245:  MOVF   77,W
+0246:  ADDWF  5C,W
+0247:  ADDLW  05
+0248:  MOVWF  04
+0249:  MOVLW  20
+024A:  MOVWF  05
+024B:  BTFSC  03.0
+024C:  INCF   05,F
+024D:  CLRF   00
+*
+0291:  RLF    5B,W
+0292:  MOVWF  77
+0293:  RLF    77,F
+0294:  RLF    77,F
+0295:  MOVLW  F8
+0296:  ANDWF  77,F
+0297:  MOVF   77,W
+0298:  ADDWF  5C,W
+0299:  ADDLW  05
+029A:  MOVWF  04
+029B:  MOVLW  20
+029C:  MOVWF  05
+029D:  BTFSC  03.0
+029E:  INCF   05,F
+029F:  CLRF   00
+*
+02E1:  RLF    5B,W
+02E2:  MOVWF  77
+02E3:  RLF    77,F
+02E4:  RLF    77,F
+02E5:  MOVLW  F8
+02E6:  ANDWF  77,F
+02E7:  MOVF   77,W
+02E8:  ADDWF  5C,W
+02E9:  ADDLW  05
+02EA:  MOVWF  04
+02EB:  MOVLW  20
+02EC:  MOVWF  05
+02ED:  BTFSC  03.0
+02EE:  INCF   05,F
+02EF:  CLRF   00
+*
+03B6:  RLF    5B,W
+03B7:  MOVWF  77
+03B8:  RLF    77,F
+03B9:  RLF    77,F
+03BA:  MOVLW  F8
+03BB:  ANDWF  77,F
+03BC:  MOVF   77,W
+03BD:  ADDWF  5C,W
+03BE:  ADDLW  05
+03BF:  MOVWF  04
+03C0:  MOVLW  20
+03C1:  MOVWF  05
+03C2:  BTFSC  03.0
+03C3:  INCF   05,F
+03C4:  CLRF   00
+*
+080B:  RLF    5B,W
+080C:  MOVWF  77
+080D:  RLF    77,F
+080E:  RLF    77,F
+080F:  MOVLW  F8
+0810:  ANDWF  77,F
+0811:  MOVF   77,W
+0812:  ADDWF  5C,W
+0813:  ADDLW  05
+0814:  MOVWF  04
+0815:  MOVLW  20
+0816:  MOVWF  05
+0817:  BTFSC  03.0
+0818:  INCF   05,F
+0819:  CLRF   00
+....................       greenA[x][y] = false; 
+*
+014D:  RLF    5B,W
+014E:  MOVWF  77
+014F:  RLF    77,F
+0150:  RLF    77,F
+0151:  MOVLW  F8
+0152:  ANDWF  77,F
+0153:  MOVF   77,W
+0154:  ADDWF  5C,W
+0155:  ADDLW  45
+0156:  MOVWF  04
+0157:  MOVLW  20
+0158:  MOVWF  05
+0159:  BTFSC  03.0
+015A:  INCF   05,F
+015B:  CLRF   00
+*
+024E:  RLF    5B,W
+024F:  MOVWF  77
+0250:  RLF    77,F
+0251:  RLF    77,F
+0252:  MOVLW  F8
+0253:  ANDWF  77,F
+0254:  MOVF   77,W
+0255:  ADDWF  5C,W
+0256:  ADDLW  45
+0257:  MOVWF  04
+0258:  MOVLW  20
+0259:  MOVWF  05
+025A:  BTFSC  03.0
+025B:  INCF   05,F
+025C:  CLRF   00
+*
+02A0:  RLF    5B,W
+02A1:  MOVWF  77
+02A2:  RLF    77,F
+02A3:  RLF    77,F
+02A4:  MOVLW  F8
+02A5:  ANDWF  77,F
+02A6:  MOVF   77,W
+02A7:  ADDWF  5C,W
+02A8:  ADDLW  45
+02A9:  MOVWF  04
+02AA:  MOVLW  20
+02AB:  MOVWF  05
+02AC:  BTFSC  03.0
+02AD:  INCF   05,F
+02AE:  CLRF   00
+*
+02F0:  RLF    5B,W
+02F1:  MOVWF  77
+02F2:  RLF    77,F
+02F3:  RLF    77,F
+02F4:  MOVLW  F8
+02F5:  ANDWF  77,F
+02F6:  MOVF   77,W
+02F7:  ADDWF  5C,W
+02F8:  ADDLW  45
+02F9:  MOVWF  04
+02FA:  MOVLW  20
+02FB:  MOVWF  05
+02FC:  BTFSC  03.0
+02FD:  INCF   05,F
+02FE:  CLRF   00
+*
+03C5:  RLF    5B,W
+03C6:  MOVWF  77
+03C7:  RLF    77,F
+03C8:  RLF    77,F
+03C9:  MOVLW  F8
+03CA:  ANDWF  77,F
+03CB:  MOVF   77,W
+03CC:  ADDWF  5C,W
+03CD:  ADDLW  45
+03CE:  MOVWF  04
+03CF:  MOVLW  20
+03D0:  MOVWF  05
+03D1:  BTFSC  03.0
+03D2:  INCF   05,F
+03D3:  CLRF   00
+*
+081A:  RLF    5B,W
+081B:  MOVWF  77
+081C:  RLF    77,F
+081D:  RLF    77,F
+081E:  MOVLW  F8
+081F:  ANDWF  77,F
+0820:  MOVF   77,W
+0821:  ADDWF  5C,W
+0822:  ADDLW  45
+0823:  MOVWF  04
+0824:  MOVLW  20
+0825:  MOVWF  05
+0826:  BTFSC  03.0
+0827:  INCF   05,F
+0828:  CLRF   00
+....................       blueA[x][y] = false; 
+*
+015C:  RLF    5B,W
+015D:  MOVWF  77
+015E:  RLF    77,F
+015F:  RLF    77,F
+0160:  MOVLW  F8
+0161:  ANDWF  77,F
+0162:  MOVF   77,W
+0163:  ADDWF  5C,W
+0164:  ADDLW  85
+0165:  MOVWF  04
+0166:  MOVLW  20
+0167:  MOVWF  05
+0168:  BTFSC  03.0
+0169:  INCF   05,F
+016A:  CLRF   00
+016B:  INCF   5C,F
+016C:  GOTO   13A
+016D:  INCF   5B,F
+016E:  GOTO   135
+*
+025D:  RLF    5B,W
+025E:  MOVWF  77
+025F:  RLF    77,F
+0260:  RLF    77,F
+0261:  MOVLW  F8
+0262:  ANDWF  77,F
+0263:  MOVF   77,W
+0264:  ADDWF  5C,W
+0265:  ADDLW  85
+0266:  MOVWF  04
+0267:  MOVLW  20
+0268:  MOVWF  05
+0269:  BTFSC  03.0
+026A:  INCF   05,F
+026B:  CLRF   00
+026C:  INCF   5C,F
+026D:  GOTO   23B
+026E:  INCF   5B,F
+026F:  GOTO   236
+*
+02AF:  RLF    5B,W
+02B0:  MOVWF  77
+02B1:  RLF    77,F
+02B2:  RLF    77,F
+02B3:  MOVLW  F8
+02B4:  ANDWF  77,F
+02B5:  MOVF   77,W
+02B6:  ADDWF  5C,W
+02B7:  ADDLW  85
+02B8:  MOVWF  04
+02B9:  MOVLW  20
+02BA:  MOVWF  05
+02BB:  BTFSC  03.0
+02BC:  INCF   05,F
+02BD:  CLRF   00
+02BE:  INCF   5C,F
+02BF:  GOTO   28D
+02C0:  INCF   5B,F
+02C1:  GOTO   288
+*
+02FF:  RLF    5B,W
+0300:  MOVWF  77
+0301:  RLF    77,F
+0302:  RLF    77,F
+0303:  MOVLW  F8
+0304:  ANDWF  77,F
+0305:  MOVF   77,W
+0306:  ADDWF  5C,W
+0307:  ADDLW  85
+0308:  MOVWF  04
+0309:  MOVLW  20
+030A:  MOVWF  05
+030B:  BTFSC  03.0
+030C:  INCF   05,F
+030D:  CLRF   00
+030E:  INCF   5C,F
+030F:  GOTO   2DD
+0310:  INCF   5B,F
+0311:  GOTO   2D8
+*
+03D4:  RLF    5B,W
+03D5:  MOVWF  77
+03D6:  RLF    77,F
+03D7:  RLF    77,F
+03D8:  MOVLW  F8
+03D9:  ANDWF  77,F
+03DA:  MOVF   77,W
+03DB:  ADDWF  5C,W
+03DC:  ADDLW  85
+03DD:  MOVWF  04
+03DE:  MOVLW  20
+03DF:  MOVWF  05
+03E0:  BTFSC  03.0
+03E1:  INCF   05,F
+03E2:  CLRF   00
+03E3:  INCF   5C,F
+03E4:  GOTO   3B2
+03E5:  INCF   5B,F
+03E6:  GOTO   3AD
+*
+0829:  RLF    5B,W
+082A:  MOVWF  77
+082B:  RLF    77,F
+082C:  RLF    77,F
+082D:  MOVLW  F8
+082E:  ANDWF  77,F
+082F:  MOVF   77,W
+0830:  ADDWF  5C,W
+0831:  ADDLW  85
+0832:  MOVWF  04
+0833:  MOVLW  20
+0834:  MOVWF  05
+0835:  BTFSC  03.0
+0836:  INCF   05,F
+0837:  CLRF   00
+0838:  INCF   5C,F
+0839:  GOTO   007
+083A:  INCF   5B,F
+083B:  GOTO   002
+....................     } 
+.................... } 
+....................  
+.................... #inline 
+.................... void clearDisplayColor(bool r, bool g, bool b) { 
+....................  
+....................   for (int x = 0; x < 8; x++) 
+*
+00A9:  CLRF   62
+00AA:  MOVF   62,W
+00AB:  SUBLW  07
+00AC:  BTFSS  03.0
+00AD:  GOTO   0E7
+....................     for (int y = 0; y < 8; y++) { 
+00AE:  CLRF   63
+00AF:  MOVF   63,W
+00B0:  SUBLW  07
+00B1:  BTFSS  03.0
+00B2:  GOTO   0E5
+....................      
+....................       redA[x][y] = r; 
+00B3:  RLF    62,W
+00B4:  MOVWF  77
+00B5:  RLF    77,F
+00B6:  RLF    77,F
+00B7:  MOVLW  F8
+00B8:  ANDWF  77,F
+00B9:  MOVF   77,W
+00BA:  ADDWF  63,W
+00BB:  ADDLW  05
+00BC:  MOVWF  04
+00BD:  MOVLW  20
+00BE:  MOVWF  05
+00BF:  BTFSC  03.0
+00C0:  INCF   05,F
+00C1:  MOVF   5F,W
+00C2:  MOVWF  00
+....................       greenA[x][y] = g; 
+00C3:  RLF    62,W
+00C4:  MOVWF  77
+00C5:  RLF    77,F
+00C6:  RLF    77,F
+00C7:  MOVLW  F8
+00C8:  ANDWF  77,F
+00C9:  MOVF   77,W
+00CA:  ADDWF  63,W
+00CB:  ADDLW  45
+00CC:  MOVWF  04
+00CD:  MOVLW  20
+00CE:  MOVWF  05
+00CF:  BTFSC  03.0
+00D0:  INCF   05,F
+00D1:  MOVF   60,W
+00D2:  MOVWF  00
+....................       blueA[x][y] = b; 
+00D3:  RLF    62,W
+00D4:  MOVWF  77
+00D5:  RLF    77,F
+00D6:  RLF    77,F
+00D7:  MOVLW  F8
+00D8:  ANDWF  77,F
+00D9:  MOVF   77,W
+00DA:  ADDWF  63,W
+00DB:  ADDLW  85
+00DC:  MOVWF  04
+00DD:  MOVLW  20
+00DE:  MOVWF  05
+00DF:  BTFSC  03.0
+00E0:  INCF   05,F
+00E1:  MOVF   61,W
+00E2:  MOVWF  00
+00E3:  INCF   63,F
+00E4:  GOTO   0AF
+00E5:  INCF   62,F
+00E6:  GOTO   0AA
+....................     } 
+.................... } 
+....................  
+.................... void SetLEDPosition(unsigned int8 x, unsigned int8 y, bool red, bool green, bool blue) { 
+....................   
+....................   redA[x][7 - y] = red; 
+*
+002A:  MOVLB  02
+002B:  RLF    5F,W
+002C:  MOVWF  64
+002D:  RLF    64,F
+002E:  RLF    64,F
+002F:  MOVLW  F8
+0030:  ANDWF  64,F
+0031:  MOVF   60,W
+0032:  SUBLW  07
+0033:  ADDWF  64,W
+0034:  ADDLW  05
+0035:  MOVWF  04
+0036:  MOVLW  20
+0037:  MOVWF  05
+0038:  BTFSC  03.0
+0039:  INCF   05,F
+003A:  MOVF   61,W
+003B:  MOVWF  00
+....................   greenA[x][7 - y] = green; 
+003C:  RLF    5F,W
+003D:  MOVWF  64
+003E:  RLF    64,F
+003F:  RLF    64,F
+0040:  MOVLW  F8
+0041:  ANDWF  64,F
+0042:  MOVF   60,W
+0043:  SUBLW  07
+0044:  ADDWF  64,W
+0045:  ADDLW  45
+0046:  MOVWF  04
+0047:  MOVLW  20
+0048:  MOVWF  05
+0049:  BTFSC  03.0
+004A:  INCF   05,F
+004B:  MOVF   62,W
+004C:  MOVWF  00
+....................   blueA[x][7 - y] = blue; 
+004D:  RLF    5F,W
+004E:  MOVWF  64
+004F:  RLF    64,F
+0050:  RLF    64,F
+0051:  MOVLW  F8
+0052:  ANDWF  64,F
+0053:  MOVF   60,W
+0054:  SUBLW  07
+0055:  ADDWF  64,W
+0056:  ADDLW  85
+0057:  MOVWF  04
+0058:  MOVLW  20
+0059:  MOVWF  05
+005A:  BTFSC  03.0
+005B:  INCF   05,F
+005C:  MOVF   63,W
+005D:  MOVWF  00
+005E:  MOVLB  00
+005F:  RETURN
+.................... } 
+....................  
+.................... void loop1() { 
+*
+1000:  MOVLB  02
+1001:  CLRF   4C
+....................  
+....................   int x = 0; 
+....................    
+....................   while (true) { 
+....................    
+....................     output_low(Trans[x]); 
+1002:  MOVLW  F8
+1003:  ADDWF  4C,W
+1004:  MOVWF  4F
+1005:  MOVLW  1F
+1006:  MOVWF  50
+1007:  BTFSC  03.0
+1008:  INCF   50,F
+1009:  MOVF   50,W
+100A:  MOVLB  03
+100B:  MOVWF  12
+100C:  MOVLB  02
+100D:  MOVF   4F,W
+100E:  MOVLB  03
+100F:  MOVWF  11
+1010:  MOVLW  20
+1011:  MOVWF  05
+1012:  MOVLW  D1
+1013:  MOVWF  04
+1014:  MOVLW  01
+1015:  MOVLB  02
+1016:  MOVWF  52
+1017:  MOVLP  00
+1018:  MOVLB  00
+1019:  CALL   338
+101A:  MOVLP  10
+101B:  MOVLB  02
+101C:  MOVF   51,W
+101D:  MOVWF  52
+101E:  CLRF   53
+101F:  MOVLW  01
+1020:  MOVWF  55
+1021:  CLRF   54
+1022:  MOVLP  00
+1023:  MOVLB  00
+1024:  CALL   34B
+1025:  MOVLP  10
+....................    
+....................     if (greenA[x][0]) 
+1026:  MOVLB  02
+1027:  RLF    4C,W
+1028:  MOVWF  77
+1029:  RLF    77,F
+102A:  RLF    77,F
+102B:  MOVLW  F8
+102C:  ANDWF  77,F
+102D:  MOVF   77,W
+102E:  ADDLW  45
+102F:  MOVWF  04
+1030:  MOVLW  20
+1031:  MOVWF  05
+1032:  BTFSC  03.0
+1033:  INCF   05,F
+1034:  MOVF   00,F
+1035:  BTFSC  03.2
+1036:  GOTO   053
+....................       output_low(gPin[0]); 
+1037:  MOVLW  1F
+1038:  MOVLB  03
+1039:  MOVWF  12
+103A:  MOVLW  F0
+103B:  MOVWF  11
+103C:  MOVLW  20
+103D:  MOVWF  05
+103E:  MOVLW  CF
+103F:  MOVWF  04
+1040:  MOVLW  01
+1041:  MOVLB  02
+1042:  MOVWF  52
+1043:  MOVLP  00
+1044:  MOVLB  00
+1045:  CALL   338
+1046:  MOVLP  10
+1047:  MOVLB  02
+1048:  MOVF   4F,W
+1049:  MOVWF  52
+104A:  CLRF   53
+104B:  MOVLW  01
+104C:  MOVWF  55
+104D:  CLRF   54
+104E:  MOVLP  00
+104F:  MOVLB  00
+1050:  CALL   34B
+1051:  MOVLP  10
+1052:  MOVLB  02
+....................    
+....................     if (greenA[x][1]) 
+1053:  RLF    4C,W
+1054:  MOVWF  77
+1055:  RLF    77,F
+1056:  RLF    77,F
+1057:  MOVLW  F8
+1058:  ANDWF  77,F
+1059:  MOVF   77,W
+105A:  ADDLW  01
+105B:  ADDLW  45
+105C:  MOVWF  04
+105D:  MOVLW  20
+105E:  MOVWF  05
+105F:  BTFSC  03.0
+1060:  INCF   05,F
+1061:  MOVF   00,F
+1062:  BTFSC  03.2
+1063:  GOTO   080
+....................       output_low(gPin[1]); 
+1064:  MOVLW  1F
+1065:  MOVLB  03
+1066:  MOVWF  12
+1067:  MOVLW  F1
+1068:  MOVWF  11
+1069:  MOVLW  20
+106A:  MOVWF  05
+106B:  MOVLW  CF
+106C:  MOVWF  04
+106D:  MOVLW  01
+106E:  MOVLB  02
+106F:  MOVWF  52
+1070:  MOVLP  00
+1071:  MOVLB  00
+1072:  CALL   338
+1073:  MOVLP  10
+1074:  MOVLB  02
+1075:  MOVF   4F,W
+1076:  MOVWF  52
+1077:  CLRF   53
+1078:  MOVLW  01
+1079:  MOVWF  55
+107A:  CLRF   54
+107B:  MOVLP  00
+107C:  MOVLB  00
+107D:  CALL   34B
+107E:  MOVLP  10
+107F:  MOVLB  02
+....................    
+....................     if (greenA[x][2]) 
+1080:  RLF    4C,W
+1081:  MOVWF  77
+1082:  RLF    77,F
+1083:  RLF    77,F
+1084:  MOVLW  F8
+1085:  ANDWF  77,F
+1086:  MOVF   77,W
+1087:  ADDLW  02
+1088:  ADDLW  45
+1089:  MOVWF  04
+108A:  MOVLW  20
+108B:  MOVWF  05
+108C:  BTFSC  03.0
+108D:  INCF   05,F
+108E:  MOVF   00,F
+108F:  BTFSC  03.2
+1090:  GOTO   0AD
+....................       output_low(gPin[2]); 
+1091:  MOVLW  1F
+1092:  MOVLB  03
+1093:  MOVWF  12
+1094:  MOVLW  F2
+1095:  MOVWF  11
+1096:  MOVLW  20
+1097:  MOVWF  05
+1098:  MOVLW  CF
+1099:  MOVWF  04
+109A:  MOVLW  01
+109B:  MOVLB  02
+109C:  MOVWF  52
+109D:  MOVLP  00
+109E:  MOVLB  00
+109F:  CALL   338
+10A0:  MOVLP  10
+10A1:  MOVLB  02
+10A2:  MOVF   4F,W
+10A3:  MOVWF  52
+10A4:  CLRF   53
+10A5:  MOVLW  01
+10A6:  MOVWF  55
+10A7:  CLRF   54
+10A8:  MOVLP  00
+10A9:  MOVLB  00
+10AA:  CALL   34B
+10AB:  MOVLP  10
+10AC:  MOVLB  02
+....................    
+....................     if (greenA[x][3]) 
+10AD:  RLF    4C,W
+10AE:  MOVWF  77
+10AF:  RLF    77,F
+10B0:  RLF    77,F
+10B1:  MOVLW  F8
+10B2:  ANDWF  77,F
+10B3:  MOVF   77,W
+10B4:  ADDLW  03
+10B5:  ADDLW  45
+10B6:  MOVWF  04
+10B7:  MOVLW  20
+10B8:  MOVWF  05
+10B9:  BTFSC  03.0
+10BA:  INCF   05,F
+10BB:  MOVF   00,F
+10BC:  BTFSC  03.2
+10BD:  GOTO   0DA
+....................       output_low(gPin[3]); 
+10BE:  MOVLW  1F
+10BF:  MOVLB  03
+10C0:  MOVWF  12
+10C1:  MOVLW  F3
+10C2:  MOVWF  11
+10C3:  MOVLW  20
+10C4:  MOVWF  05
+10C5:  MOVLW  CF
+10C6:  MOVWF  04
+10C7:  MOVLW  01
+10C8:  MOVLB  02
+10C9:  MOVWF  52
+10CA:  MOVLP  00
+10CB:  MOVLB  00
+10CC:  CALL   338
+10CD:  MOVLP  10
+10CE:  MOVLB  02
+10CF:  MOVF   4F,W
+10D0:  MOVWF  52
+10D1:  CLRF   53
+10D2:  MOVLW  01
+10D3:  MOVWF  55
+10D4:  CLRF   54
+10D5:  MOVLP  00
+10D6:  MOVLB  00
+10D7:  CALL   34B
+10D8:  MOVLP  10
+10D9:  MOVLB  02
+....................    
+....................     if (greenA[x][4]) 
+10DA:  RLF    4C,W
+10DB:  MOVWF  77
+10DC:  RLF    77,F
+10DD:  RLF    77,F
+10DE:  MOVLW  F8
+10DF:  ANDWF  77,F
+10E0:  MOVF   77,W
+10E1:  ADDLW  04
+10E2:  ADDLW  45
+10E3:  MOVWF  04
+10E4:  MOVLW  20
+10E5:  MOVWF  05
+10E6:  BTFSC  03.0
+10E7:  INCF   05,F
+10E8:  MOVF   00,F
+10E9:  BTFSC  03.2
+10EA:  GOTO   107
+....................       output_low(gPin[4]); 
+10EB:  MOVLW  1F
+10EC:  MOVLB  03
+10ED:  MOVWF  12
+10EE:  MOVLW  F4
+10EF:  MOVWF  11
+10F0:  MOVLW  20
+10F1:  MOVWF  05
+10F2:  MOVLW  CF
+10F3:  MOVWF  04
+10F4:  MOVLW  01
+10F5:  MOVLB  02
+10F6:  MOVWF  52
+10F7:  MOVLP  00
+10F8:  MOVLB  00
+10F9:  CALL   338
+10FA:  MOVLP  10
+10FB:  MOVLB  02
+10FC:  MOVF   4F,W
+10FD:  MOVWF  52
+10FE:  CLRF   53
+10FF:  MOVLW  01
+1100:  MOVWF  55
+1101:  CLRF   54
+1102:  MOVLP  00
+1103:  MOVLB  00
+1104:  CALL   34B
+1105:  MOVLP  10
+1106:  MOVLB  02
+....................    
+....................     if (greenA[x][5]) 
+1107:  RLF    4C,W
+1108:  MOVWF  77
+1109:  RLF    77,F
+110A:  RLF    77,F
+110B:  MOVLW  F8
+110C:  ANDWF  77,F
+110D:  MOVF   77,W
+110E:  ADDLW  05
+110F:  ADDLW  45
+1110:  MOVWF  04
+1111:  MOVLW  20
+1112:  MOVWF  05
+1113:  BTFSC  03.0
+1114:  INCF   05,F
+1115:  MOVF   00,F
+1116:  BTFSC  03.2
+1117:  GOTO   134
+....................       output_low(gPin[5]); 
+1118:  MOVLW  1F
+1119:  MOVLB  03
+111A:  MOVWF  12
+111B:  MOVLW  F5
+111C:  MOVWF  11
+111D:  MOVLW  20
+111E:  MOVWF  05
+111F:  MOVLW  CF
+1120:  MOVWF  04
+1121:  MOVLW  01
+1122:  MOVLB  02
+1123:  MOVWF  52
+1124:  MOVLP  00
+1125:  MOVLB  00
+1126:  CALL   338
+1127:  MOVLP  10
+1128:  MOVLB  02
+1129:  MOVF   4F,W
+112A:  MOVWF  52
+112B:  CLRF   53
+112C:  MOVLW  01
+112D:  MOVWF  55
+112E:  CLRF   54
+112F:  MOVLP  00
+1130:  MOVLB  00
+1131:  CALL   34B
+1132:  MOVLP  10
+1133:  MOVLB  02
+....................    
+....................     if (greenA[x][6]) 
+1134:  RLF    4C,W
+1135:  MOVWF  77
+1136:  RLF    77,F
+1137:  RLF    77,F
+1138:  MOVLW  F8
+1139:  ANDWF  77,F
+113A:  MOVF   77,W
+113B:  ADDLW  06
+113C:  ADDLW  45
+113D:  MOVWF  04
+113E:  MOVLW  20
+113F:  MOVWF  05
+1140:  BTFSC  03.0
+1141:  INCF   05,F
+1142:  MOVF   00,F
+1143:  BTFSC  03.2
+1144:  GOTO   161
+....................       output_low(gPin[6]); 
+1145:  MOVLW  1F
+1146:  MOVLB  03
+1147:  MOVWF  12
+1148:  MOVLW  F6
+1149:  MOVWF  11
+114A:  MOVLW  20
+114B:  MOVWF  05
+114C:  MOVLW  CF
+114D:  MOVWF  04
+114E:  MOVLW  01
+114F:  MOVLB  02
+1150:  MOVWF  52
+1151:  MOVLP  00
+1152:  MOVLB  00
+1153:  CALL   338
+1154:  MOVLP  10
+1155:  MOVLB  02
+1156:  MOVF   4F,W
+1157:  MOVWF  52
+1158:  CLRF   53
+1159:  MOVLW  01
+115A:  MOVWF  55
+115B:  CLRF   54
+115C:  MOVLP  00
+115D:  MOVLB  00
+115E:  CALL   34B
+115F:  MOVLP  10
+1160:  MOVLB  02
+....................    
+....................     if (greenA[x][7]) 
+1161:  RLF    4C,W
+1162:  MOVWF  77
+1163:  RLF    77,F
+1164:  RLF    77,F
+1165:  MOVLW  F8
+1166:  ANDWF  77,F
+1167:  MOVF   77,W
+1168:  ADDLW  07
+1169:  ADDLW  45
+116A:  MOVWF  04
+116B:  MOVLW  20
+116C:  MOVWF  05
+116D:  BTFSC  03.0
+116E:  INCF   05,F
+116F:  MOVF   00,F
+1170:  BTFSC  03.2
+1171:  GOTO   18E
+....................       output_low(gPin[7]); 
+1172:  MOVLW  1F
+1173:  MOVLB  03
+1174:  MOVWF  12
+1175:  MOVLW  F7
+1176:  MOVWF  11
+1177:  MOVLW  20
+1178:  MOVWF  05
+1179:  MOVLW  CF
+117A:  MOVWF  04
+117B:  MOVLW  01
+117C:  MOVLB  02
+117D:  MOVWF  52
+117E:  MOVLP  00
+117F:  MOVLB  00
+1180:  CALL   338
+1181:  MOVLP  10
+1182:  MOVLB  02
+1183:  MOVF   4F,W
+1184:  MOVWF  52
+1185:  CLRF   53
+1186:  MOVLW  01
+1187:  MOVWF  55
+1188:  CLRF   54
+1189:  MOVLP  00
+118A:  MOVLB  00
+118B:  CALL   34B
+118C:  MOVLP  10
+118D:  MOVLB  02
+....................    
+....................     // blue 
+....................     if (blueA[x][0]) 
+118E:  RLF    4C,W
+118F:  MOVWF  77
+1190:  RLF    77,F
+1191:  RLF    77,F
+1192:  MOVLW  F8
+1193:  ANDWF  77,F
+1194:  MOVF   77,W
+1195:  ADDLW  85
+1196:  MOVWF  04
+1197:  MOVLW  20
+1198:  MOVWF  05
+1199:  BTFSC  03.0
+119A:  INCF   05,F
+119B:  MOVF   00,F
+119C:  BTFSC  03.2
+119D:  GOTO   1BA
+....................       output_low(bPin[0]); 
+119E:  MOVLW  1F
+119F:  MOVLB  03
+11A0:  MOVWF  12
+11A1:  MOVLW  E8
+11A2:  MOVWF  11
+11A3:  MOVLW  20
+11A4:  MOVWF  05
+11A5:  MOVLW  CF
+11A6:  MOVWF  04
+11A7:  MOVLW  01
+11A8:  MOVLB  02
+11A9:  MOVWF  52
+11AA:  MOVLP  00
+11AB:  MOVLB  00
+11AC:  CALL   338
+11AD:  MOVLP  10
+11AE:  MOVLB  02
+11AF:  MOVF   4F,W
+11B0:  MOVWF  52
+11B1:  CLRF   53
+11B2:  MOVLW  01
+11B3:  MOVWF  55
+11B4:  CLRF   54
+11B5:  MOVLP  00
+11B6:  MOVLB  00
+11B7:  CALL   34B
+11B8:  MOVLP  10
+11B9:  MOVLB  02
+....................    
+....................     if (blueA[x][1]) 
+11BA:  RLF    4C,W
+11BB:  MOVWF  77
+11BC:  RLF    77,F
+11BD:  RLF    77,F
+11BE:  MOVLW  F8
+11BF:  ANDWF  77,F
+11C0:  MOVF   77,W
+11C1:  ADDLW  01
+11C2:  ADDLW  85
+11C3:  MOVWF  04
+11C4:  MOVLW  20
+11C5:  MOVWF  05
+11C6:  BTFSC  03.0
+11C7:  INCF   05,F
+11C8:  MOVF   00,F
+11C9:  BTFSC  03.2
+11CA:  GOTO   1E7
+....................       output_low(bPin[1]); 
+11CB:  MOVLW  1F
+11CC:  MOVLB  03
+11CD:  MOVWF  12
+11CE:  MOVLW  E9
+11CF:  MOVWF  11
+11D0:  MOVLW  20
+11D1:  MOVWF  05
+11D2:  MOVLW  CF
+11D3:  MOVWF  04
+11D4:  MOVLW  01
+11D5:  MOVLB  02
+11D6:  MOVWF  52
+11D7:  MOVLP  00
+11D8:  MOVLB  00
+11D9:  CALL   338
+11DA:  MOVLP  10
+11DB:  MOVLB  02
+11DC:  MOVF   4F,W
+11DD:  MOVWF  52
+11DE:  CLRF   53
+11DF:  MOVLW  01
+11E0:  MOVWF  55
+11E1:  CLRF   54
+11E2:  MOVLP  00
+11E3:  MOVLB  00
+11E4:  CALL   34B
+11E5:  MOVLP  10
+11E6:  MOVLB  02
+....................    
+....................     if (blueA[x][2]) 
+11E7:  RLF    4C,W
+11E8:  MOVWF  77
+11E9:  RLF    77,F
+11EA:  RLF    77,F
+11EB:  MOVLW  F8
+11EC:  ANDWF  77,F
+11ED:  MOVF   77,W
+11EE:  ADDLW  02
+11EF:  ADDLW  85
+11F0:  MOVWF  04
+11F1:  MOVLW  20
+11F2:  MOVWF  05
+11F3:  BTFSC  03.0
+11F4:  INCF   05,F
+11F5:  MOVF   00,F
+11F6:  BTFSC  03.2
+11F7:  GOTO   214
+....................       output_low(bPin[2]); 
+11F8:  MOVLW  1F
+11F9:  MOVLB  03
+11FA:  MOVWF  12
+11FB:  MOVLW  EA
+11FC:  MOVWF  11
+11FD:  MOVLW  20
+11FE:  MOVWF  05
+11FF:  MOVLW  CF
+1200:  MOVWF  04
+1201:  MOVLW  01
+1202:  MOVLB  02
+1203:  MOVWF  52
+1204:  MOVLP  00
+1205:  MOVLB  00
+1206:  CALL   338
+1207:  MOVLP  10
+1208:  MOVLB  02
+1209:  MOVF   4F,W
+120A:  MOVWF  52
+120B:  CLRF   53
+120C:  MOVLW  01
+120D:  MOVWF  55
+120E:  CLRF   54
+120F:  MOVLP  00
+1210:  MOVLB  00
+1211:  CALL   34B
+1212:  MOVLP  10
+1213:  MOVLB  02
+....................    
+....................     if (blueA[x][3]) 
+1214:  RLF    4C,W
+1215:  MOVWF  77
+1216:  RLF    77,F
+1217:  RLF    77,F
+1218:  MOVLW  F8
+1219:  ANDWF  77,F
+121A:  MOVF   77,W
+121B:  ADDLW  03
+121C:  ADDLW  85
+121D:  MOVWF  04
+121E:  MOVLW  20
+121F:  MOVWF  05
+1220:  BTFSC  03.0
+1221:  INCF   05,F
+1222:  MOVF   00,F
+1223:  BTFSC  03.2
+1224:  GOTO   241
+....................       output_low(bPin[3]); 
+1225:  MOVLW  1F
+1226:  MOVLB  03
+1227:  MOVWF  12
+1228:  MOVLW  EB
+1229:  MOVWF  11
+122A:  MOVLW  20
+122B:  MOVWF  05
+122C:  MOVLW  CF
+122D:  MOVWF  04
+122E:  MOVLW  01
+122F:  MOVLB  02
+1230:  MOVWF  52
+1231:  MOVLP  00
+1232:  MOVLB  00
+1233:  CALL   338
+1234:  MOVLP  10
+1235:  MOVLB  02
+1236:  MOVF   4F,W
+1237:  MOVWF  52
+1238:  CLRF   53
+1239:  MOVLW  01
+123A:  MOVWF  55
+123B:  CLRF   54
+123C:  MOVLP  00
+123D:  MOVLB  00
+123E:  CALL   34B
+123F:  MOVLP  10
+1240:  MOVLB  02
+....................    
+....................     if (blueA[x][4]) 
+1241:  RLF    4C,W
+1242:  MOVWF  77
+1243:  RLF    77,F
+1244:  RLF    77,F
+1245:  MOVLW  F8
+1246:  ANDWF  77,F
+1247:  MOVF   77,W
+1248:  ADDLW  04
+1249:  ADDLW  85
+124A:  MOVWF  04
+124B:  MOVLW  20
+124C:  MOVWF  05
+124D:  BTFSC  03.0
+124E:  INCF   05,F
+124F:  MOVF   00,F
+1250:  BTFSC  03.2
+1251:  GOTO   26E
+....................       output_low(bPin[4]); 
+1252:  MOVLW  1F
+1253:  MOVLB  03
+1254:  MOVWF  12
+1255:  MOVLW  EC
+1256:  MOVWF  11
+1257:  MOVLW  20
+1258:  MOVWF  05
+1259:  MOVLW  CF
+125A:  MOVWF  04
+125B:  MOVLW  01
+125C:  MOVLB  02
+125D:  MOVWF  52
+125E:  MOVLP  00
+125F:  MOVLB  00
+1260:  CALL   338
+1261:  MOVLP  10
+1262:  MOVLB  02
+1263:  MOVF   4F,W
+1264:  MOVWF  52
+1265:  CLRF   53
+1266:  MOVLW  01
+1267:  MOVWF  55
+1268:  CLRF   54
+1269:  MOVLP  00
+126A:  MOVLB  00
+126B:  CALL   34B
+126C:  MOVLP  10
+126D:  MOVLB  02
+....................    
+....................     if (blueA[x][5]) 
+126E:  RLF    4C,W
+126F:  MOVWF  77
+1270:  RLF    77,F
+1271:  RLF    77,F
+1272:  MOVLW  F8
+1273:  ANDWF  77,F
+1274:  MOVF   77,W
+1275:  ADDLW  05
+1276:  ADDLW  85
+1277:  MOVWF  04
+1278:  MOVLW  20
+1279:  MOVWF  05
+127A:  BTFSC  03.0
+127B:  INCF   05,F
+127C:  MOVF   00,F
+127D:  BTFSC  03.2
+127E:  GOTO   29B
+....................       output_low(bPin[5]); 
+127F:  MOVLW  1F
+1280:  MOVLB  03
+1281:  MOVWF  12
+1282:  MOVLW  ED
+1283:  MOVWF  11
+1284:  MOVLW  20
+1285:  MOVWF  05
+1286:  MOVLW  CF
+1287:  MOVWF  04
+1288:  MOVLW  01
+1289:  MOVLB  02
+128A:  MOVWF  52
+128B:  MOVLP  00
+128C:  MOVLB  00
+128D:  CALL   338
+128E:  MOVLP  10
+128F:  MOVLB  02
+1290:  MOVF   4F,W
+1291:  MOVWF  52
+1292:  CLRF   53
+1293:  MOVLW  01
+1294:  MOVWF  55
+1295:  CLRF   54
+1296:  MOVLP  00
+1297:  MOVLB  00
+1298:  CALL   34B
+1299:  MOVLP  10
+129A:  MOVLB  02
+....................    
+....................     if (blueA[x][6]) 
+129B:  RLF    4C,W
+129C:  MOVWF  77
+129D:  RLF    77,F
+129E:  RLF    77,F
+129F:  MOVLW  F8
+12A0:  ANDWF  77,F
+12A1:  MOVF   77,W
+12A2:  ADDLW  06
+12A3:  ADDLW  85
+12A4:  MOVWF  04
+12A5:  MOVLW  20
+12A6:  MOVWF  05
+12A7:  BTFSC  03.0
+12A8:  INCF   05,F
+12A9:  MOVF   00,F
+12AA:  BTFSC  03.2
+12AB:  GOTO   2C8
+....................       output_low(bPin[6]); 
+12AC:  MOVLW  1F
+12AD:  MOVLB  03
+12AE:  MOVWF  12
+12AF:  MOVLW  EE
+12B0:  MOVWF  11
+12B1:  MOVLW  20
+12B2:  MOVWF  05
+12B3:  MOVLW  CF
+12B4:  MOVWF  04
+12B5:  MOVLW  01
+12B6:  MOVLB  02
+12B7:  MOVWF  52
+12B8:  MOVLP  00
+12B9:  MOVLB  00
+12BA:  CALL   338
+12BB:  MOVLP  10
+12BC:  MOVLB  02
+12BD:  MOVF   4F,W
+12BE:  MOVWF  52
+12BF:  CLRF   53
+12C0:  MOVLW  01
+12C1:  MOVWF  55
+12C2:  CLRF   54
+12C3:  MOVLP  00
+12C4:  MOVLB  00
+12C5:  CALL   34B
+12C6:  MOVLP  10
+12C7:  MOVLB  02
+....................    
+....................     if (blueA[x][7]) 
+12C8:  RLF    4C,W
+12C9:  MOVWF  77
+12CA:  RLF    77,F
+12CB:  RLF    77,F
+12CC:  MOVLW  F8
+12CD:  ANDWF  77,F
+12CE:  MOVF   77,W
+12CF:  ADDLW  07
+12D0:  ADDLW  85
+12D1:  MOVWF  04
+12D2:  MOVLW  20
+12D3:  MOVWF  05
+12D4:  BTFSC  03.0
+12D5:  INCF   05,F
+12D6:  MOVF   00,F
+12D7:  BTFSC  03.2
+12D8:  GOTO   2F5
+....................       output_low(bPin[7]); 
+12D9:  MOVLW  1F
+12DA:  MOVLB  03
+12DB:  MOVWF  12
+12DC:  MOVLW  EF
+12DD:  MOVWF  11
+12DE:  MOVLW  20
+12DF:  MOVWF  05
+12E0:  MOVLW  CF
+12E1:  MOVWF  04
+12E2:  MOVLW  01
+12E3:  MOVLB  02
+12E4:  MOVWF  52
+12E5:  MOVLP  00
+12E6:  MOVLB  00
+12E7:  CALL   338
+12E8:  MOVLP  10
+12E9:  MOVLB  02
+12EA:  MOVF   4F,W
+12EB:  MOVWF  52
+12EC:  CLRF   53
+12ED:  MOVLW  01
+12EE:  MOVWF  55
+12EF:  CLRF   54
+12F0:  MOVLP  00
+12F1:  MOVLB  00
+12F2:  CALL   34B
+12F3:  MOVLP  10
+12F4:  MOVLB  02
+....................    
+....................     // red 
+....................     if (redA[x][0]) 
+12F5:  RLF    4C,W
+12F6:  MOVWF  77
+12F7:  RLF    77,F
+12F8:  RLF    77,F
+12F9:  MOVLW  F8
+12FA:  ANDWF  77,F
+12FB:  MOVF   77,W
+12FC:  ADDLW  05
+12FD:  MOVWF  04
+12FE:  MOVLW  20
+12FF:  MOVWF  05
+1300:  BTFSC  03.0
+1301:  INCF   05,F
+1302:  MOVF   00,F
+1303:  BTFSC  03.2
+1304:  GOTO   321
+....................       output_low(rPin[0]); 
+1305:  MOVLW  1F
+1306:  MOVLB  03
+1307:  MOVWF  12
+1308:  MOVLW  E0
+1309:  MOVWF  11
+130A:  MOVLW  20
+130B:  MOVWF  05
+130C:  MOVLW  CF
+130D:  MOVWF  04
+130E:  MOVLW  01
+130F:  MOVLB  02
+1310:  MOVWF  52
+1311:  MOVLP  00
+1312:  MOVLB  00
+1313:  CALL   338
+1314:  MOVLP  10
+1315:  MOVLB  02
+1316:  MOVF   4F,W
+1317:  MOVWF  52
+1318:  CLRF   53
+1319:  MOVLW  01
+131A:  MOVWF  55
+131B:  CLRF   54
+131C:  MOVLP  00
+131D:  MOVLB  00
+131E:  CALL   34B
+131F:  MOVLP  10
+1320:  MOVLB  02
+....................    
+....................     if (redA[x][1]) 
+1321:  RLF    4C,W
+1322:  MOVWF  77
+1323:  RLF    77,F
+1324:  RLF    77,F
+1325:  MOVLW  F8
+1326:  ANDWF  77,F
+1327:  MOVF   77,W
+1328:  ADDLW  01
+1329:  ADDLW  05
+132A:  MOVWF  04
+132B:  MOVLW  20
+132C:  MOVWF  05
+132D:  BTFSC  03.0
+132E:  INCF   05,F
+132F:  MOVF   00,F
+1330:  BTFSC  03.2
+1331:  GOTO   34E
+....................       output_low(rPin[1]); 
+1332:  MOVLW  1F
+1333:  MOVLB  03
+1334:  MOVWF  12
+1335:  MOVLW  E1
+1336:  MOVWF  11
+1337:  MOVLW  20
+1338:  MOVWF  05
+1339:  MOVLW  CF
+133A:  MOVWF  04
+133B:  MOVLW  01
+133C:  MOVLB  02
+133D:  MOVWF  52
+133E:  MOVLP  00
+133F:  MOVLB  00
+1340:  CALL   338
+1341:  MOVLP  10
+1342:  MOVLB  02
+1343:  MOVF   4F,W
+1344:  MOVWF  52
+1345:  CLRF   53
+1346:  MOVLW  01
+1347:  MOVWF  55
+1348:  CLRF   54
+1349:  MOVLP  00
+134A:  MOVLB  00
+134B:  CALL   34B
+134C:  MOVLP  10
+134D:  MOVLB  02
+....................    
+....................     if (redA[x][2]) 
+134E:  RLF    4C,W
+134F:  MOVWF  77
+1350:  RLF    77,F
+1351:  RLF    77,F
+1352:  MOVLW  F8
+1353:  ANDWF  77,F
+1354:  MOVF   77,W
+1355:  ADDLW  02
+1356:  ADDLW  05
+1357:  MOVWF  04
+1358:  MOVLW  20
+1359:  MOVWF  05
+135A:  BTFSC  03.0
+135B:  INCF   05,F
+135C:  MOVF   00,F
+135D:  BTFSC  03.2
+135E:  GOTO   37B
+....................       output_low(rPin[2]); 
+135F:  MOVLW  1F
+1360:  MOVLB  03
+1361:  MOVWF  12
+1362:  MOVLW  E2
+1363:  MOVWF  11
+1364:  MOVLW  20
+1365:  MOVWF  05
+1366:  MOVLW  CF
+1367:  MOVWF  04
+1368:  MOVLW  01
+1369:  MOVLB  02
+136A:  MOVWF  52
+136B:  MOVLP  00
+136C:  MOVLB  00
+136D:  CALL   338
+136E:  MOVLP  10
+136F:  MOVLB  02
+1370:  MOVF   4F,W
+1371:  MOVWF  52
+1372:  CLRF   53
+1373:  MOVLW  01
+1374:  MOVWF  55
+1375:  CLRF   54
+1376:  MOVLP  00
+1377:  MOVLB  00
+1378:  CALL   34B
+1379:  MOVLP  10
+137A:  MOVLB  02
+....................    
+....................     if (redA[x][3]) 
+137B:  RLF    4C,W
+137C:  MOVWF  77
+137D:  RLF    77,F
+137E:  RLF    77,F
+137F:  MOVLW  F8
+1380:  ANDWF  77,F
+1381:  MOVF   77,W
+1382:  ADDLW  03
+1383:  ADDLW  05
+1384:  MOVWF  04
+1385:  MOVLW  20
+1386:  MOVWF  05
+1387:  BTFSC  03.0
+1388:  INCF   05,F
+1389:  MOVF   00,F
+138A:  BTFSC  03.2
+138B:  GOTO   3A8
+....................       output_low(rPin[3]); 
+138C:  MOVLW  1F
+138D:  MOVLB  03
+138E:  MOVWF  12
+138F:  MOVLW  E3
+1390:  MOVWF  11
+1391:  MOVLW  20
+1392:  MOVWF  05
+1393:  MOVLW  CF
+1394:  MOVWF  04
+1395:  MOVLW  01
+1396:  MOVLB  02
+1397:  MOVWF  52
+1398:  MOVLP  00
+1399:  MOVLB  00
+139A:  CALL   338
+139B:  MOVLP  10
+139C:  MOVLB  02
+139D:  MOVF   4F,W
+139E:  MOVWF  52
+139F:  CLRF   53
+13A0:  MOVLW  01
+13A1:  MOVWF  55
+13A2:  CLRF   54
+13A3:  MOVLP  00
+13A4:  MOVLB  00
+13A5:  CALL   34B
+13A6:  MOVLP  10
+13A7:  MOVLB  02
+....................    
+....................     if (redA[x][4]) 
+13A8:  RLF    4C,W
+13A9:  MOVWF  77
+13AA:  RLF    77,F
+13AB:  RLF    77,F
+13AC:  MOVLW  F8
+13AD:  ANDWF  77,F
+13AE:  MOVF   77,W
+13AF:  ADDLW  04
+13B0:  ADDLW  05
+13B1:  MOVWF  04
+13B2:  MOVLW  20
+13B3:  MOVWF  05
+13B4:  BTFSC  03.0
+13B5:  INCF   05,F
+13B6:  MOVF   00,F
+13B7:  BTFSC  03.2
+13B8:  GOTO   3D5
+....................       output_low(rPin[4]); 
+13B9:  MOVLW  1F
+13BA:  MOVLB  03
+13BB:  MOVWF  12
+13BC:  MOVLW  E4
+13BD:  MOVWF  11
+13BE:  MOVLW  20
+13BF:  MOVWF  05
+13C0:  MOVLW  CF
+13C1:  MOVWF  04
+13C2:  MOVLW  01
+13C3:  MOVLB  02
+13C4:  MOVWF  52
+13C5:  MOVLP  00
+13C6:  MOVLB  00
+13C7:  CALL   338
+13C8:  MOVLP  10
+13C9:  MOVLB  02
+13CA:  MOVF   4F,W
+13CB:  MOVWF  52
+13CC:  CLRF   53
+13CD:  MOVLW  01
+13CE:  MOVWF  55
+13CF:  CLRF   54
+13D0:  MOVLP  00
+13D1:  MOVLB  00
+13D2:  CALL   34B
+13D3:  MOVLP  10
+13D4:  MOVLB  02
+....................    
+....................     if (redA[x][5]) 
+13D5:  RLF    4C,W
+13D6:  MOVWF  77
+13D7:  RLF    77,F
+13D8:  RLF    77,F
+13D9:  MOVLW  F8
+13DA:  ANDWF  77,F
+13DB:  MOVF   77,W
+13DC:  ADDLW  05
+13DD:  ADDLW  05
+13DE:  MOVWF  04
+13DF:  MOVLW  20
+13E0:  MOVWF  05
+13E1:  BTFSC  03.0
+13E2:  INCF   05,F
+13E3:  MOVF   00,F
+13E4:  BTFSC  03.2
+13E5:  GOTO   402
+....................       output_low(rPin[5]); 
+13E6:  MOVLW  1F
+13E7:  MOVLB  03
+13E8:  MOVWF  12
+13E9:  MOVLW  E5
+13EA:  MOVWF  11
+13EB:  MOVLW  20
+13EC:  MOVWF  05
+13ED:  MOVLW  CF
+13EE:  MOVWF  04
+13EF:  MOVLW  01
+13F0:  MOVLB  02
+13F1:  MOVWF  52
+13F2:  MOVLP  00
+13F3:  MOVLB  00
+13F4:  CALL   338
+13F5:  MOVLP  10
+13F6:  MOVLB  02
+13F7:  MOVF   4F,W
+13F8:  MOVWF  52
+13F9:  CLRF   53
+13FA:  MOVLW  01
+13FB:  MOVWF  55
+13FC:  CLRF   54
+13FD:  MOVLP  00
+13FE:  MOVLB  00
+13FF:  CALL   34B
+1400:  MOVLP  10
+1401:  MOVLB  02
+....................    
+....................     if (redA[x][6]) 
+1402:  RLF    4C,W
+1403:  MOVWF  77
+1404:  RLF    77,F
+1405:  RLF    77,F
+1406:  MOVLW  F8
+1407:  ANDWF  77,F
+1408:  MOVF   77,W
+1409:  ADDLW  06
+140A:  ADDLW  05
+140B:  MOVWF  04
+140C:  MOVLW  20
+140D:  MOVWF  05
+140E:  BTFSC  03.0
+140F:  INCF   05,F
+1410:  MOVF   00,F
+1411:  BTFSC  03.2
+1412:  GOTO   42F
+....................       output_low(rPin[6]); 
+1413:  MOVLW  1F
+1414:  MOVLB  03
+1415:  MOVWF  12
+1416:  MOVLW  E6
+1417:  MOVWF  11
+1418:  MOVLW  20
+1419:  MOVWF  05
+141A:  MOVLW  CF
+141B:  MOVWF  04
+141C:  MOVLW  01
+141D:  MOVLB  02
+141E:  MOVWF  52
+141F:  MOVLP  00
+1420:  MOVLB  00
+1421:  CALL   338
+1422:  MOVLP  10
+1423:  MOVLB  02
+1424:  MOVF   4F,W
+1425:  MOVWF  52
+1426:  CLRF   53
+1427:  MOVLW  01
+1428:  MOVWF  55
+1429:  CLRF   54
+142A:  MOVLP  00
+142B:  MOVLB  00
+142C:  CALL   34B
+142D:  MOVLP  10
+142E:  MOVLB  02
+....................    
+....................     if (redA[x][7]) 
+142F:  RLF    4C,W
+1430:  MOVWF  77
+1431:  RLF    77,F
+1432:  RLF    77,F
+1433:  MOVLW  F8
+1434:  ANDWF  77,F
+1435:  MOVF   77,W
+1436:  ADDLW  07
+1437:  ADDLW  05
+1438:  MOVWF  04
+1439:  MOVLW  20
+143A:  MOVWF  05
+143B:  BTFSC  03.0
+143C:  INCF   05,F
+143D:  MOVF   00,F
+143E:  BTFSC  03.2
+143F:  GOTO   45C
+....................       output_low(rPin[7]); 
+1440:  MOVLW  1F
+1441:  MOVLB  03
+1442:  MOVWF  12
+1443:  MOVLW  E7
+1444:  MOVWF  11
+1445:  MOVLW  20
+1446:  MOVWF  05
+1447:  MOVLW  CF
+1448:  MOVWF  04
+1449:  MOVLW  01
+144A:  MOVLB  02
+144B:  MOVWF  52
+144C:  MOVLP  00
+144D:  MOVLB  00
+144E:  CALL   338
+144F:  MOVLP  10
+1450:  MOVLB  02
+1451:  MOVF   4F,W
+1452:  MOVWF  52
+1453:  CLRF   53
+1454:  MOVLW  01
+1455:  MOVWF  55
+1456:  CLRF   54
+1457:  MOVLP  00
+1458:  MOVLB  00
+1459:  CALL   34B
+145A:  MOVLP  10
+145B:  MOVLB  02
+....................    
+....................     delay_us(ON_DELAY_US); 
+145C:  MOVLW  02
+145D:  MOVWF  4F
+145E:  MOVLP  00
+145F:  MOVLB  00
+1460:  CALL   36D
+1461:  MOVLP  10
+....................      
+....................     output_high(rPin[0]);         
+1462:  MOVLW  1F
+1463:  MOVLB  03
+1464:  MOVWF  12
+1465:  MOVLW  E0
+1466:  MOVWF  11
+1467:  MOVLW  20
+1468:  MOVWF  05
+1469:  MOVLW  CF
+146A:  MOVWF  04
+146B:  MOVLW  01
+146C:  MOVLB  02
+146D:  MOVWF  52
+146E:  MOVLP  00
+146F:  MOVLB  00
+1470:  CALL   338
+1471:  MOVLP  10
+1472:  MOVLB  02
+1473:  MOVF   4F,W
+1474:  MOVWF  52
+1475:  MOVLW  01
+1476:  MOVWF  53
+1477:  MOVLW  01
+1478:  MOVWF  55
+1479:  CLRF   54
+147A:  MOVLP  00
+147B:  MOVLB  00
+147C:  CALL   34B
+147D:  MOVLP  10
+....................     output_high(rPin[1]);         
+147E:  MOVLW  1F
+147F:  MOVLB  03
+1480:  MOVWF  12
+1481:  MOVLW  E1
+1482:  MOVWF  11
+1483:  MOVLW  20
+1484:  MOVWF  05
+1485:  MOVLW  CF
+1486:  MOVWF  04
+1487:  MOVLW  01
+1488:  MOVLB  02
+1489:  MOVWF  52
+148A:  MOVLP  00
+148B:  MOVLB  00
+148C:  CALL   338
+148D:  MOVLP  10
+148E:  MOVLB  02
+148F:  MOVF   4F,W
+1490:  MOVWF  52
+1491:  MOVLW  01
+1492:  MOVWF  53
+1493:  MOVLW  01
+1494:  MOVWF  55
+1495:  CLRF   54
+1496:  MOVLP  00
+1497:  MOVLB  00
+1498:  CALL   34B
+1499:  MOVLP  10
+....................     output_high(rPin[2]);         
+149A:  MOVLW  1F
+149B:  MOVLB  03
+149C:  MOVWF  12
+149D:  MOVLW  E2
+149E:  MOVWF  11
+149F:  MOVLW  20
+14A0:  MOVWF  05
+14A1:  MOVLW  CF
+14A2:  MOVWF  04
+14A3:  MOVLW  01
+14A4:  MOVLB  02
+14A5:  MOVWF  52
+14A6:  MOVLP  00
+14A7:  MOVLB  00
+14A8:  CALL   338
+14A9:  MOVLP  10
+14AA:  MOVLB  02
+14AB:  MOVF   4F,W
+14AC:  MOVWF  52
+14AD:  MOVLW  01
+14AE:  MOVWF  53
+14AF:  MOVLW  01
+14B0:  MOVWF  55
+14B1:  CLRF   54
+14B2:  MOVLP  00
+14B3:  MOVLB  00
+14B4:  CALL   34B
+14B5:  MOVLP  10
+....................     output_high(rPin[3]);         
+14B6:  MOVLW  1F
+14B7:  MOVLB  03
+14B8:  MOVWF  12
+14B9:  MOVLW  E3
+14BA:  MOVWF  11
+14BB:  MOVLW  20
+14BC:  MOVWF  05
+14BD:  MOVLW  CF
+14BE:  MOVWF  04
+14BF:  MOVLW  01
+14C0:  MOVLB  02
+14C1:  MOVWF  52
+14C2:  MOVLP  00
+14C3:  MOVLB  00
+14C4:  CALL   338
+14C5:  MOVLP  10
+14C6:  MOVLB  02
+14C7:  MOVF   4F,W
+14C8:  MOVWF  52
+14C9:  MOVLW  01
+14CA:  MOVWF  53
+14CB:  MOVLW  01
+14CC:  MOVWF  55
+14CD:  CLRF   54
+14CE:  MOVLP  00
+14CF:  MOVLB  00
+14D0:  CALL   34B
+14D1:  MOVLP  10
+....................     output_high(rPin[4]);         
+14D2:  MOVLW  1F
+14D3:  MOVLB  03
+14D4:  MOVWF  12
+14D5:  MOVLW  E4
+14D6:  MOVWF  11
+14D7:  MOVLW  20
+14D8:  MOVWF  05
+14D9:  MOVLW  CF
+14DA:  MOVWF  04
+14DB:  MOVLW  01
+14DC:  MOVLB  02
+14DD:  MOVWF  52
+14DE:  MOVLP  00
+14DF:  MOVLB  00
+14E0:  CALL   338
+14E1:  MOVLP  10
+14E2:  MOVLB  02
+14E3:  MOVF   4F,W
+14E4:  MOVWF  52
+14E5:  MOVLW  01
+14E6:  MOVWF  53
+14E7:  MOVLW  01
+14E8:  MOVWF  55
+14E9:  CLRF   54
+14EA:  MOVLP  00
+14EB:  MOVLB  00
+14EC:  CALL   34B
+14ED:  MOVLP  10
+....................     output_high(rPin[5]);         
+14EE:  MOVLW  1F
+14EF:  MOVLB  03
+14F0:  MOVWF  12
+14F1:  MOVLW  E5
+14F2:  MOVWF  11
+14F3:  MOVLW  20
+14F4:  MOVWF  05
+14F5:  MOVLW  CF
+14F6:  MOVWF  04
+14F7:  MOVLW  01
+14F8:  MOVLB  02
+14F9:  MOVWF  52
+14FA:  MOVLP  00
+14FB:  MOVLB  00
+14FC:  CALL   338
+14FD:  MOVLP  10
+14FE:  MOVLB  02
+14FF:  MOVF   4F,W
+1500:  MOVWF  52
+1501:  MOVLW  01
+1502:  MOVWF  53
+1503:  MOVLW  01
+1504:  MOVWF  55
+1505:  CLRF   54
+1506:  MOVLP  00
+1507:  MOVLB  00
+1508:  CALL   34B
+1509:  MOVLP  10
+....................     output_high(rPin[6]);         
+150A:  MOVLW  1F
+150B:  MOVLB  03
+150C:  MOVWF  12
+150D:  MOVLW  E6
+150E:  MOVWF  11
+150F:  MOVLW  20
+1510:  MOVWF  05
+1511:  MOVLW  CF
+1512:  MOVWF  04
+1513:  MOVLW  01
+1514:  MOVLB  02
+1515:  MOVWF  52
+1516:  MOVLP  00
+1517:  MOVLB  00
+1518:  CALL   338
+1519:  MOVLP  10
+151A:  MOVLB  02
+151B:  MOVF   4F,W
+151C:  MOVWF  52
+151D:  MOVLW  01
+151E:  MOVWF  53
+151F:  MOVLW  01
+1520:  MOVWF  55
+1521:  CLRF   54
+1522:  MOVLP  00
+1523:  MOVLB  00
+1524:  CALL   34B
+1525:  MOVLP  10
+....................     output_high(rPin[7]);         
+1526:  MOVLW  1F
+1527:  MOVLB  03
+1528:  MOVWF  12
+1529:  MOVLW  E7
+152A:  MOVWF  11
+152B:  MOVLW  20
+152C:  MOVWF  05
+152D:  MOVLW  CF
+152E:  MOVWF  04
+152F:  MOVLW  01
+1530:  MOVLB  02
+1531:  MOVWF  52
+1532:  MOVLP  00
+1533:  MOVLB  00
+1534:  CALL   338
+1535:  MOVLP  10
+1536:  MOVLB  02
+1537:  MOVF   4F,W
+1538:  MOVWF  52
+1539:  MOVLW  01
+153A:  MOVWF  53
+153B:  MOVLW  01
+153C:  MOVWF  55
+153D:  CLRF   54
+153E:  MOVLP  00
+153F:  MOVLB  00
+1540:  CALL   34B
+1541:  MOVLP  10
+....................  
+....................     output_high(bPin[0]);         
+1542:  MOVLW  1F
+1543:  MOVLB  03
+1544:  MOVWF  12
+1545:  MOVLW  E8
+1546:  MOVWF  11
+1547:  MOVLW  20
+1548:  MOVWF  05
+1549:  MOVLW  CF
+154A:  MOVWF  04
+154B:  MOVLW  01
+154C:  MOVLB  02
+154D:  MOVWF  52
+154E:  MOVLP  00
+154F:  MOVLB  00
+1550:  CALL   338
+1551:  MOVLP  10
+1552:  MOVLB  02
+1553:  MOVF   4F,W
+1554:  MOVWF  52
+1555:  MOVLW  01
+1556:  MOVWF  53
+1557:  MOVLW  01
+1558:  MOVWF  55
+1559:  CLRF   54
+155A:  MOVLP  00
+155B:  MOVLB  00
+155C:  CALL   34B
+155D:  MOVLP  10
+....................     output_high(bPin[1]);         
+155E:  MOVLW  1F
+155F:  MOVLB  03
+1560:  MOVWF  12
+1561:  MOVLW  E9
+1562:  MOVWF  11
+1563:  MOVLW  20
+1564:  MOVWF  05
+1565:  MOVLW  CF
+1566:  MOVWF  04
+1567:  MOVLW  01
+1568:  MOVLB  02
+1569:  MOVWF  52
+156A:  MOVLP  00
+156B:  MOVLB  00
+156C:  CALL   338
+156D:  MOVLP  10
+156E:  MOVLB  02
+156F:  MOVF   4F,W
+1570:  MOVWF  52
+1571:  MOVLW  01
+1572:  MOVWF  53
+1573:  MOVLW  01
+1574:  MOVWF  55
+1575:  CLRF   54
+1576:  MOVLP  00
+1577:  MOVLB  00
+1578:  CALL   34B
+1579:  MOVLP  10
+....................     output_high(bPin[2]);         
+157A:  MOVLW  1F
+157B:  MOVLB  03
+157C:  MOVWF  12
+157D:  MOVLW  EA
+157E:  MOVWF  11
+157F:  MOVLW  20
+1580:  MOVWF  05
+1581:  MOVLW  CF
+1582:  MOVWF  04
+1583:  MOVLW  01
+1584:  MOVLB  02
+1585:  MOVWF  52
+1586:  MOVLP  00
+1587:  MOVLB  00
+1588:  CALL   338
+1589:  MOVLP  10
+158A:  MOVLB  02
+158B:  MOVF   4F,W
+158C:  MOVWF  52
+158D:  MOVLW  01
+158E:  MOVWF  53
+158F:  MOVLW  01
+1590:  MOVWF  55
+1591:  CLRF   54
+1592:  MOVLP  00
+1593:  MOVLB  00
+1594:  CALL   34B
+1595:  MOVLP  10
+....................     output_high(bPin[3]);         
+1596:  MOVLW  1F
+1597:  MOVLB  03
+1598:  MOVWF  12
+1599:  MOVLW  EB
+159A:  MOVWF  11
+159B:  MOVLW  20
+159C:  MOVWF  05
+159D:  MOVLW  CF
+159E:  MOVWF  04
+159F:  MOVLW  01
+15A0:  MOVLB  02
+15A1:  MOVWF  52
+15A2:  MOVLP  00
+15A3:  MOVLB  00
+15A4:  CALL   338
+15A5:  MOVLP  10
+15A6:  MOVLB  02
+15A7:  MOVF   4F,W
+15A8:  MOVWF  52
+15A9:  MOVLW  01
+15AA:  MOVWF  53
+15AB:  MOVLW  01
+15AC:  MOVWF  55
+15AD:  CLRF   54
+15AE:  MOVLP  00
+15AF:  MOVLB  00
+15B0:  CALL   34B
+15B1:  MOVLP  10
+....................     output_high(bPin[4]);         
+15B2:  MOVLW  1F
+15B3:  MOVLB  03
+15B4:  MOVWF  12
+15B5:  MOVLW  EC
+15B6:  MOVWF  11
+15B7:  MOVLW  20
+15B8:  MOVWF  05
+15B9:  MOVLW  CF
+15BA:  MOVWF  04
+15BB:  MOVLW  01
+15BC:  MOVLB  02
+15BD:  MOVWF  52
+15BE:  MOVLP  00
+15BF:  MOVLB  00
+15C0:  CALL   338
+15C1:  MOVLP  10
+15C2:  MOVLB  02
+15C3:  MOVF   4F,W
+15C4:  MOVWF  52
+15C5:  MOVLW  01
+15C6:  MOVWF  53
+15C7:  MOVLW  01
+15C8:  MOVWF  55
+15C9:  CLRF   54
+15CA:  MOVLP  00
+15CB:  MOVLB  00
+15CC:  CALL   34B
+15CD:  MOVLP  10
+....................     output_high(bPin[5]);         
+15CE:  MOVLW  1F
+15CF:  MOVLB  03
+15D0:  MOVWF  12
+15D1:  MOVLW  ED
+15D2:  MOVWF  11
+15D3:  MOVLW  20
+15D4:  MOVWF  05
+15D5:  MOVLW  CF
+15D6:  MOVWF  04
+15D7:  MOVLW  01
+15D8:  MOVLB  02
+15D9:  MOVWF  52
+15DA:  MOVLP  00
+15DB:  MOVLB  00
+15DC:  CALL   338
+15DD:  MOVLP  10
+15DE:  MOVLB  02
+15DF:  MOVF   4F,W
+15E0:  MOVWF  52
+15E1:  MOVLW  01
+15E2:  MOVWF  53
+15E3:  MOVLW  01
+15E4:  MOVWF  55
+15E5:  CLRF   54
+15E6:  MOVLP  00
+15E7:  MOVLB  00
+15E8:  CALL   34B
+15E9:  MOVLP  10
+....................     output_high(bPin[6]);         
+15EA:  MOVLW  1F
+15EB:  MOVLB  03
+15EC:  MOVWF  12
+15ED:  MOVLW  EE
+15EE:  MOVWF  11
+15EF:  MOVLW  20
+15F0:  MOVWF  05
+15F1:  MOVLW  CF
+15F2:  MOVWF  04
+15F3:  MOVLW  01
+15F4:  MOVLB  02
+15F5:  MOVWF  52
+15F6:  MOVLP  00
+15F7:  MOVLB  00
+15F8:  CALL   338
+15F9:  MOVLP  10
+15FA:  MOVLB  02
+15FB:  MOVF   4F,W
+15FC:  MOVWF  52
+15FD:  MOVLW  01
+15FE:  MOVWF  53
+15FF:  MOVLW  01
+1600:  MOVWF  55
+1601:  CLRF   54
+1602:  MOVLP  00
+1603:  MOVLB  00
+1604:  CALL   34B
+1605:  MOVLP  10
+....................     output_high(bPin[7]);         
+1606:  MOVLW  1F
+1607:  MOVLB  03
+1608:  MOVWF  12
+1609:  MOVLW  EF
+160A:  MOVWF  11
+160B:  MOVLW  20
+160C:  MOVWF  05
+160D:  MOVLW  CF
+160E:  MOVWF  04
+160F:  MOVLW  01
+1610:  MOVLB  02
+1611:  MOVWF  52
+1612:  MOVLP  00
+1613:  MOVLB  00
+1614:  CALL   338
+1615:  MOVLP  10
+1616:  MOVLB  02
+1617:  MOVF   4F,W
+1618:  MOVWF  52
+1619:  MOVLW  01
+161A:  MOVWF  53
+161B:  MOVLW  01
+161C:  MOVWF  55
+161D:  CLRF   54
+161E:  MOVLP  00
+161F:  MOVLB  00
+1620:  CALL   34B
+1621:  MOVLP  10
+....................  
+....................     output_high(gPin[0]);         
+1622:  MOVLW  1F
+1623:  MOVLB  03
+1624:  MOVWF  12
+1625:  MOVLW  F0
+1626:  MOVWF  11
+1627:  MOVLW  20
+1628:  MOVWF  05
+1629:  MOVLW  CF
+162A:  MOVWF  04
+162B:  MOVLW  01
+162C:  MOVLB  02
+162D:  MOVWF  52
+162E:  MOVLP  00
+162F:  MOVLB  00
+1630:  CALL   338
+1631:  MOVLP  10
+1632:  MOVLB  02
+1633:  MOVF   4F,W
+1634:  MOVWF  52
+1635:  MOVLW  01
+1636:  MOVWF  53
+1637:  MOVLW  01
+1638:  MOVWF  55
+1639:  CLRF   54
+163A:  MOVLP  00
+163B:  MOVLB  00
+163C:  CALL   34B
+163D:  MOVLP  10
+....................     output_high(gPin[1]);         
+163E:  MOVLW  1F
+163F:  MOVLB  03
+1640:  MOVWF  12
+1641:  MOVLW  F1
+1642:  MOVWF  11
+1643:  MOVLW  20
+1644:  MOVWF  05
+1645:  MOVLW  CF
+1646:  MOVWF  04
+1647:  MOVLW  01
+1648:  MOVLB  02
+1649:  MOVWF  52
+164A:  MOVLP  00
+164B:  MOVLB  00
+164C:  CALL   338
+164D:  MOVLP  10
+164E:  MOVLB  02
+164F:  MOVF   4F,W
+1650:  MOVWF  52
+1651:  MOVLW  01
+1652:  MOVWF  53
+1653:  MOVLW  01
+1654:  MOVWF  55
+1655:  CLRF   54
+1656:  MOVLP  00
+1657:  MOVLB  00
+1658:  CALL   34B
+1659:  MOVLP  10
+....................     output_high(gPin[2]);         
+165A:  MOVLW  1F
+165B:  MOVLB  03
+165C:  MOVWF  12
+165D:  MOVLW  F2
+165E:  MOVWF  11
+165F:  MOVLW  20
+1660:  MOVWF  05
+1661:  MOVLW  CF
+1662:  MOVWF  04
+1663:  MOVLW  01
+1664:  MOVLB  02
+1665:  MOVWF  52
+1666:  MOVLP  00
+1667:  MOVLB  00
+1668:  CALL   338
+1669:  MOVLP  10
+166A:  MOVLB  02
+166B:  MOVF   4F,W
+166C:  MOVWF  52
+166D:  MOVLW  01
+166E:  MOVWF  53
+166F:  MOVLW  01
+1670:  MOVWF  55
+1671:  CLRF   54
+1672:  MOVLP  00
+1673:  MOVLB  00
+1674:  CALL   34B
+1675:  MOVLP  10
+....................     output_high(gPin[3]);         
+1676:  MOVLW  1F
+1677:  MOVLB  03
+1678:  MOVWF  12
+1679:  MOVLW  F3
+167A:  MOVWF  11
+167B:  MOVLW  20
+167C:  MOVWF  05
+167D:  MOVLW  CF
+167E:  MOVWF  04
+167F:  MOVLW  01
+1680:  MOVLB  02
+1681:  MOVWF  52
+1682:  MOVLP  00
+1683:  MOVLB  00
+1684:  CALL   338
+1685:  MOVLP  10
+1686:  MOVLB  02
+1687:  MOVF   4F,W
+1688:  MOVWF  52
+1689:  MOVLW  01
+168A:  MOVWF  53
+168B:  MOVLW  01
+168C:  MOVWF  55
+168D:  CLRF   54
+168E:  MOVLP  00
+168F:  MOVLB  00
+1690:  CALL   34B
+1691:  MOVLP  10
+....................     output_high(gPin[4]);         
+1692:  MOVLW  1F
+1693:  MOVLB  03
+1694:  MOVWF  12
+1695:  MOVLW  F4
+1696:  MOVWF  11
+1697:  MOVLW  20
+1698:  MOVWF  05
+1699:  MOVLW  CF
+169A:  MOVWF  04
+169B:  MOVLW  01
+169C:  MOVLB  02
+169D:  MOVWF  52
+169E:  MOVLP  00
+169F:  MOVLB  00
+16A0:  CALL   338
+16A1:  MOVLP  10
+16A2:  MOVLB  02
+16A3:  MOVF   4F,W
+16A4:  MOVWF  52
+16A5:  MOVLW  01
+16A6:  MOVWF  53
+16A7:  MOVLW  01
+16A8:  MOVWF  55
+16A9:  CLRF   54
+16AA:  MOVLP  00
+16AB:  MOVLB  00
+16AC:  CALL   34B
+16AD:  MOVLP  10
+....................     output_high(gPin[5]);         
+16AE:  MOVLW  1F
+16AF:  MOVLB  03
+16B0:  MOVWF  12
+16B1:  MOVLW  F5
+16B2:  MOVWF  11
+16B3:  MOVLW  20
+16B4:  MOVWF  05
+16B5:  MOVLW  CF
+16B6:  MOVWF  04
+16B7:  MOVLW  01
+16B8:  MOVLB  02
+16B9:  MOVWF  52
+16BA:  MOVLP  00
+16BB:  MOVLB  00
+16BC:  CALL   338
+16BD:  MOVLP  10
+16BE:  MOVLB  02
+16BF:  MOVF   4F,W
+16C0:  MOVWF  52
+16C1:  MOVLW  01
+16C2:  MOVWF  53
+16C3:  MOVLW  01
+16C4:  MOVWF  55
+16C5:  CLRF   54
+16C6:  MOVLP  00
+16C7:  MOVLB  00
+16C8:  CALL   34B
+16C9:  MOVLP  10
+....................     output_high(gPin[6]);         
+16CA:  MOVLW  1F
+16CB:  MOVLB  03
+16CC:  MOVWF  12
+16CD:  MOVLW  F6
+16CE:  MOVWF  11
+16CF:  MOVLW  20
+16D0:  MOVWF  05
+16D1:  MOVLW  CF
+16D2:  MOVWF  04
+16D3:  MOVLW  01
+16D4:  MOVLB  02
+16D5:  MOVWF  52
+16D6:  MOVLP  00
+16D7:  MOVLB  00
+16D8:  CALL   338
+16D9:  MOVLP  10
+16DA:  MOVLB  02
+16DB:  MOVF   4F,W
+16DC:  MOVWF  52
+16DD:  MOVLW  01
+16DE:  MOVWF  53
+16DF:  MOVLW  01
+16E0:  MOVWF  55
+16E1:  CLRF   54
+16E2:  MOVLP  00
+16E3:  MOVLB  00
+16E4:  CALL   34B
+16E5:  MOVLP  10
+....................     output_high(gPin[7]);         
+16E6:  MOVLW  1F
+16E7:  MOVLB  03
+16E8:  MOVWF  12
+16E9:  MOVLW  F7
+16EA:  MOVWF  11
+16EB:  MOVLW  20
+16EC:  MOVWF  05
+16ED:  MOVLW  CF
+16EE:  MOVWF  04
+16EF:  MOVLW  01
+16F0:  MOVLB  02
+16F1:  MOVWF  52
+16F2:  MOVLP  00
+16F3:  MOVLB  00
+16F4:  CALL   338
+16F5:  MOVLP  10
+16F6:  MOVLB  02
+16F7:  MOVF   4F,W
+16F8:  MOVWF  52
+16F9:  MOVLW  01
+16FA:  MOVWF  53
+16FB:  MOVLW  01
+16FC:  MOVWF  55
+16FD:  CLRF   54
+16FE:  MOVLP  00
+16FF:  MOVLB  00
+1700:  CALL   34B
+1701:  MOVLP  10
+....................  
+....................     output_high(Trans[x]);       
+1702:  MOVLW  F8
+1703:  MOVLB  02
+1704:  ADDWF  4C,W
+1705:  MOVWF  4F
+1706:  MOVLW  1F
+1707:  MOVWF  50
+1708:  BTFSC  03.0
+1709:  INCF   50,F
+170A:  MOVF   50,W
+170B:  MOVLB  03
+170C:  MOVWF  12
+170D:  MOVLB  02
+170E:  MOVF   4F,W
+170F:  MOVLB  03
+1710:  MOVWF  11
+1711:  MOVLW  20
+1712:  MOVWF  05
+1713:  MOVLW  D1
+1714:  MOVWF  04
+1715:  MOVLW  01
+1716:  MOVLB  02
+1717:  MOVWF  52
+1718:  MOVLP  00
+1719:  MOVLB  00
+171A:  CALL   338
+171B:  MOVLP  10
+171C:  MOVLB  02
+171D:  MOVF   51,W
+171E:  MOVWF  52
+171F:  MOVLW  01
+1720:  MOVWF  53
+1721:  MOVLW  01
+1722:  MOVWF  55
+1723:  CLRF   54
+1724:  MOVLP  00
+1725:  MOVLB  00
+1726:  CALL   34B
+1727:  MOVLP  10
+....................      
+....................     x++; 
+1728:  MOVLB  02
+1729:  INCF   4C,F
+....................      
+....................     if (x == 8) 
+172A:  MOVF   4C,W
+172B:  SUBLW  08
+172C:  BTFSC  03.2
+....................       x = 0; 
+172D:  CLRF   4C
+172E:  GOTO   002
+....................   } 
+172F:  MOVLP  00
+1730:  MOVLB  00
+1731:  GOTO   557 (RETURN)
+.................... } 
+....................  
+.................... volatile unsigned int8 _mode = 0; // 1 = change led by address, 2 = change i2c address, 3 = clear display 
+.................... volatile unsigned int8 _changeAddress; 
+.................... volatile unsigned int8 _tmp; 
+.................... volatile unsigned int8 _state; 
+....................  
+.................... #INT_SSP 
+.................... void ssp_interupt() { 
+....................  
+....................   _state = i2c_isr_state(); 
+*
+0060:  MOVLB  04
+0061:  BTFSC  14.5
+0062:  GOTO   066
+0063:  CLRF   75
+0064:  BTFSC  14.2
+0065:  BSF    75.7
+0066:  MOVF   75,W
+0067:  INCF   75,F
+0068:  MOVWF  74
+....................      
+....................   if (_state == 0) {       
+0069:  MOVF   74,F
+006A:  BTFSS  03.2
+006B:  GOTO   076
+....................    
+....................     // this device address matched for the master to write to us 
+....................     // we read but it's our own address anyway 
+....................     _tmp = i2c_read();     
+006C:  BCF    15.6
+006D:  MOVLB  00
+006E:  BTFSS  11.3
+006F:  GOTO   06E
+0070:  MOVLB  04
+0071:  MOVF   11,W
+0072:  BSF    15.4
+0073:  MOVWF  73
+....................     _mode = 0; 
+0074:  CLRF   71
+....................      
+....................   } else if (_state >= 1 && _state <= 127) { 
+0075:  GOTO   21A
+0076:  MOVF   74,W
+0077:  SUBLW  00
+0078:  BTFSC  03.0
+0079:  GOTO   21A
+007A:  MOVF   74,W
+007B:  SUBLW  7F
+007C:  BTFSS  03.0
+007D:  GOTO   21A
+....................  
+....................     // now we receive all the data that the master is writing to us 
+....................     // this is the "memory" that the client is writing. All sequential data after this byte is "data" 
+....................     _tmp = i2c_read(); 
+007E:  BCF    15.6
+007F:  MOVLB  00
+0080:  BTFSS  11.3
+0081:  GOTO   080
+0082:  MOVLB  04
+0083:  MOVF   11,W
+0084:  BSF    15.4
+0085:  MOVWF  73
+....................  
+....................     if (_state == 1) { 
+0086:  DECFSZ 74,W
+0087:  GOTO   0F0
+....................        
+....................       // let's get the address they are writing to 
+....................        
+....................       if (_tmp == 200) { 
+0088:  MOVF   73,W
+0089:  SUBLW  C8
+008A:  BTFSS  03.2
+008B:  GOTO   08F
+....................  
+....................         // the next byte of data is going to be the new i2c address to store in eeprom 
+....................         _mode = 2; 
+008C:  MOVLW  02
+008D:  MOVWF  71
+....................       } else if (_tmp >= 240 && _tmp <= 247) { 
+008E:  GOTO   0ED
+008F:  MOVF   73,W
+0090:  SUBLW  EF
+0091:  BTFSC  03.0
+0092:  GOTO   0E9
+0093:  MOVF   73,W
+0094:  SUBLW  F7
+0095:  BTFSS  03.0
+0096:  GOTO   0E9
+....................          
+....................         _mode = 3; 
+0097:  MOVLW  03
+0098:  MOVWF  71
+....................          
+....................         clearDisplayColor(CHECK_BIT(_tmp, 2), CHECK_BIT(_tmp, 1), CHECK_BIT(_tmp, 0)); 
+0099:  MOVF   73,W
+009A:  ANDLW  04
+009B:  MOVLB  02
+009C:  MOVWF  5B
+009D:  MOVF   73,W
+009E:  ANDLW  02
+009F:  MOVWF  5C
+00A0:  MOVF   73,W
+00A1:  ANDLW  01
+00A2:  MOVWF  5D
+00A3:  MOVF   5B,W
+00A4:  MOVWF  5F
+00A5:  MOVF   5C,W
+00A6:  MOVWF  60
+00A7:  MOVF   5D,W
+00A8:  MOVWF  61
+....................       } else { 
+*
+00E7:  GOTO   0EE
+00E8:  MOVLB  04
+....................  
+....................         // all next bytes of data are led colors 
+....................         _mode = 1; 
+00E9:  MOVLW  01
+00EA:  MOVWF  71
+....................  
+....................         // get the address that we will begin writing to for all consecutive byte 
+....................         _changeAddress = _tmp; 
+00EB:  MOVF   73,W
+00EC:  MOVWF  72
+00ED:  MOVLB  02
+....................       } 
+....................     } else { 
+00EE:  GOTO   21B
+00EF:  MOVLB  04
+....................      
+....................       if (_mode == 1) { 
+00F0:  DECFSZ 71,W
+00F1:  GOTO   114
+....................    
+....................         // now that we know the starting memory address from the first byte send, we will write the data from this transmission to that address and then increment 
+....................    
+....................         unsigned int8 y = _changeAddress / 8; 
+....................         unsigned int8 x = _changeAddress % 8; 
+00F2:  RRF    72,W
+00F3:  MOVLB  02
+00F4:  MOVWF  59
+00F5:  RRF    59,F
+00F6:  RRF    59,F
+00F7:  MOVLW  1F
+00F8:  ANDWF  59,F
+00F9:  MOVF   72,W
+00FA:  ANDLW  07
+00FB:  MOVWF  5A
+....................    
+....................         SetLEDPosition(x, y, CHECK_BIT(_tmp, 2), CHECK_BIT(_tmp, 1), CHECK_BIT(_tmp, 0)); 
+00FC:  MOVF   73,W
+00FD:  ANDLW  04
+00FE:  MOVWF  5B
+00FF:  MOVF   73,W
+0100:  ANDLW  02
+0101:  MOVWF  5C
+0102:  MOVF   73,W
+0103:  ANDLW  01
+0104:  MOVWF  5D
+0105:  MOVF   5A,W
+0106:  MOVWF  5F
+0107:  MOVF   59,W
+0108:  MOVWF  60
+0109:  MOVF   5B,W
+010A:  MOVWF  61
+010B:  MOVF   5C,W
+010C:  MOVWF  62
+010D:  MOVF   5D,W
+010E:  MOVWF  63
+010F:  MOVLB  00
+0110:  CALL   02A
+....................          
+....................         // increment the address (which is actually the next led) incase there is an additional transmission 
+....................         _changeAddress++; 
+0111:  INCF   72,F
+....................       } else if (_mode == 2) { 
+0112:  GOTO   219
+0113:  MOVLB  04
+0114:  MOVF   71,W
+0115:  SUBLW  02
+0116:  BTFSS  03.2
+0117:  GOTO   21A
+....................    
+....................         // if the tmp data is within an acceptable i2c address range, write it to eeprom and we will use it for next power-up 
+....................         if (_tmp >= 130 && _tmp <= 180) { 
+0118:  MOVF   73,W
+0119:  SUBLW  81
+011A:  BTFSC  03.0
+011B:  GOTO   21A
+011C:  MOVF   73,W
+011D:  SUBLW  B4
+011E:  BTFSS  03.0
+011F:  GOTO   21A
+....................          
+....................           write_eeprom(0, _tmp); 
+0120:  MOVF   0B,W
+0121:  MOVWF  77
+0122:  BCF    0B.7
+0123:  MOVLB  03
+0124:  CLRF   11
+0125:  MOVF   73,W
+0126:  MOVWF  13
+0127:  BCF    15.7
+0128:  BSF    15.2
+0129:  MOVLW  55
+012A:  MOVWF  16
+012B:  MOVLW  AA
+012C:  MOVWF  16
+012D:  BSF    15.1
+012E:  BTFSC  15.1
+012F:  GOTO   12E
+0130:  BCF    15.2
+0131:  MOVF   77,W
+0132:  IORWF  0B,F
+....................  
+....................           clearDisplay(); 
+....................                      
+....................           // O 
+....................           SetLEDPosition(1, 2, false, false, true); 
+*
+016F:  MOVLW  01
+0170:  MOVWF  5F
+0171:  MOVLW  02
+0172:  MOVWF  60
+0173:  CLRF   61
+0174:  CLRF   62
+0175:  MOVLW  01
+0176:  MOVWF  63
+0177:  MOVLB  00
+0178:  CALL   02A
+....................           SetLEDPosition(2, 2, false, false, true); 
+0179:  MOVLW  02
+017A:  MOVLB  02
+017B:  MOVWF  5F
+017C:  MOVWF  60
+017D:  CLRF   61
+017E:  CLRF   62
+017F:  MOVLW  01
+0180:  MOVWF  63
+0181:  MOVLB  00
+0182:  CALL   02A
+....................           SetLEDPosition(0, 3, false, false, true); 
+0183:  MOVLB  02
+0184:  CLRF   5F
+0185:  MOVLW  03
+0186:  MOVWF  60
+0187:  CLRF   61
+0188:  CLRF   62
+0189:  MOVLW  01
+018A:  MOVWF  63
+018B:  MOVLB  00
+018C:  CALL   02A
+....................           SetLEDPosition(3, 3, false, false, true); 
+018D:  MOVLW  03
+018E:  MOVLB  02
+018F:  MOVWF  5F
+0190:  MOVWF  60
+0191:  CLRF   61
+0192:  CLRF   62
+0193:  MOVLW  01
+0194:  MOVWF  63
+0195:  MOVLB  00
+0196:  CALL   02A
+....................           SetLEDPosition(0, 4, false, false, true); 
+0197:  MOVLB  02
+0198:  CLRF   5F
+0199:  MOVLW  04
+019A:  MOVWF  60
+019B:  CLRF   61
+019C:  CLRF   62
+019D:  MOVLW  01
+019E:  MOVWF  63
+019F:  MOVLB  00
+01A0:  CALL   02A
+....................           SetLEDPosition(3, 4, false, false, true); 
+01A1:  MOVLW  03
+01A2:  MOVLB  02
+01A3:  MOVWF  5F
+01A4:  MOVLW  04
+01A5:  MOVWF  60
+01A6:  CLRF   61
+01A7:  CLRF   62
+01A8:  MOVLW  01
+01A9:  MOVWF  63
+01AA:  MOVLB  00
+01AB:  CALL   02A
+....................           SetLEDPosition(1, 5, false, false, true); 
+01AC:  MOVLW  01
+01AD:  MOVLB  02
+01AE:  MOVWF  5F
+01AF:  MOVLW  05
+01B0:  MOVWF  60
+01B1:  CLRF   61
+01B2:  CLRF   62
+01B3:  MOVLW  01
+01B4:  MOVWF  63
+01B5:  MOVLB  00
+01B6:  CALL   02A
+....................           SetLEDPosition(2, 5, false, false, true); 
+01B7:  MOVLW  02
+01B8:  MOVLB  02
+01B9:  MOVWF  5F
+01BA:  MOVLW  05
+01BB:  MOVWF  60
+01BC:  CLRF   61
+01BD:  CLRF   62
+01BE:  MOVLW  01
+01BF:  MOVWF  63
+01C0:  MOVLB  00
+01C1:  CALL   02A
+....................  
+....................           // K 
+....................           SetLEDPosition(5, 2, false, false, true); 
+01C2:  MOVLW  05
+01C3:  MOVLB  02
+01C4:  MOVWF  5F
+01C5:  MOVLW  02
+01C6:  MOVWF  60
+01C7:  CLRF   61
+01C8:  CLRF   62
+01C9:  MOVLW  01
+01CA:  MOVWF  63
+01CB:  MOVLB  00
+01CC:  CALL   02A
+....................           SetLEDPosition(5, 3, false, false, true); 
+01CD:  MOVLW  05
+01CE:  MOVLB  02
+01CF:  MOVWF  5F
+01D0:  MOVLW  03
+01D1:  MOVWF  60
+01D2:  CLRF   61
+01D3:  CLRF   62
+01D4:  MOVLW  01
+01D5:  MOVWF  63
+01D6:  MOVLB  00
+01D7:  CALL   02A
+....................           SetLEDPosition(5, 4, false, false, true); 
+01D8:  MOVLW  05
+01D9:  MOVLB  02
+01DA:  MOVWF  5F
+01DB:  MOVLW  04
+01DC:  MOVWF  60
+01DD:  CLRF   61
+01DE:  CLRF   62
+01DF:  MOVLW  01
+01E0:  MOVWF  63
+01E1:  MOVLB  00
+01E2:  CALL   02A
+....................           SetLEDPosition(5, 5, false, false, true); 
+01E3:  MOVLW  05
+01E4:  MOVLB  02
+01E5:  MOVWF  5F
+01E6:  MOVWF  60
+01E7:  CLRF   61
+01E8:  CLRF   62
+01E9:  MOVLW  01
+01EA:  MOVWF  63
+01EB:  MOVLB  00
+01EC:  CALL   02A
+....................           SetLEDPosition(6, 3, false, false, true); 
+01ED:  MOVLW  06
+01EE:  MOVLB  02
+01EF:  MOVWF  5F
+01F0:  MOVLW  03
+01F1:  MOVWF  60
+01F2:  CLRF   61
+01F3:  CLRF   62
+01F4:  MOVLW  01
+01F5:  MOVWF  63
+01F6:  MOVLB  00
+01F7:  CALL   02A
+....................           SetLEDPosition(6, 4, false, false, true); 
+01F8:  MOVLW  06
+01F9:  MOVLB  02
+01FA:  MOVWF  5F
+01FB:  MOVLW  04
+01FC:  MOVWF  60
+01FD:  CLRF   61
+01FE:  CLRF   62
+01FF:  MOVLW  01
+0200:  MOVWF  63
+0201:  MOVLB  00
+0202:  CALL   02A
+....................           SetLEDPosition(7, 2, false, false, true); 
+0203:  MOVLW  07
+0204:  MOVLB  02
+0205:  MOVWF  5F
+0206:  MOVLW  02
+0207:  MOVWF  60
+0208:  CLRF   61
+0209:  CLRF   62
+020A:  MOVLW  01
+020B:  MOVWF  63
+020C:  MOVLB  00
+020D:  CALL   02A
+....................           SetLEDPosition(7, 5, false, false, true);           
+020E:  MOVLW  07
+020F:  MOVLB  02
+0210:  MOVWF  5F
+0211:  MOVLW  05
+0212:  MOVWF  60
+0213:  CLRF   61
+0214:  CLRF   62
+0215:  MOVLW  01
+0216:  MOVWF  63
+0217:  MOVLB  00
+0218:  CALL   02A
+0219:  MOVLB  04
+021A:  MOVLB  02
+....................         } 
+....................       } 
+....................     } 
+....................   } 
+021B:  MOVLB  00
+021C:  BCF    11.3
+021D:  MOVLP  00
+021E:  GOTO   01D
+.................... } 
+....................  
+.................... void displayDigit(unsigned int digit) { 
+....................    
+....................   clearDisplay(); 
+....................    
+....................   switch (digit) { 
+*
+083C:  MOVF   59,W
+083D:  ADDLW  F6
+083E:  BTFSC  03.0
+083F:  GOTO   73F
+0840:  ADDLW  0A
+0841:  MOVLB  00
+0842:  GOTO   741
+....................     case 0: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0843:  MOVLW  02
+0844:  MOVLB  02
+0845:  MOVWF  5F
+0846:  MOVLW  01
+0847:  MOVWF  60
+0848:  CLRF   61
+0849:  CLRF   62
+084A:  MOVWF  63
+084B:  MOVLP  00
+084C:  MOVLB  00
+084D:  CALL   02A
+084E:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+084F:  MOVLW  03
+0850:  MOVLB  02
+0851:  MOVWF  5F
+0852:  MOVLW  01
+0853:  MOVWF  60
+0854:  CLRF   61
+0855:  CLRF   62
+0856:  MOVWF  63
+0857:  MOVLP  00
+0858:  MOVLB  00
+0859:  CALL   02A
+085A:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+085B:  MOVLW  04
+085C:  MOVLB  02
+085D:  MOVWF  5F
+085E:  MOVLW  01
+085F:  MOVWF  60
+0860:  CLRF   61
+0861:  CLRF   62
+0862:  MOVWF  63
+0863:  MOVLP  00
+0864:  MOVLB  00
+0865:  CALL   02A
+0866:  MOVLP  08
+....................       SetLEDPosition(5, 1, false, false, true);       
+0867:  MOVLW  05
+0868:  MOVLB  02
+0869:  MOVWF  5F
+086A:  MOVLW  01
+086B:  MOVWF  60
+086C:  CLRF   61
+086D:  CLRF   62
+086E:  MOVWF  63
+086F:  MOVLP  00
+0870:  MOVLB  00
+0871:  CALL   02A
+0872:  MOVLP  08
+....................        
+....................       SetLEDPosition(2, 6, false, false, true); 
+0873:  MOVLW  02
+0874:  MOVLB  02
+0875:  MOVWF  5F
+0876:  MOVLW  06
+0877:  MOVWF  60
+0878:  CLRF   61
+0879:  CLRF   62
+087A:  MOVLW  01
+087B:  MOVWF  63
+087C:  MOVLP  00
+087D:  MOVLB  00
+087E:  CALL   02A
+087F:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0880:  MOVLW  03
+0881:  MOVLB  02
+0882:  MOVWF  5F
+0883:  MOVLW  06
+0884:  MOVWF  60
+0885:  CLRF   61
+0886:  CLRF   62
+0887:  MOVLW  01
+0888:  MOVWF  63
+0889:  MOVLP  00
+088A:  MOVLB  00
+088B:  CALL   02A
+088C:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true); 
+088D:  MOVLW  04
+088E:  MOVLB  02
+088F:  MOVWF  5F
+0890:  MOVLW  06
+0891:  MOVWF  60
+0892:  CLRF   61
+0893:  CLRF   62
+0894:  MOVLW  01
+0895:  MOVWF  63
+0896:  MOVLP  00
+0897:  MOVLB  00
+0898:  CALL   02A
+0899:  MOVLP  08
+....................       SetLEDPosition(5, 6, false, false, true); 
+089A:  MOVLW  05
+089B:  MOVLB  02
+089C:  MOVWF  5F
+089D:  MOVLW  06
+089E:  MOVWF  60
+089F:  CLRF   61
+08A0:  CLRF   62
+08A1:  MOVLW  01
+08A2:  MOVWF  63
+08A3:  MOVLP  00
+08A4:  MOVLB  00
+08A5:  CALL   02A
+08A6:  MOVLP  08
+....................  
+....................       SetLEDPosition(1, 2, false, false, true); 
+08A7:  MOVLW  01
+08A8:  MOVLB  02
+08A9:  MOVWF  5F
+08AA:  MOVLW  02
+08AB:  MOVWF  60
+08AC:  CLRF   61
+08AD:  CLRF   62
+08AE:  MOVLW  01
+08AF:  MOVWF  63
+08B0:  MOVLP  00
+08B1:  MOVLB  00
+08B2:  CALL   02A
+08B3:  MOVLP  08
+....................       SetLEDPosition(1, 3, false, false, true); 
+08B4:  MOVLW  01
+08B5:  MOVLB  02
+08B6:  MOVWF  5F
+08B7:  MOVLW  03
+08B8:  MOVWF  60
+08B9:  CLRF   61
+08BA:  CLRF   62
+08BB:  MOVLW  01
+08BC:  MOVWF  63
+08BD:  MOVLP  00
+08BE:  MOVLB  00
+08BF:  CALL   02A
+08C0:  MOVLP  08
+....................       SetLEDPosition(1, 4, false, false, true); 
+08C1:  MOVLW  01
+08C2:  MOVLB  02
+08C3:  MOVWF  5F
+08C4:  MOVLW  04
+08C5:  MOVWF  60
+08C6:  CLRF   61
+08C7:  CLRF   62
+08C8:  MOVLW  01
+08C9:  MOVWF  63
+08CA:  MOVLP  00
+08CB:  MOVLB  00
+08CC:  CALL   02A
+08CD:  MOVLP  08
+....................       SetLEDPosition(1, 5, false, false, true); 
+08CE:  MOVLW  01
+08CF:  MOVLB  02
+08D0:  MOVWF  5F
+08D1:  MOVLW  05
+08D2:  MOVWF  60
+08D3:  CLRF   61
+08D4:  CLRF   62
+08D5:  MOVLW  01
+08D6:  MOVWF  63
+08D7:  MOVLP  00
+08D8:  MOVLB  00
+08D9:  CALL   02A
+08DA:  MOVLP  08
+....................  
+....................       SetLEDPosition(6, 2, false, false, true); 
+08DB:  MOVLW  06
+08DC:  MOVLB  02
+08DD:  MOVWF  5F
+08DE:  MOVLW  02
+08DF:  MOVWF  60
+08E0:  CLRF   61
+08E1:  CLRF   62
+08E2:  MOVLW  01
+08E3:  MOVWF  63
+08E4:  MOVLP  00
+08E5:  MOVLB  00
+08E6:  CALL   02A
+08E7:  MOVLP  08
+....................       SetLEDPosition(6, 3, false, false, true); 
+08E8:  MOVLW  06
+08E9:  MOVLB  02
+08EA:  MOVWF  5F
+08EB:  MOVLW  03
+08EC:  MOVWF  60
+08ED:  CLRF   61
+08EE:  CLRF   62
+08EF:  MOVLW  01
+08F0:  MOVWF  63
+08F1:  MOVLP  00
+08F2:  MOVLB  00
+08F3:  CALL   02A
+08F4:  MOVLP  08
+....................       SetLEDPosition(6, 4, false, false, true); 
+08F5:  MOVLW  06
+08F6:  MOVLB  02
+08F7:  MOVWF  5F
+08F8:  MOVLW  04
+08F9:  MOVWF  60
+08FA:  CLRF   61
+08FB:  CLRF   62
+08FC:  MOVLW  01
+08FD:  MOVWF  63
+08FE:  MOVLP  00
+08FF:  MOVLB  00
+0900:  CALL   02A
+0901:  MOVLP  08
+....................       SetLEDPosition(6, 5, false, false, true); 
+0902:  MOVLW  06
+0903:  MOVLB  02
+0904:  MOVWF  5F
+0905:  MOVLW  05
+0906:  MOVWF  60
+0907:  CLRF   61
+0908:  CLRF   62
+0909:  MOVLW  01
+090A:  MOVWF  63
+090B:  MOVLP  00
+090C:  MOVLB  00
+090D:  CALL   02A
+090E:  MOVLP  08
+....................       break;    
+090F:  MOVLB  02
+0910:  GOTO   73F
+....................     case 1: 
+....................       SetLEDPosition(3, 1, false, false, true); 
+0911:  MOVLW  03
+0912:  MOVLB  02
+0913:  MOVWF  5F
+0914:  MOVLW  01
+0915:  MOVWF  60
+0916:  CLRF   61
+0917:  CLRF   62
+0918:  MOVWF  63
+0919:  MOVLP  00
+091A:  MOVLB  00
+091B:  CALL   02A
+091C:  MOVLP  08
+....................       SetLEDPosition(3, 2, false, false, true); 
+091D:  MOVLW  03
+091E:  MOVLB  02
+091F:  MOVWF  5F
+0920:  MOVLW  02
+0921:  MOVWF  60
+0922:  CLRF   61
+0923:  CLRF   62
+0924:  MOVLW  01
+0925:  MOVWF  63
+0926:  MOVLP  00
+0927:  MOVLB  00
+0928:  CALL   02A
+0929:  MOVLP  08
+....................       SetLEDPosition(3, 3, false, false, true); 
+092A:  MOVLW  03
+092B:  MOVLB  02
+092C:  MOVWF  5F
+092D:  MOVWF  60
+092E:  CLRF   61
+092F:  CLRF   62
+0930:  MOVLW  01
+0931:  MOVWF  63
+0932:  MOVLP  00
+0933:  MOVLB  00
+0934:  CALL   02A
+0935:  MOVLP  08
+....................       SetLEDPosition(3, 4, false, false, true); 
+0936:  MOVLW  03
+0937:  MOVLB  02
+0938:  MOVWF  5F
+0939:  MOVLW  04
+093A:  MOVWF  60
+093B:  CLRF   61
+093C:  CLRF   62
+093D:  MOVLW  01
+093E:  MOVWF  63
+093F:  MOVLP  00
+0940:  MOVLB  00
+0941:  CALL   02A
+0942:  MOVLP  08
+....................       SetLEDPosition(3, 5, false, false, true); 
+0943:  MOVLW  03
+0944:  MOVLB  02
+0945:  MOVWF  5F
+0946:  MOVLW  05
+0947:  MOVWF  60
+0948:  CLRF   61
+0949:  CLRF   62
+094A:  MOVLW  01
+094B:  MOVWF  63
+094C:  MOVLP  00
+094D:  MOVLB  00
+094E:  CALL   02A
+094F:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0950:  MOVLW  03
+0951:  MOVLB  02
+0952:  MOVWF  5F
+0953:  MOVLW  06
+0954:  MOVWF  60
+0955:  CLRF   61
+0956:  CLRF   62
+0957:  MOVLW  01
+0958:  MOVWF  63
+0959:  MOVLP  00
+095A:  MOVLB  00
+095B:  CALL   02A
+095C:  MOVLP  08
+....................      
+....................       SetLEDPosition(2, 2, false, false, true);     
+095D:  MOVLW  02
+095E:  MOVLB  02
+095F:  MOVWF  5F
+0960:  MOVWF  60
+0961:  CLRF   61
+0962:  CLRF   62
+0963:  MOVLW  01
+0964:  MOVWF  63
+0965:  MOVLP  00
+0966:  MOVLB  00
+0967:  CALL   02A
+0968:  MOVLP  08
+....................  
+....................       SetLEDPosition(2, 6, false, false, true);     
+0969:  MOVLW  02
+096A:  MOVLB  02
+096B:  MOVWF  5F
+096C:  MOVLW  06
+096D:  MOVWF  60
+096E:  CLRF   61
+096F:  CLRF   62
+0970:  MOVLW  01
+0971:  MOVWF  63
+0972:  MOVLP  00
+0973:  MOVLB  00
+0974:  CALL   02A
+0975:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true);     
+0976:  MOVLW  04
+0977:  MOVLB  02
+0978:  MOVWF  5F
+0979:  MOVLW  06
+097A:  MOVWF  60
+097B:  CLRF   61
+097C:  CLRF   62
+097D:  MOVLW  01
+097E:  MOVWF  63
+097F:  MOVLP  00
+0980:  MOVLB  00
+0981:  CALL   02A
+0982:  MOVLP  08
+....................       break; 
+0983:  MOVLB  02
+0984:  GOTO   73F
+....................     case 2: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0985:  MOVLW  02
+0986:  MOVLB  02
+0987:  MOVWF  5F
+0988:  MOVLW  01
+0989:  MOVWF  60
+098A:  CLRF   61
+098B:  CLRF   62
+098C:  MOVWF  63
+098D:  MOVLP  00
+098E:  MOVLB  00
+098F:  CALL   02A
+0990:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0991:  MOVLW  03
+0992:  MOVLB  02
+0993:  MOVWF  5F
+0994:  MOVLW  01
+0995:  MOVWF  60
+0996:  CLRF   61
+0997:  CLRF   62
+0998:  MOVWF  63
+0999:  MOVLP  00
+099A:  MOVLB  00
+099B:  CALL   02A
+099C:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+099D:  MOVLW  04
+099E:  MOVLB  02
+099F:  MOVWF  5F
+09A0:  MOVLW  01
+09A1:  MOVWF  60
+09A2:  CLRF   61
+09A3:  CLRF   62
+09A4:  MOVWF  63
+09A5:  MOVLP  00
+09A6:  MOVLB  00
+09A7:  CALL   02A
+09A8:  MOVLP  08
+....................       SetLEDPosition(5, 1, false, false, true); 
+09A9:  MOVLW  05
+09AA:  MOVLB  02
+09AB:  MOVWF  5F
+09AC:  MOVLW  01
+09AD:  MOVWF  60
+09AE:  CLRF   61
+09AF:  CLRF   62
+09B0:  MOVWF  63
+09B1:  MOVLP  00
+09B2:  MOVLB  00
+09B3:  CALL   02A
+09B4:  MOVLP  08
+....................        
+....................  
+....................       SetLEDPosition(1, 2, false, false, true); 
+09B5:  MOVLW  01
+09B6:  MOVLB  02
+09B7:  MOVWF  5F
+09B8:  MOVLW  02
+09B9:  MOVWF  60
+09BA:  CLRF   61
+09BB:  CLRF   62
+09BC:  MOVLW  01
+09BD:  MOVWF  63
+09BE:  MOVLP  00
+09BF:  MOVLB  00
+09C0:  CALL   02A
+09C1:  MOVLP  08
+....................       SetLEDPosition(6, 2, false, false, true); 
+09C2:  MOVLW  06
+09C3:  MOVLB  02
+09C4:  MOVWF  5F
+09C5:  MOVLW  02
+09C6:  MOVWF  60
+09C7:  CLRF   61
+09C8:  CLRF   62
+09C9:  MOVLW  01
+09CA:  MOVWF  63
+09CB:  MOVLP  00
+09CC:  MOVLB  00
+09CD:  CALL   02A
+09CE:  MOVLP  08
+....................  
+....................       SetLEDPosition(6, 3, false, false, true); 
+09CF:  MOVLW  06
+09D0:  MOVLB  02
+09D1:  MOVWF  5F
+09D2:  MOVLW  03
+09D3:  MOVWF  60
+09D4:  CLRF   61
+09D5:  CLRF   62
+09D6:  MOVLW  01
+09D7:  MOVWF  63
+09D8:  MOVLP  00
+09D9:  MOVLB  00
+09DA:  CALL   02A
+09DB:  MOVLP  08
+....................  
+....................       SetLEDPosition(2, 4, false, false, true); 
+09DC:  MOVLW  02
+09DD:  MOVLB  02
+09DE:  MOVWF  5F
+09DF:  MOVLW  04
+09E0:  MOVWF  60
+09E1:  CLRF   61
+09E2:  CLRF   62
+09E3:  MOVLW  01
+09E4:  MOVWF  63
+09E5:  MOVLP  00
+09E6:  MOVLB  00
+09E7:  CALL   02A
+09E8:  MOVLP  08
+....................       SetLEDPosition(3, 4, false, false, true); 
+09E9:  MOVLW  03
+09EA:  MOVLB  02
+09EB:  MOVWF  5F
+09EC:  MOVLW  04
+09ED:  MOVWF  60
+09EE:  CLRF   61
+09EF:  CLRF   62
+09F0:  MOVLW  01
+09F1:  MOVWF  63
+09F2:  MOVLP  00
+09F3:  MOVLB  00
+09F4:  CALL   02A
+09F5:  MOVLP  08
+....................       SetLEDPosition(4, 4, false, false, true); 
+09F6:  MOVLW  04
+09F7:  MOVLB  02
+09F8:  MOVWF  5F
+09F9:  MOVWF  60
+09FA:  CLRF   61
+09FB:  CLRF   62
+09FC:  MOVLW  01
+09FD:  MOVWF  63
+09FE:  MOVLP  00
+09FF:  MOVLB  00
+0A00:  CALL   02A
+0A01:  MOVLP  08
+....................       SetLEDPosition(5, 4, false, false, true); 
+0A02:  MOVLW  05
+0A03:  MOVLB  02
+0A04:  MOVWF  5F
+0A05:  MOVLW  04
+0A06:  MOVWF  60
+0A07:  CLRF   61
+0A08:  CLRF   62
+0A09:  MOVLW  01
+0A0A:  MOVWF  63
+0A0B:  MOVLP  00
+0A0C:  MOVLB  00
+0A0D:  CALL   02A
+0A0E:  MOVLP  08
+....................      
+....................       SetLEDPosition(1, 5, false, false, true); 
+0A0F:  MOVLW  01
+0A10:  MOVLB  02
+0A11:  MOVWF  5F
+0A12:  MOVLW  05
+0A13:  MOVWF  60
+0A14:  CLRF   61
+0A15:  CLRF   62
+0A16:  MOVLW  01
+0A17:  MOVWF  63
+0A18:  MOVLP  00
+0A19:  MOVLB  00
+0A1A:  CALL   02A
+0A1B:  MOVLP  08
+....................      
+....................       SetLEDPosition(1, 6, false, false, true); 
+0A1C:  MOVLW  01
+0A1D:  MOVLB  02
+0A1E:  MOVWF  5F
+0A1F:  MOVLW  06
+0A20:  MOVWF  60
+0A21:  CLRF   61
+0A22:  CLRF   62
+0A23:  MOVLW  01
+0A24:  MOVWF  63
+0A25:  MOVLP  00
+0A26:  MOVLB  00
+0A27:  CALL   02A
+0A28:  MOVLP  08
+....................       SetLEDPosition(2, 6, false, false, true); 
+0A29:  MOVLW  02
+0A2A:  MOVLB  02
+0A2B:  MOVWF  5F
+0A2C:  MOVLW  06
+0A2D:  MOVWF  60
+0A2E:  CLRF   61
+0A2F:  CLRF   62
+0A30:  MOVLW  01
+0A31:  MOVWF  63
+0A32:  MOVLP  00
+0A33:  MOVLB  00
+0A34:  CALL   02A
+0A35:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0A36:  MOVLW  03
+0A37:  MOVLB  02
+0A38:  MOVWF  5F
+0A39:  MOVLW  06
+0A3A:  MOVWF  60
+0A3B:  CLRF   61
+0A3C:  CLRF   62
+0A3D:  MOVLW  01
+0A3E:  MOVWF  63
+0A3F:  MOVLP  00
+0A40:  MOVLB  00
+0A41:  CALL   02A
+0A42:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true); 
+0A43:  MOVLW  04
+0A44:  MOVLB  02
+0A45:  MOVWF  5F
+0A46:  MOVLW  06
+0A47:  MOVWF  60
+0A48:  CLRF   61
+0A49:  CLRF   62
+0A4A:  MOVLW  01
+0A4B:  MOVWF  63
+0A4C:  MOVLP  00
+0A4D:  MOVLB  00
+0A4E:  CALL   02A
+0A4F:  MOVLP  08
+....................       SetLEDPosition(5, 6, false, false, true); 
+0A50:  MOVLW  05
+0A51:  MOVLB  02
+0A52:  MOVWF  5F
+0A53:  MOVLW  06
+0A54:  MOVWF  60
+0A55:  CLRF   61
+0A56:  CLRF   62
+0A57:  MOVLW  01
+0A58:  MOVWF  63
+0A59:  MOVLP  00
+0A5A:  MOVLB  00
+0A5B:  CALL   02A
+0A5C:  MOVLP  08
+....................       SetLEDPosition(6, 6, false, false, true); 
+0A5D:  MOVLW  06
+0A5E:  MOVLB  02
+0A5F:  MOVWF  5F
+0A60:  MOVWF  60
+0A61:  CLRF   61
+0A62:  CLRF   62
+0A63:  MOVLW  01
+0A64:  MOVWF  63
+0A65:  MOVLP  00
+0A66:  MOVLB  00
+0A67:  CALL   02A
+0A68:  MOVLP  08
+....................       break; 
+0A69:  MOVLB  02
+0A6A:  GOTO   73F
+....................     case 3: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0A6B:  MOVLW  02
+0A6C:  MOVLB  02
+0A6D:  MOVWF  5F
+0A6E:  MOVLW  01
+0A6F:  MOVWF  60
+0A70:  CLRF   61
+0A71:  CLRF   62
+0A72:  MOVWF  63
+0A73:  MOVLP  00
+0A74:  MOVLB  00
+0A75:  CALL   02A
+0A76:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0A77:  MOVLW  03
+0A78:  MOVLB  02
+0A79:  MOVWF  5F
+0A7A:  MOVLW  01
+0A7B:  MOVWF  60
+0A7C:  CLRF   61
+0A7D:  CLRF   62
+0A7E:  MOVWF  63
+0A7F:  MOVLP  00
+0A80:  MOVLB  00
+0A81:  CALL   02A
+0A82:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+0A83:  MOVLW  04
+0A84:  MOVLB  02
+0A85:  MOVWF  5F
+0A86:  MOVLW  01
+0A87:  MOVWF  60
+0A88:  CLRF   61
+0A89:  CLRF   62
+0A8A:  MOVWF  63
+0A8B:  MOVLP  00
+0A8C:  MOVLB  00
+0A8D:  CALL   02A
+0A8E:  MOVLP  08
+....................       SetLEDPosition(5, 1, false, false, true); 
+0A8F:  MOVLW  05
+0A90:  MOVLB  02
+0A91:  MOVWF  5F
+0A92:  MOVLW  01
+0A93:  MOVWF  60
+0A94:  CLRF   61
+0A95:  CLRF   62
+0A96:  MOVWF  63
+0A97:  MOVLP  00
+0A98:  MOVLB  00
+0A99:  CALL   02A
+0A9A:  MOVLP  08
+....................  
+....................       SetLEDPosition(6, 2, false, false, true); 
+0A9B:  MOVLW  06
+0A9C:  MOVLB  02
+0A9D:  MOVWF  5F
+0A9E:  MOVLW  02
+0A9F:  MOVWF  60
+0AA0:  CLRF   61
+0AA1:  CLRF   62
+0AA2:  MOVLW  01
+0AA3:  MOVWF  63
+0AA4:  MOVLP  00
+0AA5:  MOVLB  00
+0AA6:  CALL   02A
+0AA7:  MOVLP  08
+....................        
+....................       SetLEDPosition(5, 3, false, false, true); 
+0AA8:  MOVLW  05
+0AA9:  MOVLB  02
+0AAA:  MOVWF  5F
+0AAB:  MOVLW  03
+0AAC:  MOVWF  60
+0AAD:  CLRF   61
+0AAE:  CLRF   62
+0AAF:  MOVLW  01
+0AB0:  MOVWF  63
+0AB1:  MOVLP  00
+0AB2:  MOVLB  00
+0AB3:  CALL   02A
+0AB4:  MOVLP  08
+....................        
+....................       SetLEDPosition(4, 4, false, false, true); 
+0AB5:  MOVLW  04
+0AB6:  MOVLB  02
+0AB7:  MOVWF  5F
+0AB8:  MOVWF  60
+0AB9:  CLRF   61
+0ABA:  CLRF   62
+0ABB:  MOVLW  01
+0ABC:  MOVWF  63
+0ABD:  MOVLP  00
+0ABE:  MOVLB  00
+0ABF:  CALL   02A
+0AC0:  MOVLP  08
+....................       SetLEDPosition(5, 4, false, false, true); 
+0AC1:  MOVLW  05
+0AC2:  MOVLB  02
+0AC3:  MOVWF  5F
+0AC4:  MOVLW  04
+0AC5:  MOVWF  60
+0AC6:  CLRF   61
+0AC7:  CLRF   62
+0AC8:  MOVLW  01
+0AC9:  MOVWF  63
+0ACA:  MOVLP  00
+0ACB:  MOVLB  00
+0ACC:  CALL   02A
+0ACD:  MOVLP  08
+....................  
+....................       SetLEDPosition(6, 5, false, false, true); 
+0ACE:  MOVLW  06
+0ACF:  MOVLB  02
+0AD0:  MOVWF  5F
+0AD1:  MOVLW  05
+0AD2:  MOVWF  60
+0AD3:  CLRF   61
+0AD4:  CLRF   62
+0AD5:  MOVLW  01
+0AD6:  MOVWF  63
+0AD7:  MOVLP  00
+0AD8:  MOVLB  00
+0AD9:  CALL   02A
+0ADA:  MOVLP  08
+....................  
+....................       SetLEDPosition(2, 6, false, false, true); 
+0ADB:  MOVLW  02
+0ADC:  MOVLB  02
+0ADD:  MOVWF  5F
+0ADE:  MOVLW  06
+0ADF:  MOVWF  60
+0AE0:  CLRF   61
+0AE1:  CLRF   62
+0AE2:  MOVLW  01
+0AE3:  MOVWF  63
+0AE4:  MOVLP  00
+0AE5:  MOVLB  00
+0AE6:  CALL   02A
+0AE7:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0AE8:  MOVLW  03
+0AE9:  MOVLB  02
+0AEA:  MOVWF  5F
+0AEB:  MOVLW  06
+0AEC:  MOVWF  60
+0AED:  CLRF   61
+0AEE:  CLRF   62
+0AEF:  MOVLW  01
+0AF0:  MOVWF  63
+0AF1:  MOVLP  00
+0AF2:  MOVLB  00
+0AF3:  CALL   02A
+0AF4:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true); 
+0AF5:  MOVLW  04
+0AF6:  MOVLB  02
+0AF7:  MOVWF  5F
+0AF8:  MOVLW  06
+0AF9:  MOVWF  60
+0AFA:  CLRF   61
+0AFB:  CLRF   62
+0AFC:  MOVLW  01
+0AFD:  MOVWF  63
+0AFE:  MOVLP  00
+0AFF:  MOVLB  00
+0B00:  CALL   02A
+0B01:  MOVLP  08
+....................       SetLEDPosition(5, 6, false, false, true); 
+0B02:  MOVLW  05
+0B03:  MOVLB  02
+0B04:  MOVWF  5F
+0B05:  MOVLW  06
+0B06:  MOVWF  60
+0B07:  CLRF   61
+0B08:  CLRF   62
+0B09:  MOVLW  01
+0B0A:  MOVWF  63
+0B0B:  MOVLP  00
+0B0C:  MOVLB  00
+0B0D:  CALL   02A
+0B0E:  MOVLP  08
+....................       break;       
+0B0F:  MOVLB  02
+0B10:  GOTO   73F
+....................     case 4: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0B11:  MOVLW  02
+0B12:  MOVLB  02
+0B13:  MOVWF  5F
+0B14:  MOVLW  01
+0B15:  MOVWF  60
+0B16:  CLRF   61
+0B17:  CLRF   62
+0B18:  MOVWF  63
+0B19:  MOVLP  00
+0B1A:  MOVLB  00
+0B1B:  CALL   02A
+0B1C:  MOVLP  08
+....................       SetLEDPosition(2, 2, false, false, true); 
+0B1D:  MOVLW  02
+0B1E:  MOVLB  02
+0B1F:  MOVWF  5F
+0B20:  MOVWF  60
+0B21:  CLRF   61
+0B22:  CLRF   62
+0B23:  MOVLW  01
+0B24:  MOVWF  63
+0B25:  MOVLP  00
+0B26:  MOVLB  00
+0B27:  CALL   02A
+0B28:  MOVLP  08
+....................       SetLEDPosition(2, 3, false, false, true); 
+0B29:  MOVLW  02
+0B2A:  MOVLB  02
+0B2B:  MOVWF  5F
+0B2C:  MOVLW  03
+0B2D:  MOVWF  60
+0B2E:  CLRF   61
+0B2F:  CLRF   62
+0B30:  MOVLW  01
+0B31:  MOVWF  63
+0B32:  MOVLP  00
+0B33:  MOVLB  00
+0B34:  CALL   02A
+0B35:  MOVLP  08
+....................       SetLEDPosition(2, 4, false, false, true); 
+0B36:  MOVLW  02
+0B37:  MOVLB  02
+0B38:  MOVWF  5F
+0B39:  MOVLW  04
+0B3A:  MOVWF  60
+0B3B:  CLRF   61
+0B3C:  CLRF   62
+0B3D:  MOVLW  01
+0B3E:  MOVWF  63
+0B3F:  MOVLP  00
+0B40:  MOVLB  00
+0B41:  CALL   02A
+0B42:  MOVLP  08
+....................  
+....................       SetLEDPosition(5, 1, false, false, true); 
+0B43:  MOVLW  05
+0B44:  MOVLB  02
+0B45:  MOVWF  5F
+0B46:  MOVLW  01
+0B47:  MOVWF  60
+0B48:  CLRF   61
+0B49:  CLRF   62
+0B4A:  MOVWF  63
+0B4B:  MOVLP  00
+0B4C:  MOVLB  00
+0B4D:  CALL   02A
+0B4E:  MOVLP  08
+....................       SetLEDPosition(5, 2, false, false, true); 
+0B4F:  MOVLW  05
+0B50:  MOVLB  02
+0B51:  MOVWF  5F
+0B52:  MOVLW  02
+0B53:  MOVWF  60
+0B54:  CLRF   61
+0B55:  CLRF   62
+0B56:  MOVLW  01
+0B57:  MOVWF  63
+0B58:  MOVLP  00
+0B59:  MOVLB  00
+0B5A:  CALL   02A
+0B5B:  MOVLP  08
+....................       SetLEDPosition(5, 3, false, false, true); 
+0B5C:  MOVLW  05
+0B5D:  MOVLB  02
+0B5E:  MOVWF  5F
+0B5F:  MOVLW  03
+0B60:  MOVWF  60
+0B61:  CLRF   61
+0B62:  CLRF   62
+0B63:  MOVLW  01
+0B64:  MOVWF  63
+0B65:  MOVLP  00
+0B66:  MOVLB  00
+0B67:  CALL   02A
+0B68:  MOVLP  08
+....................       SetLEDPosition(5, 4, false, false, true); 
+0B69:  MOVLW  05
+0B6A:  MOVLB  02
+0B6B:  MOVWF  5F
+0B6C:  MOVLW  04
+0B6D:  MOVWF  60
+0B6E:  CLRF   61
+0B6F:  CLRF   62
+0B70:  MOVLW  01
+0B71:  MOVWF  63
+0B72:  MOVLP  00
+0B73:  MOVLB  00
+0B74:  CALL   02A
+0B75:  MOVLP  08
+....................       SetLEDPosition(5, 5, false, false, true); 
+0B76:  MOVLW  05
+0B77:  MOVLB  02
+0B78:  MOVWF  5F
+0B79:  MOVWF  60
+0B7A:  CLRF   61
+0B7B:  CLRF   62
+0B7C:  MOVLW  01
+0B7D:  MOVWF  63
+0B7E:  MOVLP  00
+0B7F:  MOVLB  00
+0B80:  CALL   02A
+0B81:  MOVLP  08
+....................       SetLEDPosition(5, 6, false, false, true); 
+0B82:  MOVLW  05
+0B83:  MOVLB  02
+0B84:  MOVWF  5F
+0B85:  MOVLW  06
+0B86:  MOVWF  60
+0B87:  CLRF   61
+0B88:  CLRF   62
+0B89:  MOVLW  01
+0B8A:  MOVWF  63
+0B8B:  MOVLP  00
+0B8C:  MOVLB  00
+0B8D:  CALL   02A
+0B8E:  MOVLP  08
+....................      
+....................       SetLEDPosition(3, 4, false, false, true); 
+0B8F:  MOVLW  03
+0B90:  MOVLB  02
+0B91:  MOVWF  5F
+0B92:  MOVLW  04
+0B93:  MOVWF  60
+0B94:  CLRF   61
+0B95:  CLRF   62
+0B96:  MOVLW  01
+0B97:  MOVWF  63
+0B98:  MOVLP  00
+0B99:  MOVLB  00
+0B9A:  CALL   02A
+0B9B:  MOVLP  08
+....................       SetLEDPosition(4, 4, false, false, true); 
+0B9C:  MOVLW  04
+0B9D:  MOVLB  02
+0B9E:  MOVWF  5F
+0B9F:  MOVWF  60
+0BA0:  CLRF   61
+0BA1:  CLRF   62
+0BA2:  MOVLW  01
+0BA3:  MOVWF  63
+0BA4:  MOVLP  00
+0BA5:  MOVLB  00
+0BA6:  CALL   02A
+0BA7:  MOVLP  08
+....................       SetLEDPosition(6, 4, false, false, true); 
+0BA8:  MOVLW  06
+0BA9:  MOVLB  02
+0BAA:  MOVWF  5F
+0BAB:  MOVLW  04
+0BAC:  MOVWF  60
+0BAD:  CLRF   61
+0BAE:  CLRF   62
+0BAF:  MOVLW  01
+0BB0:  MOVWF  63
+0BB1:  MOVLP  00
+0BB2:  MOVLB  00
+0BB3:  CALL   02A
+0BB4:  MOVLP  08
+....................      
+....................       SetLEDPosition(5, 5, false, false, true); 
+0BB5:  MOVLW  05
+0BB6:  MOVLB  02
+0BB7:  MOVWF  5F
+0BB8:  MOVWF  60
+0BB9:  CLRF   61
+0BBA:  CLRF   62
+0BBB:  MOVLW  01
+0BBC:  MOVWF  63
+0BBD:  MOVLP  00
+0BBE:  MOVLB  00
+0BBF:  CALL   02A
+0BC0:  MOVLP  08
+....................       SetLEDPosition(5, 6, false, false, true); 
+0BC1:  MOVLW  05
+0BC2:  MOVLB  02
+0BC3:  MOVWF  5F
+0BC4:  MOVLW  06
+0BC5:  MOVWF  60
+0BC6:  CLRF   61
+0BC7:  CLRF   62
+0BC8:  MOVLW  01
+0BC9:  MOVWF  63
+0BCA:  MOVLP  00
+0BCB:  MOVLB  00
+0BCC:  CALL   02A
+0BCD:  MOVLP  08
+....................       break; 
+0BCE:  MOVLB  02
+0BCF:  GOTO   73F
+....................     case 5: 
+....................       SetLEDPosition(1, 1, false, false, true); 
+0BD0:  MOVLW  01
+0BD1:  MOVLB  02
+0BD2:  MOVWF  5F
+0BD3:  MOVWF  60
+0BD4:  CLRF   61
+0BD5:  CLRF   62
+0BD6:  MOVWF  63
+0BD7:  MOVLP  00
+0BD8:  MOVLB  00
+0BD9:  CALL   02A
+0BDA:  MOVLP  08
+....................       SetLEDPosition(2, 1, false, false, true); 
+0BDB:  MOVLW  02
+0BDC:  MOVLB  02
+0BDD:  MOVWF  5F
+0BDE:  MOVLW  01
+0BDF:  MOVWF  60
+0BE0:  CLRF   61
+0BE1:  CLRF   62
+0BE2:  MOVWF  63
+0BE3:  MOVLP  00
+0BE4:  MOVLB  00
+0BE5:  CALL   02A
+0BE6:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0BE7:  MOVLW  03
+0BE8:  MOVLB  02
+0BE9:  MOVWF  5F
+0BEA:  MOVLW  01
+0BEB:  MOVWF  60
+0BEC:  CLRF   61
+0BED:  CLRF   62
+0BEE:  MOVWF  63
+0BEF:  MOVLP  00
+0BF0:  MOVLB  00
+0BF1:  CALL   02A
+0BF2:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+0BF3:  MOVLW  04
+0BF4:  MOVLB  02
+0BF5:  MOVWF  5F
+0BF6:  MOVLW  01
+0BF7:  MOVWF  60
+0BF8:  CLRF   61
+0BF9:  CLRF   62
+0BFA:  MOVWF  63
+0BFB:  MOVLP  00
+0BFC:  MOVLB  00
+0BFD:  CALL   02A
+0BFE:  MOVLP  08
+....................       SetLEDPosition(5, 1, false, false, true); 
+0BFF:  MOVLW  05
+0C00:  MOVLB  02
+0C01:  MOVWF  5F
+0C02:  MOVLW  01
+0C03:  MOVWF  60
+0C04:  CLRF   61
+0C05:  CLRF   62
+0C06:  MOVWF  63
+0C07:  MOVLP  00
+0C08:  MOVLB  00
+0C09:  CALL   02A
+0C0A:  MOVLP  08
+....................       
+....................       SetLEDPosition(1, 2, false, false, true); 
+0C0B:  MOVLW  01
+0C0C:  MOVLB  02
+0C0D:  MOVWF  5F
+0C0E:  MOVLW  02
+0C0F:  MOVWF  60
+0C10:  CLRF   61
+0C11:  CLRF   62
+0C12:  MOVLW  01
+0C13:  MOVWF  63
+0C14:  MOVLP  00
+0C15:  MOVLB  00
+0C16:  CALL   02A
+0C17:  MOVLP  08
+....................       
+....................       SetLEDPosition(1, 3, false, false, true); 
+0C18:  MOVLW  01
+0C19:  MOVLB  02
+0C1A:  MOVWF  5F
+0C1B:  MOVLW  03
+0C1C:  MOVWF  60
+0C1D:  CLRF   61
+0C1E:  CLRF   62
+0C1F:  MOVLW  01
+0C20:  MOVWF  63
+0C21:  MOVLP  00
+0C22:  MOVLB  00
+0C23:  CALL   02A
+0C24:  MOVLP  08
+....................       SetLEDPosition(2, 3, false, false, true); 
+0C25:  MOVLW  02
+0C26:  MOVLB  02
+0C27:  MOVWF  5F
+0C28:  MOVLW  03
+0C29:  MOVWF  60
+0C2A:  CLRF   61
+0C2B:  CLRF   62
+0C2C:  MOVLW  01
+0C2D:  MOVWF  63
+0C2E:  MOVLP  00
+0C2F:  MOVLB  00
+0C30:  CALL   02A
+0C31:  MOVLP  08
+....................       SetLEDPosition(3, 3, false, false, true); 
+0C32:  MOVLW  03
+0C33:  MOVLB  02
+0C34:  MOVWF  5F
+0C35:  MOVWF  60
+0C36:  CLRF   61
+0C37:  CLRF   62
+0C38:  MOVLW  01
+0C39:  MOVWF  63
+0C3A:  MOVLP  00
+0C3B:  MOVLB  00
+0C3C:  CALL   02A
+0C3D:  MOVLP  08
+....................       SetLEDPosition(4, 3, false, false, true); 
+0C3E:  MOVLW  04
+0C3F:  MOVLB  02
+0C40:  MOVWF  5F
+0C41:  MOVLW  03
+0C42:  MOVWF  60
+0C43:  CLRF   61
+0C44:  CLRF   62
+0C45:  MOVLW  01
+0C46:  MOVWF  63
+0C47:  MOVLP  00
+0C48:  MOVLB  00
+0C49:  CALL   02A
+0C4A:  MOVLP  08
+....................  
+....................       SetLEDPosition(5, 4, false, false, true); 
+0C4B:  MOVLW  05
+0C4C:  MOVLB  02
+0C4D:  MOVWF  5F
+0C4E:  MOVLW  04
+0C4F:  MOVWF  60
+0C50:  CLRF   61
+0C51:  CLRF   62
+0C52:  MOVLW  01
+0C53:  MOVWF  63
+0C54:  MOVLP  00
+0C55:  MOVLB  00
+0C56:  CALL   02A
+0C57:  MOVLP  08
+....................        
+....................       SetLEDPosition(5, 5, false, false, true);    
+0C58:  MOVLW  05
+0C59:  MOVLB  02
+0C5A:  MOVWF  5F
+0C5B:  MOVWF  60
+0C5C:  CLRF   61
+0C5D:  CLRF   62
+0C5E:  MOVLW  01
+0C5F:  MOVWF  63
+0C60:  MOVLP  00
+0C61:  MOVLB  00
+0C62:  CALL   02A
+0C63:  MOVLP  08
+....................       SetLEDPosition(1, 5, false, false, true); 
+0C64:  MOVLW  01
+0C65:  MOVLB  02
+0C66:  MOVWF  5F
+0C67:  MOVLW  05
+0C68:  MOVWF  60
+0C69:  CLRF   61
+0C6A:  CLRF   62
+0C6B:  MOVLW  01
+0C6C:  MOVWF  63
+0C6D:  MOVLP  00
+0C6E:  MOVLB  00
+0C6F:  CALL   02A
+0C70:  MOVLP  08
+....................  
+....................       SetLEDPosition(2, 6, false, false, true);    
+0C71:  MOVLW  02
+0C72:  MOVLB  02
+0C73:  MOVWF  5F
+0C74:  MOVLW  06
+0C75:  MOVWF  60
+0C76:  CLRF   61
+0C77:  CLRF   62
+0C78:  MOVLW  01
+0C79:  MOVWF  63
+0C7A:  MOVLP  00
+0C7B:  MOVLB  00
+0C7C:  CALL   02A
+0C7D:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true);    
+0C7E:  MOVLW  03
+0C7F:  MOVLB  02
+0C80:  MOVWF  5F
+0C81:  MOVLW  06
+0C82:  MOVWF  60
+0C83:  CLRF   61
+0C84:  CLRF   62
+0C85:  MOVLW  01
+0C86:  MOVWF  63
+0C87:  MOVLP  00
+0C88:  MOVLB  00
+0C89:  CALL   02A
+0C8A:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true);       
+0C8B:  MOVLW  04
+0C8C:  MOVLB  02
+0C8D:  MOVWF  5F
+0C8E:  MOVLW  06
+0C8F:  MOVWF  60
+0C90:  CLRF   61
+0C91:  CLRF   62
+0C92:  MOVLW  01
+0C93:  MOVWF  63
+0C94:  MOVLP  00
+0C95:  MOVLB  00
+0C96:  CALL   02A
+0C97:  MOVLP  08
+....................       break; 
+0C98:  MOVLB  02
+0C99:  GOTO   73F
+....................     case 6: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0C9A:  MOVLW  02
+0C9B:  MOVLB  02
+0C9C:  MOVWF  5F
+0C9D:  MOVLW  01
+0C9E:  MOVWF  60
+0C9F:  CLRF   61
+0CA0:  CLRF   62
+0CA1:  MOVWF  63
+0CA2:  MOVLP  00
+0CA3:  MOVLB  00
+0CA4:  CALL   02A
+0CA5:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0CA6:  MOVLW  03
+0CA7:  MOVLB  02
+0CA8:  MOVWF  5F
+0CA9:  MOVLW  01
+0CAA:  MOVWF  60
+0CAB:  CLRF   61
+0CAC:  CLRF   62
+0CAD:  MOVWF  63
+0CAE:  MOVLP  00
+0CAF:  MOVLB  00
+0CB0:  CALL   02A
+0CB1:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+0CB2:  MOVLW  04
+0CB3:  MOVLB  02
+0CB4:  MOVWF  5F
+0CB5:  MOVLW  01
+0CB6:  MOVWF  60
+0CB7:  CLRF   61
+0CB8:  CLRF   62
+0CB9:  MOVWF  63
+0CBA:  MOVLP  00
+0CBB:  MOVLB  00
+0CBC:  CALL   02A
+0CBD:  MOVLP  08
+....................        
+....................       SetLEDPosition(1, 2, false, false, true); 
+0CBE:  MOVLW  01
+0CBF:  MOVLB  02
+0CC0:  MOVWF  5F
+0CC1:  MOVLW  02
+0CC2:  MOVWF  60
+0CC3:  CLRF   61
+0CC4:  CLRF   62
+0CC5:  MOVLW  01
+0CC6:  MOVWF  63
+0CC7:  MOVLP  00
+0CC8:  MOVLB  00
+0CC9:  CALL   02A
+0CCA:  MOVLP  08
+....................        
+....................       SetLEDPosition(1, 3, false, false, true); 
+0CCB:  MOVLW  01
+0CCC:  MOVLB  02
+0CCD:  MOVWF  5F
+0CCE:  MOVLW  03
+0CCF:  MOVWF  60
+0CD0:  CLRF   61
+0CD1:  CLRF   62
+0CD2:  MOVLW  01
+0CD3:  MOVWF  63
+0CD4:  MOVLP  00
+0CD5:  MOVLB  00
+0CD6:  CALL   02A
+0CD7:  MOVLP  08
+....................  
+....................       SetLEDPosition(1, 4, false, false, true); 
+0CD8:  MOVLW  01
+0CD9:  MOVLB  02
+0CDA:  MOVWF  5F
+0CDB:  MOVLW  04
+0CDC:  MOVWF  60
+0CDD:  CLRF   61
+0CDE:  CLRF   62
+0CDF:  MOVLW  01
+0CE0:  MOVWF  63
+0CE1:  MOVLP  00
+0CE2:  MOVLB  00
+0CE3:  CALL   02A
+0CE4:  MOVLP  08
+....................       SetLEDPosition(2, 4, false, false, true); 
+0CE5:  MOVLW  02
+0CE6:  MOVLB  02
+0CE7:  MOVWF  5F
+0CE8:  MOVLW  04
+0CE9:  MOVWF  60
+0CEA:  CLRF   61
+0CEB:  CLRF   62
+0CEC:  MOVLW  01
+0CED:  MOVWF  63
+0CEE:  MOVLP  00
+0CEF:  MOVLB  00
+0CF0:  CALL   02A
+0CF1:  MOVLP  08
+....................       SetLEDPosition(3, 4, false, false, true); 
+0CF2:  MOVLW  03
+0CF3:  MOVLB  02
+0CF4:  MOVWF  5F
+0CF5:  MOVLW  04
+0CF6:  MOVWF  60
+0CF7:  CLRF   61
+0CF8:  CLRF   62
+0CF9:  MOVLW  01
+0CFA:  MOVWF  63
+0CFB:  MOVLP  00
+0CFC:  MOVLB  00
+0CFD:  CALL   02A
+0CFE:  MOVLP  08
+....................       SetLEDPosition(4, 4, false, false, true); 
+0CFF:  MOVLW  04
+0D00:  MOVLB  02
+0D01:  MOVWF  5F
+0D02:  MOVWF  60
+0D03:  CLRF   61
+0D04:  CLRF   62
+0D05:  MOVLW  01
+0D06:  MOVWF  63
+0D07:  MOVLP  00
+0D08:  MOVLB  00
+0D09:  CALL   02A
+0D0A:  MOVLP  08
+....................       SetLEDPosition(5, 4, false, false, true); 
+0D0B:  MOVLW  05
+0D0C:  MOVLB  02
+0D0D:  MOVWF  5F
+0D0E:  MOVLW  04
+0D0F:  MOVWF  60
+0D10:  CLRF   61
+0D11:  CLRF   62
+0D12:  MOVLW  01
+0D13:  MOVWF  63
+0D14:  MOVLP  00
+0D15:  MOVLB  00
+0D16:  CALL   02A
+0D17:  MOVLP  08
+....................       
+....................       SetLEDPosition(1, 5, false, false, true); 
+0D18:  MOVLW  01
+0D19:  MOVLB  02
+0D1A:  MOVWF  5F
+0D1B:  MOVLW  05
+0D1C:  MOVWF  60
+0D1D:  CLRF   61
+0D1E:  CLRF   62
+0D1F:  MOVLW  01
+0D20:  MOVWF  63
+0D21:  MOVLP  00
+0D22:  MOVLB  00
+0D23:  CALL   02A
+0D24:  MOVLP  08
+....................       SetLEDPosition(5, 5, false, false, true); 
+0D25:  MOVLW  05
+0D26:  MOVLB  02
+0D27:  MOVWF  5F
+0D28:  MOVWF  60
+0D29:  CLRF   61
+0D2A:  CLRF   62
+0D2B:  MOVLW  01
+0D2C:  MOVWF  63
+0D2D:  MOVLP  00
+0D2E:  MOVLB  00
+0D2F:  CALL   02A
+0D30:  MOVLP  08
+....................       
+....................       SetLEDPosition(2, 6, false, false, true); 
+0D31:  MOVLW  02
+0D32:  MOVLB  02
+0D33:  MOVWF  5F
+0D34:  MOVLW  06
+0D35:  MOVWF  60
+0D36:  CLRF   61
+0D37:  CLRF   62
+0D38:  MOVLW  01
+0D39:  MOVWF  63
+0D3A:  MOVLP  00
+0D3B:  MOVLB  00
+0D3C:  CALL   02A
+0D3D:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0D3E:  MOVLW  03
+0D3F:  MOVLB  02
+0D40:  MOVWF  5F
+0D41:  MOVLW  06
+0D42:  MOVWF  60
+0D43:  CLRF   61
+0D44:  CLRF   62
+0D45:  MOVLW  01
+0D46:  MOVWF  63
+0D47:  MOVLP  00
+0D48:  MOVLB  00
+0D49:  CALL   02A
+0D4A:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true); 
+0D4B:  MOVLW  04
+0D4C:  MOVLB  02
+0D4D:  MOVWF  5F
+0D4E:  MOVLW  06
+0D4F:  MOVWF  60
+0D50:  CLRF   61
+0D51:  CLRF   62
+0D52:  MOVLW  01
+0D53:  MOVWF  63
+0D54:  MOVLP  00
+0D55:  MOVLB  00
+0D56:  CALL   02A
+0D57:  MOVLP  08
+....................       break; 
+0D58:  MOVLB  02
+0D59:  GOTO   73F
+....................     case 7: 
+....................       SetLEDPosition(1, 1, false, false, true); 
+0D5A:  MOVLW  01
+0D5B:  MOVLB  02
+0D5C:  MOVWF  5F
+0D5D:  MOVWF  60
+0D5E:  CLRF   61
+0D5F:  CLRF   62
+0D60:  MOVWF  63
+0D61:  MOVLP  00
+0D62:  MOVLB  00
+0D63:  CALL   02A
+0D64:  MOVLP  08
+....................       SetLEDPosition(2, 1, false, false, true); 
+0D65:  MOVLW  02
+0D66:  MOVLB  02
+0D67:  MOVWF  5F
+0D68:  MOVLW  01
+0D69:  MOVWF  60
+0D6A:  CLRF   61
+0D6B:  CLRF   62
+0D6C:  MOVWF  63
+0D6D:  MOVLP  00
+0D6E:  MOVLB  00
+0D6F:  CALL   02A
+0D70:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0D71:  MOVLW  03
+0D72:  MOVLB  02
+0D73:  MOVWF  5F
+0D74:  MOVLW  01
+0D75:  MOVWF  60
+0D76:  CLRF   61
+0D77:  CLRF   62
+0D78:  MOVWF  63
+0D79:  MOVLP  00
+0D7A:  MOVLB  00
+0D7B:  CALL   02A
+0D7C:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+0D7D:  MOVLW  04
+0D7E:  MOVLB  02
+0D7F:  MOVWF  5F
+0D80:  MOVLW  01
+0D81:  MOVWF  60
+0D82:  CLRF   61
+0D83:  CLRF   62
+0D84:  MOVWF  63
+0D85:  MOVLP  00
+0D86:  MOVLB  00
+0D87:  CALL   02A
+0D88:  MOVLP  08
+....................       SetLEDPosition(5, 1, false, false, true); 
+0D89:  MOVLW  05
+0D8A:  MOVLB  02
+0D8B:  MOVWF  5F
+0D8C:  MOVLW  01
+0D8D:  MOVWF  60
+0D8E:  CLRF   61
+0D8F:  CLRF   62
+0D90:  MOVWF  63
+0D91:  MOVLP  00
+0D92:  MOVLB  00
+0D93:  CALL   02A
+0D94:  MOVLP  08
+....................  
+....................       SetLEDPosition(5, 2, false, false, true); 
+0D95:  MOVLW  05
+0D96:  MOVLB  02
+0D97:  MOVWF  5F
+0D98:  MOVLW  02
+0D99:  MOVWF  60
+0D9A:  CLRF   61
+0D9B:  CLRF   62
+0D9C:  MOVLW  01
+0D9D:  MOVWF  63
+0D9E:  MOVLP  00
+0D9F:  MOVLB  00
+0DA0:  CALL   02A
+0DA1:  MOVLP  08
+....................      
+....................       SetLEDPosition(4, 3, false, false, true); 
+0DA2:  MOVLW  04
+0DA3:  MOVLB  02
+0DA4:  MOVWF  5F
+0DA5:  MOVLW  03
+0DA6:  MOVWF  60
+0DA7:  CLRF   61
+0DA8:  CLRF   62
+0DA9:  MOVLW  01
+0DAA:  MOVWF  63
+0DAB:  MOVLP  00
+0DAC:  MOVLB  00
+0DAD:  CALL   02A
+0DAE:  MOVLP  08
+....................      
+....................       SetLEDPosition(3, 4, false, false, true); 
+0DAF:  MOVLW  03
+0DB0:  MOVLB  02
+0DB1:  MOVWF  5F
+0DB2:  MOVLW  04
+0DB3:  MOVWF  60
+0DB4:  CLRF   61
+0DB5:  CLRF   62
+0DB6:  MOVLW  01
+0DB7:  MOVWF  63
+0DB8:  MOVLP  00
+0DB9:  MOVLB  00
+0DBA:  CALL   02A
+0DBB:  MOVLP  08
+....................       SetLEDPosition(3, 5, false, false, true); 
+0DBC:  MOVLW  03
+0DBD:  MOVLB  02
+0DBE:  MOVWF  5F
+0DBF:  MOVLW  05
+0DC0:  MOVWF  60
+0DC1:  CLRF   61
+0DC2:  CLRF   62
+0DC3:  MOVLW  01
+0DC4:  MOVWF  63
+0DC5:  MOVLP  00
+0DC6:  MOVLB  00
+0DC7:  CALL   02A
+0DC8:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0DC9:  MOVLW  03
+0DCA:  MOVLB  02
+0DCB:  MOVWF  5F
+0DCC:  MOVLW  06
+0DCD:  MOVWF  60
+0DCE:  CLRF   61
+0DCF:  CLRF   62
+0DD0:  MOVLW  01
+0DD1:  MOVWF  63
+0DD2:  MOVLP  00
+0DD3:  MOVLB  00
+0DD4:  CALL   02A
+0DD5:  MOVLP  08
+....................       break; 
+0DD6:  MOVLB  02
+0DD7:  GOTO   73F
+....................     case 8: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0DD8:  MOVLW  02
+0DD9:  MOVLB  02
+0DDA:  MOVWF  5F
+0DDB:  MOVLW  01
+0DDC:  MOVWF  60
+0DDD:  CLRF   61
+0DDE:  CLRF   62
+0DDF:  MOVWF  63
+0DE0:  MOVLP  00
+0DE1:  MOVLB  00
+0DE2:  CALL   02A
+0DE3:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0DE4:  MOVLW  03
+0DE5:  MOVLB  02
+0DE6:  MOVWF  5F
+0DE7:  MOVLW  01
+0DE8:  MOVWF  60
+0DE9:  CLRF   61
+0DEA:  CLRF   62
+0DEB:  MOVWF  63
+0DEC:  MOVLP  00
+0DED:  MOVLB  00
+0DEE:  CALL   02A
+0DEF:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+0DF0:  MOVLW  04
+0DF1:  MOVLB  02
+0DF2:  MOVWF  5F
+0DF3:  MOVLW  01
+0DF4:  MOVWF  60
+0DF5:  CLRF   61
+0DF6:  CLRF   62
+0DF7:  MOVWF  63
+0DF8:  MOVLP  00
+0DF9:  MOVLB  00
+0DFA:  CALL   02A
+0DFB:  MOVLP  08
+....................        
+....................       SetLEDPosition(1, 2, false, false, true); 
+0DFC:  MOVLW  01
+0DFD:  MOVLB  02
+0DFE:  MOVWF  5F
+0DFF:  MOVLW  02
+0E00:  MOVWF  60
+0E01:  CLRF   61
+0E02:  CLRF   62
+0E03:  MOVLW  01
+0E04:  MOVWF  63
+0E05:  MOVLP  00
+0E06:  MOVLB  00
+0E07:  CALL   02A
+0E08:  MOVLP  08
+....................       SetLEDPosition(5, 2, false, false, true); 
+0E09:  MOVLW  05
+0E0A:  MOVLB  02
+0E0B:  MOVWF  5F
+0E0C:  MOVLW  02
+0E0D:  MOVWF  60
+0E0E:  CLRF   61
+0E0F:  CLRF   62
+0E10:  MOVLW  01
+0E11:  MOVWF  63
+0E12:  MOVLP  00
+0E13:  MOVLB  00
+0E14:  CALL   02A
+0E15:  MOVLP  08
+....................      
+....................       SetLEDPosition(2, 3, false, false, true); 
+0E16:  MOVLW  02
+0E17:  MOVLB  02
+0E18:  MOVWF  5F
+0E19:  MOVLW  03
+0E1A:  MOVWF  60
+0E1B:  CLRF   61
+0E1C:  CLRF   62
+0E1D:  MOVLW  01
+0E1E:  MOVWF  63
+0E1F:  MOVLP  00
+0E20:  MOVLB  00
+0E21:  CALL   02A
+0E22:  MOVLP  08
+....................       SetLEDPosition(3, 3, false, false, true); 
+0E23:  MOVLW  03
+0E24:  MOVLB  02
+0E25:  MOVWF  5F
+0E26:  MOVWF  60
+0E27:  CLRF   61
+0E28:  CLRF   62
+0E29:  MOVLW  01
+0E2A:  MOVWF  63
+0E2B:  MOVLP  00
+0E2C:  MOVLB  00
+0E2D:  CALL   02A
+0E2E:  MOVLP  08
+....................       SetLEDPosition(4, 3, false, false, true); 
+0E2F:  MOVLW  04
+0E30:  MOVLB  02
+0E31:  MOVWF  5F
+0E32:  MOVLW  03
+0E33:  MOVWF  60
+0E34:  CLRF   61
+0E35:  CLRF   62
+0E36:  MOVLW  01
+0E37:  MOVWF  63
+0E38:  MOVLP  00
+0E39:  MOVLB  00
+0E3A:  CALL   02A
+0E3B:  MOVLP  08
+....................      
+....................       SetLEDPosition(1, 4, false, false, true); 
+0E3C:  MOVLW  01
+0E3D:  MOVLB  02
+0E3E:  MOVWF  5F
+0E3F:  MOVLW  04
+0E40:  MOVWF  60
+0E41:  CLRF   61
+0E42:  CLRF   62
+0E43:  MOVLW  01
+0E44:  MOVWF  63
+0E45:  MOVLP  00
+0E46:  MOVLB  00
+0E47:  CALL   02A
+0E48:  MOVLP  08
+....................       SetLEDPosition(5, 4, false, false, true); 
+0E49:  MOVLW  05
+0E4A:  MOVLB  02
+0E4B:  MOVWF  5F
+0E4C:  MOVLW  04
+0E4D:  MOVWF  60
+0E4E:  CLRF   61
+0E4F:  CLRF   62
+0E50:  MOVLW  01
+0E51:  MOVWF  63
+0E52:  MOVLP  00
+0E53:  MOVLB  00
+0E54:  CALL   02A
+0E55:  MOVLP  08
+....................      
+....................       SetLEDPosition(1, 5, false, false, true); 
+0E56:  MOVLW  01
+0E57:  MOVLB  02
+0E58:  MOVWF  5F
+0E59:  MOVLW  05
+0E5A:  MOVWF  60
+0E5B:  CLRF   61
+0E5C:  CLRF   62
+0E5D:  MOVLW  01
+0E5E:  MOVWF  63
+0E5F:  MOVLP  00
+0E60:  MOVLB  00
+0E61:  CALL   02A
+0E62:  MOVLP  08
+....................       SetLEDPosition(5, 5, false, false, true); 
+0E63:  MOVLW  05
+0E64:  MOVLB  02
+0E65:  MOVWF  5F
+0E66:  MOVWF  60
+0E67:  CLRF   61
+0E68:  CLRF   62
+0E69:  MOVLW  01
+0E6A:  MOVWF  63
+0E6B:  MOVLP  00
+0E6C:  MOVLB  00
+0E6D:  CALL   02A
+0E6E:  MOVLP  08
+....................  
+....................       SetLEDPosition(2, 6, false, false, true); 
+0E6F:  MOVLW  02
+0E70:  MOVLB  02
+0E71:  MOVWF  5F
+0E72:  MOVLW  06
+0E73:  MOVWF  60
+0E74:  CLRF   61
+0E75:  CLRF   62
+0E76:  MOVLW  01
+0E77:  MOVWF  63
+0E78:  MOVLP  00
+0E79:  MOVLB  00
+0E7A:  CALL   02A
+0E7B:  MOVLP  08
+....................       SetLEDPosition(3, 6, false, false, true); 
+0E7C:  MOVLW  03
+0E7D:  MOVLB  02
+0E7E:  MOVWF  5F
+0E7F:  MOVLW  06
+0E80:  MOVWF  60
+0E81:  CLRF   61
+0E82:  CLRF   62
+0E83:  MOVLW  01
+0E84:  MOVWF  63
+0E85:  MOVLP  00
+0E86:  MOVLB  00
+0E87:  CALL   02A
+0E88:  MOVLP  08
+....................       SetLEDPosition(4, 6, false, false, true); 
+0E89:  MOVLW  04
+0E8A:  MOVLB  02
+0E8B:  MOVWF  5F
+0E8C:  MOVLW  06
+0E8D:  MOVWF  60
+0E8E:  CLRF   61
+0E8F:  CLRF   62
+0E90:  MOVLW  01
+0E91:  MOVWF  63
+0E92:  MOVLP  00
+0E93:  MOVLB  00
+0E94:  CALL   02A
+0E95:  MOVLP  08
+....................       break; 
+0E96:  MOVLB  02
+0E97:  GOTO   73F
+....................     case 9: 
+....................       SetLEDPosition(2, 1, false, false, true); 
+0E98:  MOVLW  02
+0E99:  MOVLB  02
+0E9A:  MOVWF  5F
+0E9B:  MOVLW  01
+0E9C:  MOVWF  60
+0E9D:  CLRF   61
+0E9E:  CLRF   62
+0E9F:  MOVWF  63
+0EA0:  MOVLP  00
+0EA1:  MOVLB  00
+0EA2:  CALL   02A
+0EA3:  MOVLP  08
+....................       SetLEDPosition(3, 1, false, false, true); 
+0EA4:  MOVLW  03
+0EA5:  MOVLB  02
+0EA6:  MOVWF  5F
+0EA7:  MOVLW  01
+0EA8:  MOVWF  60
+0EA9:  CLRF   61
+0EAA:  CLRF   62
+0EAB:  MOVWF  63
+0EAC:  MOVLP  00
+0EAD:  MOVLB  00
+0EAE:  CALL   02A
+0EAF:  MOVLP  08
+....................       SetLEDPosition(4, 1, false, false, true); 
+0EB0:  MOVLW  04
+0EB1:  MOVLB  02
+0EB2:  MOVWF  5F
+0EB3:  MOVLW  01
+0EB4:  MOVWF  60
+0EB5:  CLRF   61
+0EB6:  CLRF   62
+0EB7:  MOVWF  63
+0EB8:  MOVLP  00
+0EB9:  MOVLB  00
+0EBA:  CALL   02A
+0EBB:  MOVLP  08
+....................        
+....................       SetLEDPosition(1, 2, false, false, true); 
+0EBC:  MOVLW  01
+0EBD:  MOVLB  02
+0EBE:  MOVWF  5F
+0EBF:  MOVLW  02
+0EC0:  MOVWF  60
+0EC1:  CLRF   61
+0EC2:  CLRF   62
+0EC3:  MOVLW  01
+0EC4:  MOVWF  63
+0EC5:  MOVLP  00
+0EC6:  MOVLB  00
+0EC7:  CALL   02A
+0EC8:  MOVLP  08
+....................       SetLEDPosition(5, 2, false, false, true); 
+0EC9:  MOVLW  05
+0ECA:  MOVLB  02
+0ECB:  MOVWF  5F
+0ECC:  MOVLW  02
+0ECD:  MOVWF  60
+0ECE:  CLRF   61
+0ECF:  CLRF   62
+0ED0:  MOVLW  01
+0ED1:  MOVWF  63
+0ED2:  MOVLP  00
+0ED3:  MOVLB  00
+0ED4:  CALL   02A
+0ED5:  MOVLP  08
+....................  
+....................       SetLEDPosition(1, 3, false, false, true); 
+0ED6:  MOVLW  01
+0ED7:  MOVLB  02
+0ED8:  MOVWF  5F
+0ED9:  MOVLW  03
+0EDA:  MOVWF  60
+0EDB:  CLRF   61
+0EDC:  CLRF   62
+0EDD:  MOVLW  01
+0EDE:  MOVWF  63
+0EDF:  MOVLP  00
+0EE0:  MOVLB  00
+0EE1:  CALL   02A
+0EE2:  MOVLP  08
+....................       SetLEDPosition(5, 3, false, false, true); 
+0EE3:  MOVLW  05
+0EE4:  MOVLB  02
+0EE5:  MOVWF  5F
+0EE6:  MOVLW  03
+0EE7:  MOVWF  60
+0EE8:  CLRF   61
+0EE9:  CLRF   62
+0EEA:  MOVLW  01
+0EEB:  MOVWF  63
+0EEC:  MOVLP  00
+0EED:  MOVLB  00
+0EEE:  CALL   02A
+0EEF:  MOVLP  08
+....................       
+....................       SetLEDPosition(2, 4, false, false, true); 
+0EF0:  MOVLW  02
+0EF1:  MOVLB  02
+0EF2:  MOVWF  5F
+0EF3:  MOVLW  04
+0EF4:  MOVWF  60
+0EF5:  CLRF   61
+0EF6:  CLRF   62
+0EF7:  MOVLW  01
+0EF8:  MOVWF  63
+0EF9:  MOVLP  00
+0EFA:  MOVLB  00
+0EFB:  CALL   02A
+0EFC:  MOVLP  08
+....................       SetLEDPosition(3, 4, false, false, true); 
+0EFD:  MOVLW  03
+0EFE:  MOVLB  02
+0EFF:  MOVWF  5F
+0F00:  MOVLW  04
+0F01:  MOVWF  60
+0F02:  CLRF   61
+0F03:  CLRF   62
+0F04:  MOVLW  01
+0F05:  MOVWF  63
+0F06:  MOVLP  00
+0F07:  MOVLB  00
+0F08:  CALL   02A
+0F09:  MOVLP  08
+....................       SetLEDPosition(4, 4, false, false, true); 
+0F0A:  MOVLW  04
+0F0B:  MOVLB  02
+0F0C:  MOVWF  5F
+0F0D:  MOVWF  60
+0F0E:  CLRF   61
+0F0F:  CLRF   62
+0F10:  MOVLW  01
+0F11:  MOVWF  63
+0F12:  MOVLP  00
+0F13:  MOVLB  00
+0F14:  CALL   02A
+0F15:  MOVLP  08
+....................       SetLEDPosition(5, 4, false, false, true); 
+0F16:  MOVLW  05
+0F17:  MOVLB  02
+0F18:  MOVWF  5F
+0F19:  MOVLW  04
+0F1A:  MOVWF  60
+0F1B:  CLRF   61
+0F1C:  CLRF   62
+0F1D:  MOVLW  01
+0F1E:  MOVWF  63
+0F1F:  MOVLP  00
+0F20:  MOVLB  00
+0F21:  CALL   02A
+0F22:  MOVLP  08
+....................       
+....................       SetLEDPosition(5, 5, false, false, true); 
+0F23:  MOVLW  05
+0F24:  MOVLB  02
+0F25:  MOVWF  5F
+0F26:  MOVWF  60
+0F27:  CLRF   61
+0F28:  CLRF   62
+0F29:  MOVLW  01
+0F2A:  MOVWF  63
+0F2B:  MOVLP  00
+0F2C:  MOVLB  00
+0F2D:  CALL   02A
+0F2E:  MOVLP  08
+....................       SetLEDPosition(5, 6, false, false, true);      
+0F2F:  MOVLW  05
+0F30:  MOVLB  02
+0F31:  MOVWF  5F
+0F32:  MOVLW  06
+0F33:  MOVWF  60
+0F34:  CLRF   61
+0F35:  CLRF   62
+0F36:  MOVLW  01
+0F37:  MOVWF  63
+0F38:  MOVLP  00
+0F39:  MOVLB  00
+0F3A:  CALL   02A
+0F3B:  MOVLP  08
+....................       break; 
+0F3C:  MOVLB  02
+0F3D:  GOTO   73F
+0F3E:  MOVLB  02
+....................     } 
+0F3F:  MOVLB  00
+0F40:  RETURN
+.................... } 
+....................  
+.................... #INT_TIMER1 
+.................... void isr_tmr1() { 
+....................  
+....................   if (_cnt == 0)  
+*
+021F:  MOVLB  02
+0220:  MOVF   48,F
+0221:  BTFSS  03.2
+0222:  GOTO   22E
+0223:  MOVF   49,F
+0224:  BTFSS  03.2
+0225:  GOTO   22E
+....................     displayDigit(_digits[2]); 
+0226:  MOVF   47,W
+0227:  MOVWF  59
+0228:  MOVLP  08
+0229:  MOVLB  00
+022A:  CALL   000
+022B:  MOVLP  00
+022C:  GOTO   319
+022D:  MOVLB  02
+....................   else if (_cnt == 100) 
+022E:  MOVF   48,W
+022F:  SUBLW  64
+0230:  BTFSS  03.2
+0231:  GOTO   271
+0232:  MOVF   49,F
+0233:  BTFSS  03.2
+0234:  GOTO   271
+....................     clearDisplay(); 
+*
+0270:  GOTO   31A
+....................   else if (_cnt == 150) 
+0271:  MOVF   48,W
+0272:  SUBLW  96
+0273:  BTFSS  03.2
+0274:  GOTO   280
+0275:  MOVF   49,F
+0276:  BTFSS  03.2
+0277:  GOTO   280
+....................     displayDigit(_digits[1]); 
+0278:  MOVF   46,W
+0279:  MOVWF  59
+027A:  MOVLP  08
+027B:  MOVLB  00
+027C:  CALL   000
+027D:  MOVLP  00
+027E:  GOTO   319
+027F:  MOVLB  02
+....................   else if (_cnt == 250) 
+0280:  MOVF   48,W
+0281:  SUBLW  FA
+0282:  BTFSS  03.2
+0283:  GOTO   2C3
+0284:  MOVF   49,F
+0285:  BTFSS  03.2
+0286:  GOTO   2C3
+....................     clearDisplay(); 
+*
+02C2:  GOTO   31A
+....................   else if (_cnt == 300)  
+02C3:  MOVF   48,W
+02C4:  SUBLW  2C
+02C5:  BTFSS  03.2
+02C6:  GOTO   2D1
+02C7:  DECFSZ 49,W
+02C8:  GOTO   2D1
+....................     displayDigit(_digits[0]);    
+02C9:  MOVF   45,W
+02CA:  MOVWF  59
+02CB:  MOVLP  08
+02CC:  MOVLB  00
+02CD:  CALL   000
+02CE:  MOVLP  00
+02CF:  GOTO   319
+02D0:  MOVLB  02
+....................   else if (_cnt == 400) { 
+02D1:  MOVF   48,W
+02D2:  SUBLW  90
+02D3:  BTFSS  03.2
+02D4:  GOTO   31A
+02D5:  DECFSZ 49,W
+02D6:  GOTO   31A
+....................  
+....................     clearDisplay(); 
+....................    
+....................     disable_interrupts(INT_TIMER1); 
+*
+0312:  MOVLB  01
+0313:  BCF    11.0
+....................      
+....................     setup_timer_1(T1_DISABLED); 
+0314:  MOVLB  02
+0315:  BCF    1D.5
+0316:  MOVLB  00
+0317:  CLRF   18
+0318:  CLRF   19
+0319:  MOVLB  02
+....................   } 
+....................    
+....................   _cnt++; 
+031A:  INCF   48,F
+031B:  BTFSC  03.2
+031C:  INCF   49,F
+031D:  MOVLB  00
+031E:  BCF    11.0
+031F:  MOVLP  00
+0320:  GOTO   01D
+.................... } 
+....................  
+.................... void main() { 
+*
+0382:  MOVLW  F0
+0383:  MOVLB  01
+0384:  MOVWF  19
+0385:  MOVF   1A,W
+0386:  BSF    0E.3
+0387:  BSF    0E.4
+0388:  MOVLB  04
+0389:  BCF    17.0
+038A:  BCF    17.1
+038B:  BCF    17.3
+038C:  MOVLW  A2
+038D:  MOVWF  12
+038E:  MOVLW  FF
+038F:  MOVWF  13
+0390:  MOVLW  36
+0391:  MOVWF  15
+0392:  BSF    16.0
+0393:  MOVLB  02
+0394:  CLRF   49
+0395:  CLRF   48
+0396:  CLRF   71
+0397:  MOVLW  03
+0398:  MOVWF  75
+0399:  MOVLB  0F
+039A:  CLRF   11
+039B:  CLRF   12
+039C:  CLRF   18
+039D:  CLRF   19
+039E:  CLRF   1A
+039F:  MOVLB  03
+03A0:  CLRF   0C
+03A1:  CLRF   0D
+03A2:  CLRF   0F
+03A3:  CLRF   10
+03A4:  MOVLB  02
+03A5:  CLRF   12
+03A6:  CLRF   11
+03A7:  CLRF   14
+03A8:  CLRF   13
+03A9:  CLRF   45
+03AA:  CLRF   46
+03AB:  CLRF   47
+....................  
+....................   clearDisplay(); 
+....................  
+....................   // ---------------------------------------------------------------------------------------------- 
+....................    
+....................   _address = read_eeprom(0); 
+*
+03E7:  MOVLB  03
+03E8:  CLRF   11
+03E9:  BCF    15.7
+03EA:  BSF    15.0
+03EB:  MOVF   13,W
+03EC:  MOVWF  70
+....................  
+....................   if (_address >= 130 && _address <= 180) 
+03ED:  MOVF   70,W
+03EE:  SUBLW  81
+03EF:  BTFSC  03.0
+03F0:  GOTO   3FA
+03F1:  MOVF   70,W
+03F2:  SUBLW  B4
+03F3:  BTFSS  03.0
+03F4:  GOTO   3FA
+....................     i2c_slaveaddr(_address); 
+03F5:  MOVF   70,W
+03F6:  MOVLB  04
+03F7:  MOVWF  12
+03F8:  GOTO   3FD
+03F9:  MOVLB  03
+....................   else 
+....................     _address = 0xa2; 
+03FA:  MOVLW  A2
+03FB:  MOVWF  70
+03FC:  MOVLB  04
+....................      
+....................   int digitsSize = 0; 
+03FD:  MOVLB  02
+03FE:  CLRF   4A
+....................    
+....................   do {                  
+....................  
+....................     _digits[digitsSize++] = _address % 10;   /* get next digit */ 
+03FF:  MOVF   4A,W
+0400:  INCF   4A,F
+0401:  ADDLW  C5
+0402:  MOVWF  04
+0403:  MOVLW  20
+0404:  MOVWF  05
+0405:  BTFSC  03.0
+0406:  INCF   05,F
+0407:  MOVF   70,W
+0408:  MOVWF  4E
+0409:  MOVLW  0A
+040A:  MOVWF  4F
+040B:  MOVLB  00
+040C:  CALL   321
+040D:  MOVF   77,W
+040E:  MOVWF  00
+....................   } while ((_address /= 10) > 0);   /* delete it */ 
+040F:  MOVF   70,W
+0410:  MOVLB  02
+0411:  MOVWF  4E
+0412:  MOVLW  0A
+0413:  MOVWF  4F
+0414:  MOVLB  00
+0415:  CALL   321
+0416:  MOVF   78,W
+0417:  MOVWF  70
+0418:  MOVF   70,F
+0419:  BTFSC  03.2
+041A:  GOTO   41D
+041B:  MOVLB  02
+041C:  GOTO   3FF
+....................  
+....................   // ---------------------------------------------------------------------------------------------- 
+....................  
+....................   for (int t = 0; t < 8; t++) { 
+041D:  MOVLB  02
+041E:  CLRF   4B
+041F:  MOVF   4B,W
+0420:  SUBLW  07
+0421:  BTFSS  03.0
+0422:  GOTO   531
+....................    
+....................     output_drive(Trans[t]); 
+0423:  MOVLW  F8
+0424:  ADDWF  4B,W
+0425:  MOVWF  4C
+0426:  MOVLW  1F
+0427:  MOVWF  4D
+0428:  BTFSC  03.0
+0429:  INCF   4D,F
+042A:  MOVF   4D,W
+042B:  MOVLB  03
+042C:  MOVWF  12
+042D:  MOVLB  02
+042E:  MOVF   4C,W
+042F:  MOVLB  03
+0430:  MOVWF  11
+0431:  MOVLW  20
+0432:  MOVWF  05
+0433:  MOVLW  CE
+0434:  MOVWF  04
+0435:  MOVLW  01
+0436:  MOVLB  02
+0437:  MOVWF  52
+0438:  MOVLB  00
+0439:  CALL   338
+043A:  MOVLB  02
+043B:  MOVF   4E,W
+043C:  MOVWF  52
+043D:  CLRF   53
+043E:  CLRF   55
+043F:  MOVLW  80
+0440:  MOVWF  54
+0441:  MOVLB  00
+0442:  CALL   34B
+....................     output_high(Trans[t]); 
+0443:  MOVLW  F8
+0444:  MOVLB  02
+0445:  ADDWF  4B,W
+0446:  MOVWF  4C
+0447:  MOVLW  1F
+0448:  MOVWF  4D
+0449:  BTFSC  03.0
+044A:  INCF   4D,F
+044B:  MOVF   4D,W
+044C:  MOVLB  03
+044D:  MOVWF  12
+044E:  MOVLB  02
+044F:  MOVF   4C,W
+0450:  MOVLB  03
+0451:  MOVWF  11
+0452:  MOVLW  20
+0453:  MOVWF  05
+0454:  MOVLW  CE
+0455:  MOVWF  04
+0456:  MOVLW  01
+0457:  MOVLB  02
+0458:  MOVWF  52
+0459:  MOVLB  00
+045A:  CALL   338
+045B:  MOVLB  02
+045C:  MOVF   4E,W
+045D:  MOVWF  52
+045E:  MOVLW  01
+045F:  MOVWF  53
+0460:  MOVLW  01
+0461:  MOVWF  55
+0462:  CLRF   54
+0463:  MOVLB  00
+0464:  CALL   34B
+....................  
+....................     output_drive(rPin[t]); 
+0465:  MOVLW  E0
+0466:  MOVLB  02
+0467:  ADDWF  4B,W
+0468:  MOVWF  4C
+0469:  MOVLW  1F
+046A:  MOVWF  4D
+046B:  BTFSC  03.0
+046C:  INCF   4D,F
+046D:  MOVF   4D,W
+046E:  MOVLB  03
+046F:  MOVWF  12
+0470:  MOVLB  02
+0471:  MOVF   4C,W
+0472:  MOVLB  03
+0473:  MOVWF  11
+0474:  MOVLW  20
+0475:  MOVWF  05
+0476:  MOVLW  CE
+0477:  MOVWF  04
+0478:  MOVLW  01
+0479:  MOVLB  02
+047A:  MOVWF  52
+047B:  MOVLB  00
+047C:  CALL   338
+047D:  MOVLB  02
+047E:  MOVF   4E,W
+047F:  MOVWF  52
+0480:  CLRF   53
+0481:  CLRF   55
+0482:  MOVLW  80
+0483:  MOVWF  54
+0484:  MOVLB  00
+0485:  CALL   34B
+....................     output_high(rPin[t]); 
+0486:  MOVLW  E0
+0487:  MOVLB  02
+0488:  ADDWF  4B,W
+0489:  MOVWF  4C
+048A:  MOVLW  1F
+048B:  MOVWF  4D
+048C:  BTFSC  03.0
+048D:  INCF   4D,F
+048E:  MOVF   4D,W
+048F:  MOVLB  03
+0490:  MOVWF  12
+0491:  MOVLB  02
+0492:  MOVF   4C,W
+0493:  MOVLB  03
+0494:  MOVWF  11
+0495:  MOVLW  20
+0496:  MOVWF  05
+0497:  MOVLW  CE
+0498:  MOVWF  04
+0499:  MOVLW  01
+049A:  MOVLB  02
+049B:  MOVWF  52
+049C:  MOVLB  00
+049D:  CALL   338
+049E:  MOVLB  02
+049F:  MOVF   4E,W
+04A0:  MOVWF  52
+04A1:  MOVLW  01
+04A2:  MOVWF  53
+04A3:  MOVLW  01
+04A4:  MOVWF  55
+04A5:  CLRF   54
+04A6:  MOVLB  00
+04A7:  CALL   34B
+....................  
+....................     output_drive(gPin[t]); 
+04A8:  MOVLW  F0
+04A9:  MOVLB  02
+04AA:  ADDWF  4B,W
+04AB:  MOVWF  4C
+04AC:  MOVLW  1F
+04AD:  MOVWF  4D
+04AE:  BTFSC  03.0
+04AF:  INCF   4D,F
+04B0:  MOVF   4D,W
+04B1:  MOVLB  03
+04B2:  MOVWF  12
+04B3:  MOVLB  02
+04B4:  MOVF   4C,W
+04B5:  MOVLB  03
+04B6:  MOVWF  11
+04B7:  MOVLW  20
+04B8:  MOVWF  05
+04B9:  MOVLW  CE
+04BA:  MOVWF  04
+04BB:  MOVLW  01
+04BC:  MOVLB  02
+04BD:  MOVWF  52
+04BE:  MOVLB  00
+04BF:  CALL   338
+04C0:  MOVLB  02
+04C1:  MOVF   4E,W
+04C2:  MOVWF  52
+04C3:  CLRF   53
+04C4:  CLRF   55
+04C5:  MOVLW  80
+04C6:  MOVWF  54
+04C7:  MOVLB  00
+04C8:  CALL   34B
+....................     output_high(gPin[t]); 
+04C9:  MOVLW  F0
+04CA:  MOVLB  02
+04CB:  ADDWF  4B,W
+04CC:  MOVWF  4C
+04CD:  MOVLW  1F
+04CE:  MOVWF  4D
+04CF:  BTFSC  03.0
+04D0:  INCF   4D,F
+04D1:  MOVF   4D,W
+04D2:  MOVLB  03
+04D3:  MOVWF  12
+04D4:  MOVLB  02
+04D5:  MOVF   4C,W
+04D6:  MOVLB  03
+04D7:  MOVWF  11
+04D8:  MOVLW  20
+04D9:  MOVWF  05
+04DA:  MOVLW  CE
+04DB:  MOVWF  04
+04DC:  MOVLW  01
+04DD:  MOVLB  02
+04DE:  MOVWF  52
+04DF:  MOVLB  00
+04E0:  CALL   338
+04E1:  MOVLB  02
+04E2:  MOVF   4E,W
+04E3:  MOVWF  52
+04E4:  MOVLW  01
+04E5:  MOVWF  53
+04E6:  MOVLW  01
+04E7:  MOVWF  55
+04E8:  CLRF   54
+04E9:  MOVLB  00
+04EA:  CALL   34B
+....................  
+....................     output_drive(bPin[t]); 
+04EB:  MOVLW  E8
+04EC:  MOVLB  02
+04ED:  ADDWF  4B,W
+04EE:  MOVWF  4C
+04EF:  MOVLW  1F
+04F0:  MOVWF  4D
+04F1:  BTFSC  03.0
+04F2:  INCF   4D,F
+04F3:  MOVF   4D,W
+04F4:  MOVLB  03
+04F5:  MOVWF  12
+04F6:  MOVLB  02
+04F7:  MOVF   4C,W
+04F8:  MOVLB  03
+04F9:  MOVWF  11
+04FA:  MOVLW  20
+04FB:  MOVWF  05
+04FC:  MOVLW  CE
+04FD:  MOVWF  04
+04FE:  MOVLW  01
+04FF:  MOVLB  02
+0500:  MOVWF  52
+0501:  MOVLB  00
+0502:  CALL   338
+0503:  MOVLB  02
+0504:  MOVF   4E,W
+0505:  MOVWF  52
+0506:  CLRF   53
+0507:  CLRF   55
+0508:  MOVLW  80
+0509:  MOVWF  54
+050A:  MOVLB  00
+050B:  CALL   34B
+....................     output_high(bPin[t]); 
+050C:  MOVLW  E8
+050D:  MOVLB  02
+050E:  ADDWF  4B,W
+050F:  MOVWF  4C
+0510:  MOVLW  1F
+0511:  MOVWF  4D
+0512:  BTFSC  03.0
+0513:  INCF   4D,F
+0514:  MOVF   4D,W
+0515:  MOVLB  03
+0516:  MOVWF  12
+0517:  MOVLB  02
+0518:  MOVF   4C,W
+0519:  MOVLB  03
+051A:  MOVWF  11
+051B:  MOVLW  20
+051C:  MOVWF  05
+051D:  MOVLW  CE
+051E:  MOVWF  04
+051F:  MOVLW  01
+0520:  MOVLB  02
+0521:  MOVWF  52
+0522:  MOVLB  00
+0523:  CALL   338
+0524:  MOVLB  02
+0525:  MOVF   4E,W
+0526:  MOVWF  52
+0527:  MOVLW  01
+0528:  MOVWF  53
+0529:  MOVLW  01
+052A:  MOVWF  55
+052B:  CLRF   54
+052C:  MOVLB  00
+052D:  CALL   34B
+052E:  MOVLB  02
+052F:  INCF   4B,F
+0530:  GOTO   41F
+....................   } 
+....................  
+....................   // ---------------------------------------------------------------------------------------------- 
+....................  
+....................   delay_ms(1000); 
+0531:  MOVLW  04
+0532:  MOVWF  4C
+0533:  MOVLW  FA
+0534:  MOVWF  4F
+0535:  MOVLB  00
+0536:  CALL   36D
+0537:  MOVLB  02
+0538:  DECFSZ 4C,F
+0539:  GOTO   533
+....................  
+....................   // ---------------------------------------------------------------------------------------------- 
+....................  
+....................   setup_adc_ports(NO_ANALOGS); 
+053A:  MOVLB  01
+053B:  BCF    1E.0
+053C:  BCF    1E.1
+053D:  BCF    1E.2
+053E:  MOVLW  00
+053F:  MOVLB  03
+0540:  MOVWF  0C
+0541:  MOVWF  10
+0542:  MOVWF  0D
+0543:  MOVWF  0F
+....................   setup_vref(false); 
+0544:  MOVLB  02
+0545:  CLRF   17
+....................   setup_comparator(NC_NC_NC_NC); 
+0546:  CLRF   12
+0547:  CLRF   11
+0548:  CLRF   14
+0549:  CLRF   13
+....................  
+....................   setup_timer_1(T1_INTERNAL|T1_DIV_BY_1); 
+054A:  BCF    1D.5
+054B:  MOVLW  05
+054C:  MOVLB  00
+054D:  MOVWF  18
+054E:  CLRF   19
+....................  
+....................   enable_interrupts(INT_SSP); 
+054F:  MOVLB  01
+0550:  BSF    11.3
+....................   enable_interrupts(INT_TIMER1); 
+0551:  BSF    11.0
+....................   enable_interrupts(GLOBAL); 
+0552:  MOVLW  C0
+0553:  IORWF  0B,F
+....................  
+....................   // ---------------------------------------------------------------------------------------------- 
+....................           
+....................   loop1(); 
+0554:  MOVLP  10
+0555:  MOVLB  00
+0556:  GOTO   000
+0557:  MOVLP  00
+.................... } 
+....................  
+0558:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3944   INTRC_IO NOWDT PUT MCLR PROTECT NOCPD NOBROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT NOVCAP PLL_SW STVREN BORV19 NODEBUG NOLVP
+
+ROM data:
+001FE0: 3462 3465 346A 346D 3470 3475 3480 3466 
+
+001FE8: 3461 3464 3469 346C 346F 3472 3477 3482 
+
+001FF0: 3460 3463 3468 346B 346E 3471 3476 3481 
+
+001FF8: 347F 347E 347D 347C 347B 347A 3479 3478 

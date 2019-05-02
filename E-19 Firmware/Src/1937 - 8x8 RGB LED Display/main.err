@@ -1,0 +1,4 @@
+>>> Warning 201 "main.c" Line 506(1,1): Assignment inside relational expression
+      Memory usage:   ROM=62%      RAM=42% - 48%
+      0 Errors,  1 Warnings.
+Build Successful.

@@ -1,0 +1,63 @@
+
+ROM used:   5113/8192 (62%)
+            6175/8192 (75%) including unused fragments
+
+            3.2 Average locations per line
+            15.1 Average locations per statement
+
+RAM used:   216/512 (42%) at main() level
+            246/512 (48%) worst case
+
+Stack used: 4 worst case (1 in main + 3 for interrupts)
+Stack size: 16
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  546   338 100  main.c
+   34     0   0  main.h
+ 1015     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F1937.h
+----- -----
+ 1595   338 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     19   0    7             @READ_PROGRAM_MEMORY8
+0     21   0    1             @delay_ms1
+ Inline         2    267  3.8  clearDisplay
+ Inline         5    325  4.4  clearDisplayColor
+0     54   1    7    244  3.5  SetLEDPosition
+2   1842  36    4   3926  4.5  loop1
+0     34   1    6             @WRITEBITA
+0    447   9    3   2958  8.0  ssp_interupt
+1   1857  36    1  16996  4.0  displayDigit
+1     14   0    0             @goto10780
+0    258   5    0    402  3.7  isr_tmr1
+0    471   9    3    993  9.4  MAIN
+0     23   0    3             @DIV88
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              338
+    Comments                195
+    Volume (V)              31972
+    Difficulty (D)          41.6
+    Effort to implement (E) 1328982
+    Time to implement (T)   20 hours, 31 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   56
+    Maintainability (MI)    115
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-00029    38  0  
+0002A-007FF  1327  679  
+00800-00FFF  1871  177  
+01000-017FF  1842  206  
+01800-01FDF     0  2016  
+01FE0-01FFF    32  0  
+
+
+
