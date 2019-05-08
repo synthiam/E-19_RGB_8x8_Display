@@ -6,7 +6,7 @@
 
 This is an RGB Matrix display of 8x8 (64) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more!
 
-The EZ-Builder behavior control for this hardware is here: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
+The EZ-Builder behavior control for this reference design is here: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
 
 ## Contents
 
