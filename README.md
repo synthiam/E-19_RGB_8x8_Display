@@ -12,7 +12,7 @@ The EZ-Builder behavior control for this reference design is here: https://synth
 
 **Documentation:** Schematic PDF, Datasheet PDF, BOM
 
-**Hardware:** Altium PCB design File, Altium SCH Design File
+**Hardware:** Altium PCB design File, Altium SCH Design File, Gerbers
 
 **Firmware:** Code, Compiled Hex
 
