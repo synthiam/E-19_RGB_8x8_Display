@@ -8,7 +8,7 @@ This is an RGB Matrix display of 8x8 (64) Full color LEDs. Each LED can be indiv
 
 A few unique features of this display are that it is a smaller form factor (48x48mm) than common RGB matrix dispalys (60x60mm) and the green LEDs are a bright and vibrant green color!
 
-The EZ-Builder behavior control for this reference design is here: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
+The simple to use EZ-Builder behavior control for this reference design is here: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
 
 ## Contents
 
