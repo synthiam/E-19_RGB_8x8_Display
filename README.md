@@ -3,6 +3,7 @@
 ![RGB 8x8 Display](https://live.staticflickr.com/65535/33867577668_3501be2fde_k.jpg)
 ![RGB 8x8 Display](https://live.staticflickr.com/65535/32801182037_fcb34d834e_k.jpg)
 ![RGB 8x8 Display](https://www.ez-robot.com/Shop/Images/Products/52.jpg)
+[![RGB 8x8 Display Roll Out](https://live.staticflickr.com/65535/48579052692_a1c3e9f185_h.jpg)](https://youtu.be/Iwhcii0WCHs)
 
 This is an RGB Matrix display of 8x8 (64) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more!
 
