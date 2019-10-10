@@ -14,21 +14,6 @@ A few unique features of this display are that it is a smaller form factor (48x4
 
 **Firmware:** Code, Compiled Hex
 
-## Photos
-
-<p align="center">
-<img src="https://live.staticflickr.com/65535/33867577668_3501be2fde_k.jpg" width="683" height="383">
-<img src="https://live.staticflickr.com/65535/32801182037_fcb34d834e_k.jpg" width="683" height="383">
-<img src="https://www.ez-robot.com/Shop/Images/Products/52.jpg" width="683" height="383"></p>
-
-## EZ-Builder Behavior Control
-
-The EZ-Builder behavior control for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
-
-Link: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
-
-<a href=https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173><img src="https://live.staticflickr.com/65535/48718203842_73170065c7_n.jpg" width="683" height="383"></a>
-
 ## Roll Out Video
 
 This Roll-out Video includes:
@@ -44,6 +29,21 @@ This Roll-out Video includes:
 Link: https://youtu.be/Iwhcii0WCHs
 
 <a href=https://youtu.be/Iwhcii0WCHs><img src="https://media.giphy.com/media/SYWj5thk1iR8p5mULy/giphy.gif" width="683" height="383"></a>
+
+## Photos
+
+<p align="center">
+<img src="https://live.staticflickr.com/65535/33867577668_3501be2fde_k.jpg" width="683" height="383">
+<img src="https://live.staticflickr.com/65535/32801182037_fcb34d834e_k.jpg" width="683" height="383">
+<img src="https://www.ez-robot.com/Shop/Images/Products/52.jpg" width="683" height="383"></p>
+
+## EZ-Builder Behavior Control
+
+The EZ-Builder behavior control for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
+
+Link: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
+
+<a href=https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173><img src="https://live.staticflickr.com/65535/48718203842_73170065c7_n.jpg" width="683" height="383"></a>
 
 ## Contact
 
