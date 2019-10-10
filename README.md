@@ -23,7 +23,7 @@ A few unique features of this display are that it is a smaller form factor (48x4
 
 ## EZ-Builder Behavior Control
 
-The EZ-Builder behavior control for this reference design is very easy to use, simply add animation frame, click on the colors, and save! Activate the animations with the click of a mouse button or in code. 
+The EZ-Builder behavior control for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
 
 Link: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
 
