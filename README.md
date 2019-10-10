@@ -53,6 +53,11 @@ Synthiam Website: https://synthiam.com
 
 ## License
 
+This project is released under the following licenses:
+
+Hardware: Creative Commons Plus Attribution-NonCommercial 4.0 International (CC+ BY-NC 4.0)
+Firmware: Apache 2.0 + “Commons Clause” License Condition v1.0
+
 Please see [LICENSE.md](https://github.com/synthiam/E-19_RGB_8x8_Display/blob/master/LICENSE.md) for license details.
 
 ![Synthiam](https://live.staticflickr.com/65535/47791527651_358dffb302_m.jpg)
