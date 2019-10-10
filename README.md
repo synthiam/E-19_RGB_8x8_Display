@@ -10,13 +10,6 @@ A few unique features of this display are that it is a smaller form factor (48x4
 <img src="https://live.staticflickr.com/65535/32801182037_fcb34d834e_k.jpg" width="683" height="383">
 <img src="https://www.ez-robot.com/Shop/Images/Products/52.jpg" width="683" height="383"></p>
 
-## Roll Out Video
-
-<p align="center">
-<a href=https://youtu.be/Iwhcii0WCHs><img src="https://media.giphy.com/media/SYWj5thk1iR8p5mULy/giphy.gif" width="683" height="383"></a></p>
-
-Link: https://youtu.be/Iwhcii0WCHs
-
 ## EZ-Builder Behavior Control
 
 The EZ-Builder behavior control for this reference design is very easy to use, simply add animation frame, click on the colors, and save! Activate the animations with the click of a mouse button or in code. 
@@ -24,6 +17,23 @@ The EZ-Builder behavior control for this reference design is very easy to use, s
 Link: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
 
 <p align="center"><a href=https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173><img src="https://live.staticflickr.com/65535/48718203842_73170065c7_n.jpg" width="683" height="383"></a></p>
+
+## Roll Out Video
+
+This Roll-out Video includes:
+
+1. Feature set 
+2. Hook-up guide 
+3. Using Synthiam EZ-Builder Software Behavior Control
+4. Schematic overview
+5. Bill of Materials (BOM) overview
+6. Custom firmware location
+7. Assembly instructions 
+
+Link: https://youtu.be/Iwhcii0WCHs
+
+<p align="center">
+<a href=https://youtu.be/Iwhcii0WCHs><img src="https://media.giphy.com/media/SYWj5thk1iR8p5mULy/giphy.gif" width="683" height="383"></a></p>
 
 ## Contents
 
