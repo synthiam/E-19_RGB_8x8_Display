@@ -16,7 +16,7 @@ A few unique features of this display are that it is a smaller form factor (48x4
 
 ## Photos
 
-<p align="center">
+<p align="left">
 <img src="https://live.staticflickr.com/65535/33867577668_3501be2fde_k.jpg" width="683" height="383">
 <img src="https://live.staticflickr.com/65535/32801182037_fcb34d834e_k.jpg" width="683" height="383">
 <img src="https://www.ez-robot.com/Shop/Images/Products/52.jpg" width="683" height="383"></p>
