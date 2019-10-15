@@ -35,7 +35,7 @@ This Roll-out Video includes:
 6. Custom firmware location
 7. Assembly instructions 
 
-Link: ![]https://youtu.be/Iwhcii0WCHs
+Link: [https://youtu.be/Iwhcii0WCHs](https://youtu.be/Iwhcii0WCHs)
 
 ![]<a href="https://youtu.be/Iwhcii0WCHs" target="_blank"><img src="https://media.giphy.com/media/SYWj5thk1iR8p5mULy/giphy.gif" width="683" height="383"></a>
 
@@ -43,7 +43,7 @@ Link: ![]https://youtu.be/Iwhcii0WCHs
 
 The EZ-Builder behavior control for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
 
-Link: ![]https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
+Link: [https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173](https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173)
 
 ![]<a href="https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173" target="_blank"><img src="https://media.giphy.com/media/l3s9aipDPVkLZZbE9G/giphy.gif" width="683" height="383"></a>
 
