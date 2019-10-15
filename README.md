@@ -35,7 +35,7 @@ This Roll-out Video includes:
 6. Custom firmware location
 7. Assembly instructions 
 
-Link: [Youtube Video](https://youtu.be/Iwhcii0WCHs){:target="_blank"} 
+Link: [Youtube Video](https://youtu.be/Iwhcii0WCHs) {:target="_blank"} 
 
 <a href="https://youtu.be/Iwhcii0WCHs" target="_blank"><img src="images/RGB8x8a.gif" width="683" height="383"></a>
 
