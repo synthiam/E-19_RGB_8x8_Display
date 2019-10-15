@@ -10,11 +10,11 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 
 ## Contents
 
-**Documentation:** Schematic PDF, Datasheet PDF, BOM, Assembly Notes, Test Procedures
+[**Documentation:**](https://github.com/synthiam/E-19_RGB_8x8_Display/tree/master/E-19%20Documentation) Schematic PDF, Datasheet PDF, BOM, Assembly Notes, Test Procedures
 
-**Hardware:** Altium PCB design File, Altium SCH Design File, Gerbers
+[**Hardware:**](https://github.com/synthiam/E-19_RGB_8x8_Display/tree/master/E-19%20Hardware) Altium PCB design File, Altium SCH Design File, Gerbers
 
-**Firmware:** Code, Compiled Hex
+[**Firmware:**](https://github.com/synthiam/E-19_RGB_8x8_Display/tree/master/E-19%20Firmware) Code, Compiled Hex
 
 *Altium Libraries are also available <a href="https://github.com/synthiam/Synthiam_Altium_Librairies">here</a>*
 
