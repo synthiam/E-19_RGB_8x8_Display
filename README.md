@@ -6,7 +6,7 @@ There are many challenges when bringing a robotics project to market. These proj
 
 Out of our passion to solve this issue, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. It's the leading launch pad for robot builders to quickly apply technologies and businesses to speed up product development and iteration cycles. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
 
-We didn't stop at the software, we also made time saving hardware solutions. This RGB Matrix display is one of them. It has 64 (8x8) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more! A unique feature of this display is that it is a smaller form factor (48x48mm) than common RGB matrix dispalys (60x60mm). It also has green LEDs that are bright and vibrant, a feature not found in most displays. We want to share these reference design files with you so you can create your own version for your community and customers to enjoy!
+We didn't stop at the software, we also made time saving hardware solutions. This RGB Matrix display reference design is one of them. It has 64 (8x8) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more! A unique feature of this display is that it is a smaller form factor (48x48mm) than common RGB matrix dispalys (60x60mm). It also has green LEDs that are bright and vibrant, a feature not found in most displays. We want to share these files with you so you can create your own version for your community and customers to enjoy!
 
 ## Contents
 
