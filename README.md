@@ -37,7 +37,7 @@ This Roll-out Video includes:
 
 Link: https://youtu.be/Iwhcii0WCHs
 
-<a href="https://youtu.be/Iwhcii0WCHs" target="_blank"><img src="https://media.giphy.com/media/SYWj5thk1iR8p5mULy/giphy.gif" width="683" height="383"></a>
+<a href="https://youtu.be/Iwhcii0WCHs" target="_blank"><img src="images/RGB8x8a.gif" width="683" height="383"></a>
 
 ## EZ-Builder Behavior Control
 
@@ -45,7 +45,7 @@ The EZ-Builder behavior control for this reference design is very easy to use! S
 
 Link: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
 
-<a href="https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173" target="_blank"><img src="https://media.giphy.com/media/l3s9aipDPVkLZZbE9G/giphy.gif" width="683" height="383"></a>
+<a href="https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173" target="_blank"><img src="images/RGB8x8b.gif" width="683" height="383"></a>
 
 ## Contact
 
