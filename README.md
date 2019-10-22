@@ -4,11 +4,22 @@
 
 ## Description
 
-There are many challenges when bringing robot products to market. These products consist of dozens of technologies, each requiring a unique skillset to implement and connect together. This leads to one key issue - time. The time spent to develop, iterate, and implement every one of these technologies makes robot products incredibly expensive and risky to develop.
+Out of our passion to solve the issue of time waste in the robot creation process, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
 
-Out of our passion to solve this issue, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. It's the leading launch pad for robot builders to quickly apply technologies to their projects and businesses to speed up product development and iteration cycles. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
+We didn't stop at the software, we also made time saving hardware solutions. This RGB Matrix display reference design is one of them. It has 64 (8x8 matrix) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more! A unique feature of this display is that it is a smaller form factor (48x48mm) than common RGB matrix dispalys (60x60mm). We want to share these files with you so you can create your own version for your community and customers to enjoy!
 
-We didn't stop at the software, we also made time saving hardware solutions. This RGB Matrix display reference design is one of them. It has 64 (8x8 matrix) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more! A unique feature of this display is that it is a smaller form factor (48x48mm) than common RGB matrix dispalys (60x60mm). It's green LEDs are bright and vibrant, a feature not found in most displays. We want to share these files with you so you can create your own version for your community and customers to enjoy!
+**Features:**
+- I2C communication
+- Adjustable I2C address for chaining multiple displays
+- Programming header
+- 5V tolerant I/O pins
+- Address displayed on boot
+- EZ-Builder behavior control available
+- Small form factor RGB display
+- Vibrant Green color, better than majority of matrix displays 
+- Voltage requirement: 3.2-3.4VDC (3.3V Typical)
+- Current draw: All Blue - 86mA, All Green - 106mA, All Red - 154mA, All White - 273mA
+- Dimensions: 48(W) x 48(L) x 15.6(H) (mm)
 
 **Major components:** 
 - HS-19088BSRND-GG RGB 8x8 LED Matrix
@@ -18,7 +29,6 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 1. Supplier: programs custom firmware into the PIC16F1937 at their facility before sending to manufacturer
 2. Manufacturer: Single side placement and soldering of SMT components
 3. Manufacturer: Dual Side soldering of THT components
-
 
 ## Contents
 
