@@ -20,7 +20,7 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 - Small form factor RGB display
 - Vibrant Green color, better than majority of matrix displays 
 - Voltage requirement: 3.2-3.4VDC (3.3V Typical)
-- Current draw: All Blue - 86mA, All Green - 106mA, All Red - 154mA, All White - 273mA
+- Current draw: All LEDs off - 6.6mA, All Blue - 86mA, All Green - 106mA, All Red - 154mA, All White - 273mA
 - Dimensions: 48(W) x 48(L) x 15.6(H) (mm)
 
 **Major components:** 
