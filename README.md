@@ -22,6 +22,7 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 - Voltage requirement: 3.2-3.4VDC (3.3V Typical)
 - Current draw: All LEDs off - 6.6mA, All Blue - 86mA, All Green - 106mA, All Red - 154mA, All White - 273mA
 - Dimensions: 48(W) x 48(L) x 15.6(H) (mm)
+- Weight: 32g
 
 **Major components:** 
 - HS-19088BSRND-GG RGB 8x8 LED Matrix
