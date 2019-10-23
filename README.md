@@ -13,7 +13,7 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 **Features:**
 - I2C communication
 - Adjustable I2C address for chaining multiple displays
-- Programming header
+- PIC programming header
 - 5V tolerant I/O pins
 - Address displayed on boot
 - EZ-Builder behavior control available
