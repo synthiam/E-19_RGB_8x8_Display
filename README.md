@@ -6,7 +6,7 @@ If you are new to GitHub and would like to create a derivative of this project, 
 
 ## Description
 
-Out of our passion to solve the issue of time waste in the robot creation process, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
+Out of our passion to solve the issue of time waste in the robot creation process, ARC was born. The ARC software platform reduces the time it takes to get from idea to implementation. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
 
 We didn't stop at the software, we also made time saving hardware solutions. This RGB Matrix display reference design is one of them. It has 64 (8x8 matrix) Full color LEDs. Each LED can be individually controlled by EZ-builder to form messages, pictures, games, and more! A unique feature of this display is that it is a smaller form factor (48x48mm) than common RGB matrix dispalys (60x60mm). We want to share these files with you so you can create your own version for your community and customers to enjoy!
 
@@ -16,7 +16,7 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 - PIC programming header
 - 5V tolerant I/O pins
 - Address displayed on boot
-- EZ-Builder behavior control available
+- ARC skill available
 - Small form factor RGB display
 - Vibrant Green color, better than majority of matrix displays 
 - Voltage requirement: 3.2-3.4VDC (3.3V Typical)
@@ -56,7 +56,7 @@ This Roll-out Video includes:
 
 1. Feature set 
 2. Hook-up guide 
-3. Using Synthiam EZ-Builder Software Behavior Control
+3. Using ARC Skill
 4. Schematic overview
 5. Bill of Materials (BOM) overview
 6. Custom firmware location
@@ -66,9 +66,9 @@ Link: https://youtu.be/Iwhcii0WCHs
 
 <a href="https://youtu.be/Iwhcii0WCHs"><img src="images/RGB8x8a.gif" width="683" height="383"></a>
 
-## EZ-Builder Behavior Control
+## ARC Skill
 
-The EZ-Builder behavior control for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
+The ARC skill for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
 
 Link: https://synthiam.com/Software/Manual/RGB-8x8-Animator-16173
 
